@@ -30,10 +30,10 @@
 
   <ItemGroup>
     <Reference Include="Calc">
-      <HintPath>..\..\..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
+      <HintPath>..\..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
     </Reference>
     <Reference Include="Func">
-      <HintPath>..\..\..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
+      <HintPath>..\..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
     </Reference>
   </ItemGroup>
 

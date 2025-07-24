@@ -56,15 +56,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Reference Include="Calc">
-	    <HintPath>..\..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Func">
-	    <HintPath>..\..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
-	  </Reference>
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Compile Update="Lang\Resources.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
@@ -97,6 +88,15 @@
 	
 	<ItemGroup>
 	  <Folder Include="Extensions\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Reference Include="Calc">
+	    <HintPath>..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Func">
+	    <HintPath>..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 	
 </Project>
