@@ -1,0 +1,10 @@
+!!! Подключение из вирутального линкуса к сети smb://192.168.1.9
+
+!!! Обновление коллекций из нескольких потоков (текущий проект, реализация Project и IExpMessages)
+
+1. Файл сервис AvaloniUI.QuickGuies IoCFileOPs
+2. Splash window AvaloniUI.QuickGuies SplashScreen
+3. Подписка на изменения коллекции объектов (people.CollectionChanged += People_CollectionChanged;) https://metanit.com/sharp/tutorial/4.13.php
+
+4. xUnit - не выводит сообщения на консоль - ExprodesCTest файл output
+5. Слияние без промежуточных коммитов - tortoisgit - merge (выбрать галачка сообщения и выставить 0)

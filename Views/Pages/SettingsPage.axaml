@@ -1,0 +1,86 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:avalonia="using:Material.Icons.Avalonia"
+             xmlns:vm="using:ExprodesC.ViewModels.Settings"
+			 x:DataType="vm:SettingsPageVM"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExprodesC.Views.Pages.SettingsPage">
+	<Design.DataContext>
+		<vm:SettingsPageVM />
+	</Design.DataContext>
+	<Grid x:Name="PART_Grid" ColumnDefinitions="Auto,5,3*" RowDefinitions="42,5,*,Auto">
+		<DockPanel IsVisible="{Binding !IsCompactMode}" VerticalAlignment="Center">
+			<Button Margin="0,4,4,4" DockPanel.Dock="Right" Command="{Binding GoForward}" Height="35"
+					VerticalAlignment="Stretch" Theme="{DynamicResource TransparentButton}">
+				<avalonia:MaterialIcon VerticalAlignment="Center" Width="16" Height="16" Kind="ArrowForward" />
+			</Button>
+			<Button Margin="4,4,0,4" DockPanel.Dock="Right" Command="{Binding GoBack}" Height="35"
+								Theme="{DynamicResource TransparentButton}">
+				<avalonia:MaterialIcon VerticalAlignment="Center" Width="16" Height="16" Kind="ArrowBack" />
+			</Button>
+			<ToggleButton Margin="4" Theme="{DynamicResource TransparentButton}" IsChecked="{Binding IsCompactMode}">
+				<StackPanel Orientation="Horizontal">
+					<avalonia:MaterialIcon Margin="0,0,8,0" DockPanel.Dock="Left"
+                                           IsVisible="{Binding Icon, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                           VerticalAlignment="Center" Width="22" Height="22" Kind="Settings" />
+					<TextBlock VerticalAlignment="Center" FontSize="18" Text="{Binding Title}"/>
+				</StackPanel>
+			</ToggleButton>
+		</DockPanel>
+
+		<TreeView IsVisible="{Binding !IsCompactMode}" Margin="4" VerticalAlignment="Stretch" Grid.Column="0"
+						  Grid.Row="2" ItemsSource="{Binding Items}" Grid.IsSharedSizeScope="True" SelectionMode="Single"
+						  AutoScrollToSelectedItem="True"
+						  SelectedItem="{Binding SelectedNode, Mode=TwoWay}">
+			<TreeView.ItemTemplate>
+				<TreeDataTemplate ItemsSource="{Binding SubNode}">
+					<DockPanel HorizontalAlignment="Stretch">
+						<avalonia:MaterialIcon Margin="0,0,12,0" DockPanel.Dock="Left" Kind="{Binding Icon}"/>
+						<TextBlock Text="{Binding Name}" Margin="0 0 12 0"/>
+					</DockPanel>
+				</TreeDataTemplate>
+			</TreeView.ItemTemplate>
+		</TreeView>
+
+		<DockPanel Grid.Column="2">
+			<DockPanel IsVisible="{Binding !IsCompactMode}" VerticalAlignment="Center">
+				<ToggleButton Margin="4" Theme="{DynamicResource TransparentButton}" IsChecked="{Binding IsCompactMode}">
+					<StackPanel Orientation="Horizontal">
+						<avalonia:MaterialIcon Margin="0,0,8,0" DockPanel.Dock="Left"
+											   IsVisible="{Binding Icon, Converter={x:Static ObjectConverters.IsNotNull}}"
+											   VerticalAlignment="Center" Width="22" Height="22" 
+											   Kind="{Binding SubIcon}" />
+						<TextBlock VerticalAlignment="Center" FontSize="18" 
+								   Text="{Binding SubTitle}"/>
+					</StackPanel>
+				</ToggleButton>
+			</DockPanel>
+		</DockPanel>
+
+		<GridSplitter IsVisible="{Binding !IsCompactMode}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
+                      Background="Transparent" Width="5" HorizontalAlignment="Stretch" />
+		<Rectangle IsVisible="{Binding !IsCompactMode}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
+                   Fill="{DynamicResource ButtonBorderBrush}" Width="1" VerticalAlignment="Stretch" />
+		
+		<avalonia:MaterialIcon IsVisible="{Binding !IsCompactMode}" Grid.Row="0" Grid.RowSpan="3" Width="15"
+                               Height="15" Grid.Column="1" Kind="UnfoldMoreVertical"
+                               Foreground="{DynamicResource ButtonBorderBrush}" />
+		<Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Fill="{DynamicResource ButtonBorderBrush}"
+                   Height="1" HorizontalAlignment="Stretch" />
+		<ContentControl Grid.Row="2" Grid.Column="2" Content="{Binding CurrentView}" />
+		<ToggleButton Height="100" Theme="{DynamicResource TransparentButton}" Padding="0" Margin="-4,0,0,0"
+					 Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"
+					 IsChecked="{Binding !IsCompactMode}" IsVisible="{Binding IsCompactMode}">
+			<StackPanel Orientation="Horizontal">
+				<avalonia:MaterialIcon DockPanel.Dock="Left" Kind="ChevronRight"
+                                       IsVisible="{Binding Icon, Converter={x:Static ObjectConverters.IsNotNull}}"
+                                       VerticalAlignment="Center" Width="22" Height="22"
+                                       Foreground="{DynamicResource ButtonBorderBrush}" />
+			</StackPanel>
+		</ToggleButton>
+	</Grid>
+</UserControl>

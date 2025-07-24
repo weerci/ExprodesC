@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="calc_method_lr" xml:space="preserve">
+    <value>Likelihood ratio</value>
+  </data>
+  <data name="calc_method_p" xml:space="preserve">
+    <value>The probability of a random match</value>
+  </data>
+  <data name="calc_method_pp" xml:space="preserve">
+    <value>Probability of identity/kinship</value>
+  </data>
+  <data name="calc_mix_aa" xml:space="preserve">
+    <value>A mixture of 2 persons (2 assumed persons)</value>
+  </data>
+  <data name="calc_mix_aaa" xml:space="preserve">
+    <value>A mixture of 3 persons (3 assumed persons)</value>
+  </data>
+  <data name="calc_mix_aau" xml:space="preserve">
+    <value>A mixture of 3 persons (2 suspected + 1 unknown)</value>
+  </data>
+  <data name="calc_mix_au" xml:space="preserve">
+    <value>A mixture of 2 persons (1 assumed + 1 unknown)</value>
+  </data>
+  <data name="calc_mix_auu" xml:space="preserve">
+    <value>A mixture of 3 persons (1 presumed + 2 unknown)</value>
+  </data>
+  <data name="calc_mix_direct" xml:space="preserve">
+    <value>Direct identification</value>
+  </data>
+  <data name="calc_mix_ka" xml:space="preserve">
+    <value>A mixture of 2 persons (1 known + 1 assumed)</value>
+  </data>
+  <data name="calc_mix_kaa" xml:space="preserve">
+    <value>A mixture of 3 persons (1 known + 2 suspected)</value>
+  </data>
+  <data name="calc_mix_kau" xml:space="preserve">
+    <value>A mixture of 3 persons (1 known + 1 assumed + 1 unknown)</value>
+  </data>
+  <data name="calc_rel_ca" xml:space="preserve">
+    <value>A child and one prospective parent</value>
+  </data>
+  <data name="calc_rel_caa" xml:space="preserve">
+    <value>A child and two prospective parents</value>
+  </data>
+  <data name="calc_rel_cag" xml:space="preserve">
+    <value>The person being checked, the intended parent, and the intended grandparent</value>
+  </data>
+  <data name="calc_rel_cagg" xml:space="preserve">
+    <value>The person being checked, the alleged parent, and the alleged grandparents</value>
+  </data>
+  <data name="calc_rel_cas" xml:space="preserve">
+    <value>The person being checked, the alleged parent, and one alleged sibling</value>
+  </data>
+  <data name="calc_rel_cca" xml:space="preserve">
+    <value>Two children and one prospective parent</value>
+  </data>
+  <data name="calc_rel_ccaa" xml:space="preserve">
+    <value>Two children and two prospective parents</value>
+  </data>
+  <data name="calc_rel_ccca" xml:space="preserve">
+    <value>Three children and one prospective parent</value>
+  </data>
+  <data name="calc_rel_cccaa" xml:space="preserve">
+    <value>Three children and two prospective parents</value>
+  </data>
+  <data name="calc_rel_cccka" xml:space="preserve">
+    <value>Three children, one known and one alleged parent</value>
+  </data>
+  <data name="calc_rel_ccka" xml:space="preserve">
+    <value>Two children, one known and one alleged parent</value>
+  </data>
+  <data name="calc_rel_cg" xml:space="preserve">
+    <value>The person being checked and the alleged grandmother (grandfather)</value>
+  </data>
+  <data name="calc_rel_cgg" xml:space="preserve">
+    <value>The person being checked, the alleged grandparents</value>
+  </data>
+  <data name="calc_rel_cgv" xml:space="preserve">
+    <value>The child, the grandparent, and the verified parent of the child</value>
+  </data>
+  <data name="calc_rel_cka" xml:space="preserve">
+    <value>Child, one known and one presumed parent</value>
+  </data>
+  <data name="calc_rel_ckgv" xml:space="preserve">
+    <value>A child, one known parent, a grandparent, and a verifiable parent of the child</value>
+  </data>
+  <data name="calc_rel_cs" xml:space="preserve">
+    <value>The person being checked and one alleged brother (sister)</value>
+  </data>
+  <data name="calc_rel_css" xml:space="preserve">
+    <value>The person under review and two alleged siblings</value>
+  </data>
+  <data name="cap_calculate" xml:space="preserve">
+    <value>Calculations</value>
+  </data>
+  <data name="cap_close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="cap_compare" xml:space="preserve">
+    <value>Comparison of genotypes</value>
+  </data>
+  <data name="cap_from_file" xml:space="preserve">
+    <value>From file</value>
+  </data>
+  <data name="cap_help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="cap_library" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="cap_project_new" xml:space="preserve">
+    <value>New project</value>
+  </data>
+  <data name="cap_project" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="cap_projects_select" xml:space="preserve">
+    <value>Project Selection</value>
+  </data>
+  <data name="cap_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="cap_setting" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="err_empty_list" xml:space="preserve">
+    <value>The list is empty</value>
+  </data>
+  <data name="err_empty_value" xml:space="preserve">
+    <value>The value is empty</value>
+  </data>
+  <data name="msg_object_saved" xml:space="preserve">
+    <value>The '{0}' was saved successfully on the way '{1}'</value>
+  </data>
+  <data name="tpl_empty_template" xml:space="preserve">
+    <value>The default template</value>
+  </data>
+  <data name="cap_project_load" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="cap_open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="cap_project_files_select" xml:space="preserve">
+    <value>Select a project or a file with genotypes</value>
+  </data>
+  <data name="cap_genotypes_list" xml:space="preserve">
+    <value>List of genotypes</value>
+  </data>
+  <data name="cap_add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="cap_del" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="cap_file_save_as" xml:space="preserve">
+    <value>Save as...</value>
+  </data>
+  <data name="cap_contols" xml:space="preserve">
+    <value>Experts/Controls</value>
+  </data>
+  <data name="msg_uploading_file" xml:space="preserve">
+    <value>Uploading a file</value>
+  </data>
+  <data name="msg_genotype_not_selected" xml:space="preserve">
+    <value>Genotype is not selected</value>
+  </data>
+  <data name="cap_profiles" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="cap_genotypes" xml:space="preserve">
+    <value>Genotypes</value>
+  </data>
+  <data name="err_add_expert" xml:space="preserve">
+    <value>The control/expert '{0}' has not been added to the list</value>
+  </data>
+  <data name="err_load_profile" xml:space="preserve">
+    <value>File upload error</value>
+  </data>
+  <data name="conf_delete" xml:space="preserve">
+    <value>Confirmation of deletion</value>
+  </data>
+  <data name="conf_delete_genotype" xml:space="preserve">
+    <value>Confirm the deletion of the genotype '{0}'</value>
+  </data>
+  <data name="cap_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="msg_no_show" xml:space="preserve">
+    <value>Never show me this again</value>
+  </data>
+  <data name="msg_page_appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="msg_page_calc" xml:space="preserve">
+    <value>Calculations</value>
+  </data>
+  <data name="msg_page_templates" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="msg_page_confirmations" xml:space="preserve">
+    <value>Confirmations</value>
+  </data>
+  <data name="cap_on" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="cap_off" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="msg_page_conf_delete_genotype" xml:space="preserve">
+    <value>Confirmation of genotype deletion</value>
+  </data>
+  <data name="cap_select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="cap_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="desc_confirm_delete_genotype" xml:space="preserve">
+    <value>If not selected, the genotype will be deleted without notifying the user.</value>
+  </data>
+  <data name="cap_theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="theme_dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="theme_light" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="theme_sys" xml:space="preserve">
+    <value>System theme</value>
+  </data>
+  <data name="theme_desc" xml:space="preserve">
+    <value>Select your preferred application theme from the list.</value>
+  </data>
+  <data name="cap_edit_genotype" xml:space="preserve">
+    <value>Edit the genotype</value>
+  </data>
+  <data name="cap_add_genotype" xml:space="preserve">
+    <value>Create a genotype</value>
+  </data>
+</root>

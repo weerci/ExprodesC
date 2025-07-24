@@ -1,0 +1,113 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless.XUnit" Version="11.3.0" />
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
+    <PackageReference Include="System.IO.Abstractions" Version="22.0.14" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExprodesC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Calc">
+      <HintPath>..\..\..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
+    </Reference>
+    <Reference Include="Func">
+      <HintPath>..\..\..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Calculation\Mix\GE-291 Genotypes Table.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Mix\Smes 2x Genotypes Table.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Mix\smes.mgc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\1-2-3_детей_и_1_предполагаемый_родитель.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\1-2-3_детей_и_1_предполагаемый_родитель_LR.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Двое детей, один известный и один предполагаемый родитель.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Дочь_бабушка_мама_папа.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Мутации в известном и предполагаемом родителях.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Ошибка_анализа_профилей_при_мутации.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо__известный_родитель__дедушка__бабушка__и_предполагаемый_родитель__.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо__один_предполагаемый_родитель__предполагаемый_брат_сестра_.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо__один_предполагаемый_родитель__предполагаемый_дедушка_и_предполагаемая_бабушка_.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо__один_предполагаемый_родитель_и_предполагаемый_дедушка___бабушка_.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо__предполагаемый_дедушка_и_предполагаемая_бабушка.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо_и_два_предполагаемых_брата__сестры__.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо_и_один_предполагаемый_брат__сестра__.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Проект_для_GL__проверяемое_лицо_и_предполагаемый_дедушка__предполагаемая_бабушка__.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Ребенок и два предполагаемых родителя с мутацией.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Ребенок и два предполагаемых родителя.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Calculation\Relative\Трое детей один известный и один предполагаемый родитель.mgj">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="key">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="xunit.runner.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

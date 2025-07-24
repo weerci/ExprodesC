@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:ExprodesC.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:views="clr-namespace:ExprodesC.Views;assembly=ExprodesC"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:ui="using:FluentAvalonia.UI.Controls"
+		xmlns:conv="using:ExprodesC.Converters"
+	    RenderOptions.BitmapInterpolationMode="HighQuality"
+		x:DataType="vm:MainViewVM"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+		x:Name="mainWindow"
+        x:Class="ExprodesC.Views.MainWindow"
+		WindowStartupLocation="CenterScreen"
+        Title="ExprodesC">
+	<Grid>
+		<views:MainView x:Name="mainView"/>
+		<ui:InfoBar Title="{Binding Message.Caption}" IsOpen="{Binding MessageIsOpen}" Severity="{Binding Message.Severity}"
+					Margin="0 45 5 0"
+					Width="{Binding Width, ElementName=mainWindow, Converter={x:Static conv:MathConverters.DivideByConv}, ConverterParameter=1.5}"
+					HorizontalAlignment="Right"
+					Message="{Binding Message.Text}"
+					CloseButtonCommand="{Binding CloseMessage}"/>
+	</Grid>
+</Window>

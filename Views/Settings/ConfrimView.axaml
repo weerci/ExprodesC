@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+             xmlns:vm="using:ExprodesC.ViewModels.Settings"
+			 xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 x:DataType="vm:SettingsPageVM"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExprodesC.ConfrimView"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 >
+	<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_genotype}"
+						 IconSource="Accept"
+						 Description="{x:Static lang:Resources.desc_confirm_delete_genotype}">
+		<ui:SettingsExpander.Footer>
+			<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+						  IsChecked="{Binding Settings.Value.ConfirmDeleteGenotype}"/>
+		</ui:SettingsExpander.Footer>
+	</ui:SettingsExpander>
+	
+</UserControl>

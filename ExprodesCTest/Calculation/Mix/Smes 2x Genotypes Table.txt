@@ -1,0 +1,241 @@
+Sample Name	Run Name	Panel	Marker	Dye	Allele 1	Allele 2	Allele 3	Allele 4	Allele 5	AE Reason For Change 1	AE Reason For Change 2	AE Reason For Change 3	AE Reason For Change 4	AE Reason For Change 5	ADO	ME	BIN	AN	BD	CC	OVL	GQ	UD1	UD4	UD5	UD7	
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	9	10	11	12	13						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	11	12	13	14	15						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	5	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	1	2									false	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	24	24.2	25	26	27						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	7	9	10	10.2	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	7	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	8	9	10	11	11.3						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	4	5	6	7	8						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	13	14	15	16	17						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	8	9	10	11	12						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	7	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	4.2	6.3	8	9	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	8	9	10	11	12						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	9	10	11	12	13						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	14	15	16	17	18						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	11	12	13	14	15						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	9	10	11	12	13						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	11	12	13	14	15						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	5	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	1	2									false	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	24	24.2	25	26	27						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	7	9	10	10.2	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	7	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	8	9	10	11	11.3						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	4	5	6	7	8						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	13	14	15	16	17						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	8	9	10	11	12						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	7	8	9	10	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	5	6	7	8	9						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	6	7	8	9	10						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	4.2	6.3	8	9	11						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	8	9	10	11	12						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	9	10	11	12	13						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	14	15	16	17	18						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+ALL	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	11	12	13	14	15						true	false	-2.0	-2.0	0.0	-2.0	0.0	1.0					
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14	17									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	15	18									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	9	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	10	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	2										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	29	31.2									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	14	17									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	10										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14	15									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	8	9.3									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	23										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	12	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	11										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	8										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	9	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	21										false	true	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	14	16									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	13	17									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	15	20									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	21										false	true	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14	17									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	15	16	17	18							false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	9	11	12								false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	9	10	12								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	2										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	10	14	15								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	29	30	31.2								false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	14	15	17	18							false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	10										false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14	15									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	6	7	8	9.3							false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	20	22	23								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	11	12	14	15							false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	9	11	13								false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	8	11	12								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	9	10	12								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	16	21	28.2								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	14	16									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	12	13	17	19.3							false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	15	17	20								false	false	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Smes	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	17	21									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14	17									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	16	17									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	11	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	9										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G											false	false	-2.0	1.0	-2.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	10	15									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	30										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	15	18									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G											false	false	-2.0	1.0	-2.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	6	7									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	20	22									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	11	15									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	9	13									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	11	12									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	10										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	16	28.2									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	14										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	12	19.3									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	17										false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+sled-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	17										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14	17									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	16	17									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	11	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	9										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G											false	false	-2.0	1.0	-2.0	-2.0	0.0	0.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	10	15									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	30										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	15	18									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G											false	false	-2.0	1.0	-2.0	-2.0	0.0	0.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	6	7									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	20	22									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	11	15									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	9	13									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	11	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	10										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	16	28.2									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	14										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	12	19.3									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	17										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-1	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	17										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14	17									false	true	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	15	18									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	9	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	10	12									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	2										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	29	31.2									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	14	17									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	10										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	10	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14	15									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	8	9.3									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	23										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	12	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	11										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	8										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	9	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	21										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	14	16									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	13	17									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	15	20									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-2	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	21										false	true	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	14										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	18										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	12	13									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	10	13									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8	11									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	2										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	11	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	29	30									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	16	22									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	11										false	true	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	11	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14	15									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	9										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	21	24									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	15	18									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	11	12									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	9	12									false	false	0.0	0.0	0.0	-2.0	0.0	0.7		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	11	12									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	25.2	30.2									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	13	14									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	12	16									false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	18										false	false	0.0	0.0	0.0	-2.0	0.0	1.0		 	 	 	
+Face-0	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	17	26									false	true	0.0	1.0	0.0	-2.0	0.0	0.0		 	 	 	
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+NEG_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P											false	false	-2.0	-2.0	-2.0	0.0	-2.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D3S1358	B	15	16									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	vWA	B	14	16									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D16S539	B	9	10									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	CSF1PO	B	11	12									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TPOX	B	8										false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	Yindel	G	2										false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	AMEL	G	X	Y									false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D8S1179	G	12	13									false	false	0.0	0.0	0.0	0.0	0.0	0.49					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D21S11	G	28	31									false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D18S51	G	12	15									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	DYS391	G	11										false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S441	Y	14	15									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D19S433	Y	14	15									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	TH01	Y	7	9.3									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	FGA	Y	24	26									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D22S1045	R	11	16									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D5S818	R	11										false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D13S317	R	11										false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D7S820	R	7	12									false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	SE33	R	17	25.2									false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D10S1248	P	12	15									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D1S1656	P	13	16									false	false	0.0	0.0	0.0	0.0	0.0	0.7					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D12S391	P	18	19									false	false	0.0	0.0	0.0	0.0	0.0	1.0					
+POZ_K	Gribalev_39NV_GE-270_2016-02-06-18-21-42	GlobalFiler_Panel_v1	D2S1338	P	20	23									false	false	0.0	0.0	0.0	0.0	0.0	1.0					

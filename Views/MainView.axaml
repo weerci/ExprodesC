@@ -1,0 +1,78 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+			 xmlns:vm="using:ExprodesC.ViewModels"
+			 xmlns:material="using:Material.Icons.Avalonia"
+			 xmlns:model="using:ExprodesC.Models"
+			 x:DataType="vm:MainViewVM"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExprodesC.Views.MainView">
+	<Design.DataContext>
+		<vm:MainViewVM />
+	</Design.DataContext>
+	<Grid RowDefinitions="Auto, *">
+		<Grid Name="TitleBarHost" ColumnDefinitions="Auto Auto * Auto">
+			<ToggleButton Name="tbIcon" Theme="{DynamicResource TransparentButton}" Padding="11,5,7,6" Margin="3,0,0,0">
+				<Image
+					IsHitTestVisible="False"
+					Source="/Assets/sintol.png"
+					Width="28" Height="28"
+					DockPanel.Dock="Left"
+					Name="WindowIcon" />
+			</ToggleButton>
+
+			<Menu Grid.Column="1" IsVisible="{Binding ElementName=nviHome, Path=IsSelected}"  >
+				<MenuItem Header="{x:Static lang:Resources.cap_project}">
+					<MenuItem Header="{x:Static lang:Resources.cap_project_new}" InputGesture="Ctrl+N"
+							  Command="{Binding NewProject}">
+						<MenuItem.Icon>
+							<material:MaterialIcon Kind="ShapePlus"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Header="{x:Static lang:Resources.cap_from_file}" InputGesture="Ctrl+O"
+							  Command="{Binding LoadProject}">
+						<MenuItem.Icon>
+							<material:MaterialIcon Kind="TrayArrowDown"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Header="{x:Static lang:Resources.cap_save}" InputGesture="Ctrl+S"
+							  Command="{Binding SaveProject}">
+						<MenuItem.Icon>
+							<material:MaterialIcon Kind="ContentSaveCheckOutline"/>
+						</MenuItem.Icon>
+					</MenuItem>
+					<Separator/>
+					<MenuItem Header="{x:Static lang:Resources.cap_close}" Icon="Close"
+							  Command="{Binding CloseProject}"/>
+				</MenuItem>
+
+			</Menu>
+
+		</Grid>
+		<ui:NavigationView x:Name="nvMain" PaneDisplayMode="Left" Grid.Row="1"
+							   IsPaneOpen="{Binding ElementName=tbIcon, Path=IsChecked}"
+							   IsPaneToggleButtonVisible="False" IsSettingsVisible="False"
+							   SelectionChanged="NavigationView_SelectionChanged">
+			
+			<ui:NavigationView.MenuItems>
+				<ui:NavigationViewItem Name="nviHome" IsSelected="True" Content="{x:Static lang:Resources.cap_projects_select}" IconSource="Home"/>
+				<ui:NavigationViewItem Name="nviCalc" Content="{x:Static lang:Resources.cap_calculate}" IconSource="Calculator"
+									   IsEnabled="{Binding HasProfiles}"/>
+				<ui:NavigationViewItem Name="nviCompare" Content="{x:Static lang:Resources.cap_compare}" IconSource="Ruler"
+									   IsEnabled="{Binding HasProfiles}"/>
+				<ui:NavigationViewItem Name="nviLib" Content="{x:Static lang:Resources.cap_library}" IconSource="Library" />
+			</ui:NavigationView.MenuItems>
+			<ui:NavigationView.FooterMenuItems>
+				<ui:NavigationViewItem Name="nviSettings" Content="{x:Static lang:Resources.cap_setting}" IconSource="Setting" />
+				<ui:NavigationViewItem Name="nviHelp" Content="{x:Static lang:Resources.cap_help}" IconSource="Help" />
+			</ui:NavigationView.FooterMenuItems>
+		</ui:NavigationView>
+
+	</Grid>
+
+</UserControl>
