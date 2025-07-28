@@ -66,6 +66,7 @@ public class AddEditGenotypeVM : BaseVM
            ;
 
         var _listAllelesForLocus = laVM.Filter(filterAlleleForLocus)
+            .Sort(SortExpressionComparer<LocusAlleleWR>.Ascending(la => la.LocusAllele.LOrd).ThenBy(la => la.AOrd))
             .Bind(out _listAlleles)
             .Subscribe();
 
@@ -85,7 +86,7 @@ public class AddEditGenotypeVM : BaseVM
                 // Создаем объект GenomeVM
                 return new GenomeWR(genome, lvms);
             })
-            .Sort(SortExpressionComparer<GenomeWR>.Ascending(g => g.Genome.Locus.Name))
+            .Sort(SortExpressionComparer<GenomeWR>.Ascending(g => g.Genome.Locus.Ord()))
             .Bind(out _listSelected).Subscribe();
 
 
