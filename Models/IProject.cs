@@ -14,14 +14,24 @@ namespace ExprodesC.Models
         public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
 
         /// <summary>
-        /// Проект сохранен
+        /// Текущий генотип выбранный в наборе <see cref="Genotypes"/>
         /// </summary>
-        public bool IsSaved => !IsChanged;
+        public GenotypeWR? CurrentGenotype { get; set; }
 
         /// <summary>
-        /// Проект изменен
+        /// В проекте есть выбранные аллели для работы
         /// </summary>
-        public bool IsChanged { get; }
+        public bool HasSelected { get; set; }
+
+        /// <summary>
+        /// Путь к файлу, в котором сохранен проект, если null - проект новый
+        /// </summary>
+        public FileName? PathToSavedFile { get; set; }
+
+        /// <summary>
+        /// Проект изменен и нуждается в сохранении
+        /// </summary>
+        public bool IsChanged { get; set; }
 
         /// <summary>
         /// В проект добавляются новые генотипы
@@ -47,9 +57,15 @@ namespace ExprodesC.Models
         public Ex<bool> LoadFromFile(Ex<FileName> fn);
 
         /// <summary>
-        /// Изменения в проекте сохраняются
+        /// Изменения в проекте сохраняются. В файл записываются данные по профилям, в базу данных данные по экспертам
         /// </summary>
         public Ex<bool> Save(Ex<FileName> fn);
+
+        /// <summary>
+        /// Проект закрывается и на его месте создается новый
+        /// </summary>
+        /// <returns></returns>
+        public Ex<bool> Close();
 
 
     }

@@ -62,7 +62,8 @@ public class AddEditGenotypeVM : BaseVM
            .WhenAnyValue(x => x.SelectedLocus)
            .Select(selectedLocus => (Func<LocusAlleleWR, bool>)(item =>
                !string.IsNullOrEmpty(selectedLocus) &&
-               item.LocusAllele.LName == selectedLocus));
+               item.LocusAllele.LName == selectedLocus))
+           ;
 
         var _listAllelesForLocus = laVM.Filter(filterAlleleForLocus)
             .Bind(out _listAlleles)

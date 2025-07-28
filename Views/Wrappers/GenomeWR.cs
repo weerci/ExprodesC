@@ -1,5 +1,7 @@
-﻿using Calc.Models;
+﻿using Calc.Calculation.Methods;
+using Calc.Models;
 using DynamicData;
+using DynamicData.Binding;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ExprodesC.Views.Wrappers
 {
-     public class GenomeWR : ReactiveObject
+    public class GenomeWR : ReactiveObject
     {
         readonly IDisposable _cleanUp;
 
@@ -21,11 +23,11 @@ namespace ExprodesC.Views.Wrappers
             Genome = genome;
 
             var listLaoder = lvms.Connect()
+                .Sort(SortExpressionComparer<LocusAlleleWR>.Ascending(a => a.AOrd))
                 .Bind(out _lvms)
                 .Subscribe();
 
             var checkedGenome = this.WhenAnyValue(g => g.IsChecked)
-                .Do(n => Debug.WriteLine(n))
                 .Subscribe(n =>
                 {
                     if (n == false)

@@ -17,6 +17,6 @@ public partial class MainPage : UserControl
 
     private void TextBlock_DoubleTapped(object? sender, Avalonia.Input.TappedEventArgs e)
     {
-        _mainPageVM.SelectGenotypeCommand?.Execute(_mainPageVM.SelectedGenotype!);
+        _mainPageVM.SelectGenotypeCommand.Execute().Subscribe();
     }
 }

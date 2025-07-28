@@ -1,6 +1,7 @@
 ﻿using ExprodesC.Models;
 using ExprodesC.Services;
 using Func;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Windows.Input;
@@ -16,24 +17,19 @@ namespace ExprodesC.ViewModels
             _dialogService = dialogService;
             Project = project;
 
-            var canSaveGenotype = this.WhenAnyValue(vm => vm.Project.IsChanged);
-
-
             LoadProject = ReactiveCommand.Create(loadProject);
             CloseMessage = ReactiveCommand.Create(() => { MessageIsOpen = false; });
-            SaveProject = ReactiveCommand.Create(saveProject, canSaveGenotype);
+            SaveProject = ReactiveCommand.Create(saveProject, this.WhenAnyValue(vm => vm.Project.IsChanged).Select(n=>n));
+            CloseProject = ReactiveCommand.Create(closeProject);
 
             Log.Errors.Subscribe(x => { Message = x.Last().Item.Current; MessageIsOpen = true; });
             Log.Messages.Subscribe(x => { Message = x.Last().Item.Current; MessageIsOpen = true; });
         }
 
-
-
         #region Properties
 
         public IProject Project { get; } = null!;
 
-        [Reactive] public bool HasProfiles { get; private set; }
         [Reactive] public bool HasError { get; private set; }
         [Reactive] public ExpMessage? Message { get; private set; }
         [Reactive] public bool MessageIsOpen { get; private set; }
@@ -72,16 +68,28 @@ namespace ExprodesC.ViewModels
             var file = await _dialogService!.OpenFileAsync();
             if (file is null) return;
 
+
             Project.LoadFromFile(FileName.Open(file.Path.LocalPath))
                 .Match(OnError: e => { Log.SendError(Lang.Resources.err_load_profile, e); });
         }
 
         private async void saveProject()
         {
-            var file = await _dialogService!.SaveFileAsync();
-            if (file is null) return;
+            if (Project.PathToSavedFile != null)
+                Project.Save(Project.PathToSavedFile);
+            else
+            {
+                var file = await _dialogService!.SaveFileAsync();
+                if (file is null) return;
+
+                Project.Save(FileName.OpenOrCreate(file.Path.AbsolutePath));
+            }
         }
 
+        private void closeProject()
+        {
+            Project.Close();
+        }
         #endregion
 
     }

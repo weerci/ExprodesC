@@ -15,6 +15,7 @@
 	<Design.DataContext>
 		<vm:MainViewVM />
 	</Design.DataContext>
+	
 	<Grid RowDefinitions="Auto, *">
 		<Grid Name="TitleBarHost" ColumnDefinitions="Auto Auto * Auto">
 			<ToggleButton Name="tbIcon" Theme="{DynamicResource TransparentButton}" Padding="11,5,7,6" Margin="3,0,0,0">
@@ -62,9 +63,9 @@
 			<ui:NavigationView.MenuItems>
 				<ui:NavigationViewItem Name="nviHome" IsSelected="True" Content="{x:Static lang:Resources.cap_projects_select}" IconSource="Home"/>
 				<ui:NavigationViewItem Name="nviCalc" Content="{x:Static lang:Resources.cap_calculate}" IconSource="Calculator"
-									   IsEnabled="{Binding HasProfiles}"/>
+									   IsEnabled="{Binding Project.HasSelected}"/>
 				<ui:NavigationViewItem Name="nviCompare" Content="{x:Static lang:Resources.cap_compare}" IconSource="Ruler"
-									   IsEnabled="{Binding HasProfiles}"/>
+									   IsEnabled="{Binding Project.HasSelected}"/>
 				<ui:NavigationViewItem Name="nviLib" Content="{x:Static lang:Resources.cap_library}" IconSource="Library" />
 			</ui:NavigationView.MenuItems>
 			<ui:NavigationView.FooterMenuItems>

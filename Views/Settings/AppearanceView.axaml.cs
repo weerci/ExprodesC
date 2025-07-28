@@ -6,7 +6,7 @@ namespace ExprodesC;
 
 public partial class AppearanceView : UserControl
 {
-    IAppHost _appHost;
+    IAppHost _appHost = null!;
     public AppearanceView()
     {
         InitializeComponent();

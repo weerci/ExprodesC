@@ -8,7 +8,7 @@ public partial class MainView : UserControl
 {
     MainPage _mainPage = null!;
     CalcPage _calcPage = null!;
-    //ComparePage _comparePage = null!;
+    ComparePage _comparePage = null!;
     //LibraryPage _libraryPage = null!;
     SettingsPage _settingsPage = null!;
     //HelpPage _helpPage = null!;
@@ -26,7 +26,7 @@ public partial class MainView : UserControl
             {
                 "nviSettings" => _settingsPage ??= new SettingsPage(),
                 "nviCalc" => _calcPage ??= new CalcPage(),
-                //"nviCompare" => _comparePage ??= new ComparePage(_viewModel),
+                "nviCompare" => _comparePage ??= new ComparePage(),
                 //"nviLib" => _libraryPage ??= new LibraryPage(),
                 //"nviHelp" => _helpPage ??= new HelpPage(),
                 _ => _mainPage ??= new MainPage(),

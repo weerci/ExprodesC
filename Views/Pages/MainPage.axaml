@@ -54,8 +54,7 @@
 									<Separator IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"/>
 									<MenuItem Header="{x:Static lang:Resources.cap_select}" Icon="{material:MaterialIconExt Kind=FormSelect}"
 											  IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"
-											  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"
-											  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
+											  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"/>
 								</MenuFlyout>
 							</TextBlock.ContextFlyout>
 						</TextBlock>
@@ -70,7 +69,7 @@
 		<material:MaterialIcon Width="25" Height="25" Grid.Column="1" Kind="UnfoldMoreVertical"
 					   Foreground="{DynamicResource ButtonBorderBrush}" />
 
-		<ListBox Grid.Column="2" Margin="10" ItemsSource="{Binding SelectedProfiles}" SelectedItem="{Binding SelectedGenotype, Mode=TwoWay}"
+		<ListBox Grid.Column="2" Margin="10" ItemsSource="{Binding SelectedProfiles}" SelectedItem="{Binding Project.CurrentGenotype, Mode=OneWay}" 
 						 Classes="draggableVirtualizing" >
 			<ListBox.ItemTemplate>
 				<DataTemplate>
@@ -80,7 +79,7 @@
 							<TextBlock Grid.Column="1" Text="{Binding Genotype.Name}" FontSize="20" VerticalAlignment="Center" Margin="5 0 0 0"/>
 							<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_edit_genotype}"
 									Command="{Binding $parent[ListBox].DataContext.EditGenotypeCommand}" 
-									CommandParameter="{Binding $parent[ListBox].DataContext.SelectedNode.GenotypeWR}"
+									CommandParameter="{Binding .}"
 									Margin="10 0 0 0" Grid.Column="2">
 								<material:MaterialIcon Kind="Edit"/>
 							</Button>

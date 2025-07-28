@@ -3,11 +3,14 @@ using Calc.Deprecated;
 using Calc.Models;
 using DynamicData;
 using DynamicData.Binding;
+using ExprodesC.Imp;
 using ExprodesC.Services;
 using ExprodesC.Views.Wrappers;
 using Func;
+using Func.Impl;
 using Func.Meta;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
@@ -15,7 +18,7 @@ using System.Reactive.Subjects;
 
 namespace ExprodesC.Models;
 
-public class Project : IProject
+public class Project : ReactiveObject, IProject
 {
     readonly IGenotypeStore _genotypeStore;
     readonly IDisposable _cleanUp;
@@ -25,39 +28,66 @@ public class Project : IProject
     {
         _genotypeStore = genotypeStore;
         ReloadFromDb();
+        IsChanged = false; // Необходимо, поскольку ReloadFromDb() устанавливает проект как измененный
 
         Genotypes = _genotypes.Connect()
+            .AutoRefresh(genotype => genotype.IsSelected)
+            .Do(g => this.HasSelected = _genotypes.Items.Any(i => i.IsSelected))
             .Publish();
 
         _cleanUp = new CompositeDisposable(Genotypes.Connect());
     }
 
     /// <inheritdoc/>
+    [Reactive]
+    public GenotypeWR? CurrentGenotype{ get; set; }
+
+    /// <inheritdoc/>
     public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
 
     /// <inheritdoc/>
-    public bool IsChanged { get; } 
+    [Reactive] public FileName? PathToSavedFile { get; set; }
 
     /// <inheritdoc/>
-    public Ex<GenotypeWR> AddGenotypes(IEnumerable<GenotypeWR> gs) => _genotypes.Try(g => { g.AddRange(gs); return gs.First(); });
+    [Reactive] public bool HasSelected { get; set; }
 
     /// <inheritdoc/>
-    public Ex<bool> LoadFromFile(Ex<FileName> fn) => _genotypeStore.TryBool(gs => {
+    [Reactive] public bool IsChanged { get; set; }
+
+    /// <inheritdoc/>
+    public Ex<GenotypeWR> AddGenotypes(IEnumerable<GenotypeWR> gs) => _genotypes.Try(g =>
+    {
+        g.AddRange(gs);
+        IsChanged = true;
+        return gs.First();
+    });
+
+    /// <inheritdoc/>
+    public Ex<bool> LoadFromFile(Ex<FileName> fn) => _genotypeStore.TryBool(gs =>
+    {
         gs.LoadFromFile(fn);
         _genotypes.AddRange(_genotypeStore.Genotypes.Select(g => new GenotypeWR(g)));
+        IsChanged = true;
     });
 
     /// <inheritdoc/>
-    public Ex<bool> ReloadFromDb() => _genotypeStore.TryBool(gs => {
+    public Ex<bool> ReloadFromDb() => _genotypeStore.TryBool(gs =>
+    {
         gs.LoadControls();
         _genotypes.AddRange(_genotypeStore.Genotypes.Select(g => new GenotypeWR(g, true)));
+        IsChanged = true;
     });
 
     /// <inheritdoc/>
-    public Ex<bool> RemoveGenotypes(IEnumerable<GenotypeWR> genotypes) => _genotypes.TryBool(g => g.RemoveMany(genotypes));
+    public Ex<bool> RemoveGenotypes(IEnumerable<GenotypeWR> genotypes) => _genotypes.TryBool(g =>
+    {
+        g.RemoveMany(genotypes);
+        IsChanged = true;
+    });
 
     /// <inheritdoc/>
-    public Ex<bool> Save(Ex<FileName> fn) => _genotypes.TryBool(gs => {
+    public Ex<bool> Save(Ex<FileName> fn) => _genotypes.TryBool(gs =>
+    {
         // Сохраняем экспертов
         _genotypeStore.Genotypes.Clear();
         _genotypeStore.Genotypes.AddRange(gs.Items.Where(g => g.IsControl).Select(g => g.Genotype));
@@ -68,6 +98,17 @@ public class Project : IProject
         _genotypeStore.Genotypes.AddRange(gs.Items.Where(g => !g.IsControl).Select(g => g.Genotype));
         _genotypeStore.SaveToFile(fn);
 
+        IsChanged = false;
+        PathToSavedFile = fn.Right!;
+    });
+
+    /// <inheritdoc/>
+    public Ex<bool> Close() => _genotypes.TryBool(g =>
+    {
+        g.Clear();
+        IsChanged = false;
+        HasSelected = false;
+        PathToSavedFile = null;
     });
 
 }
