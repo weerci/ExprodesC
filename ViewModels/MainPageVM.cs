@@ -3,11 +3,13 @@ using DynamicData;
 using DynamicData.Binding;
 using ExprodesC.Models;
 using ExprodesC.Services;
+using ExprodesC.Views.Controls;
 using ExprodesC.Views.Wrappers;
 using FluentAvalonia.UI.Controls;
 using Func;
 using Func.Meta;
 using System.Collections.ObjectModel;
+using System.Data.Common;
 using System.Diagnostics;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -81,12 +83,22 @@ public class MainPageVM() : BaseVM
         EditGenotypeCommand = ReactiveCommand.CreateFromTask<GenotypeWR>(editGenotype, canDelGenotype);
         SelectGenotypeCommand = ReactiveCommand.Create(selectGenotype);
         _cleanUp = new CompositeDisposable(canDelLoader, canAddLoader, profilesLoader, controlLoader, selectedLoader);
+
+        // Обновляем глобальные строки при изменении столбцов
+        this.WhenAnyValue(x => x.Columns.Count)
+            .Subscribe(_ => UpdateGlobalLocusRows());
+
+        AddColumnCommand = ReactiveCommand.Create<GenotypeWR>(AddColumn);
+        RemoveColumnCommand = ReactiveCommand.Create<GenotypeColumnVM>(RemoveColumn);
     }
 
     #region Properties
 
     public IProject Project { get; set; } = null!;
 
+    public ObservableCollection<GenotypeColumnVM> Columns { get; } = new();
+
+    public ObservableCollection<LocusRow> GlobalLocusRows { get; } = new();
 
     public IObservableCollection<GenotypeWR> SelectedProfiles { get; } = new ObservableCollectionExtended<GenotypeWR>();
 
@@ -115,6 +127,9 @@ public class MainPageVM() : BaseVM
     /// Выбран лист списка (профиль или контрол)
     /// </summary>
     [Reactive] public bool ListSelected { get; set; }
+    
+    private GenotypeColumnVM? DraggedColumn { get; set; }
+
 
     #endregion
 
@@ -139,15 +154,89 @@ public class MainPageVM() : BaseVM
     /// Отркрывается окно для редактирования генотипа
     /// </summary>
     public RxCommandGenotype? EditGenotypeCommand { get; }
+
+    public RxCommandGenotype AddColumnCommand { get; } = null!;
+    public RxCommandGolumnVM RemoveColumnCommand { get; } = null!;
+
     #endregion
 
     #region Функции реализующие команды представления
+
+    private void AddColumn(GenotypeWR genotype)
+    {
+        if (Columns.Any(c => c.GenotypeWR == genotype)) return;
+
+        var column = new GenotypeColumnVM(genotype, this);
+        Columns.Add(column);
+    }
+
+    private void RemoveColumn(GenotypeColumnVM column)
+    {
+        Columns.Remove(column);
+    }
+
+    public void StartDrag(GenotypeColumnVM column)
+    {
+        DraggedColumn = column;
+    }
+
+    public void HandleDrop(GenotypeColumnVM targetColumn)
+    {
+        if (DraggedColumn == null || DraggedColumn == targetColumn) return;
+
+        int oldIndex = Columns.IndexOf(DraggedColumn);
+        int newIndex = Columns.IndexOf(targetColumn);
+
+        Columns.Move(oldIndex, newIndex);
+        DraggedColumn = null;
+    }
+    //TODO Необходимо сделать перетаскивание столбцов
+    //TODO Необходимо сделать расцветку по совпадающим аллелям
+
+    private void UpdateGlobalLocusRows()
+    {
+        // Собираем все уникальные локусы из всех столбцов
+        var allLoci = Columns
+            .SelectMany(c => c.GenotypeWR.Genotype.Genomes)
+            .Select(g => g.Locus)
+            .Distinct()
+            .ToList();
+
+        // Создаем строки для каждого локуса
+        var newRows = allLoci.Select(locus => new LocusRow(locus.Name)).ToList();
+
+        // Синхронизация строк
+        foreach (var row in newRows)
+        {
+            var existing = GlobalLocusRows.FirstOrDefault(r => r.LocusName == row.LocusName);
+            if (existing == null)
+            {
+                GlobalLocusRows.Add(row);
+            }
+        }
+
+        // Удаляем старые строки
+        for (int i = GlobalLocusRows.Count - 1; i >= 0; i--)
+        {
+            if (!newRows.Any(r => r.LocusName == GlobalLocusRows[i].LocusName))
+            {
+                GlobalLocusRows.RemoveAt(i);
+            }
+        }
+
+        // Обновляем все столбцы
+        foreach (var column in Columns)
+        {
+            column.UpdateGenomeRows(GlobalLocusRows);
+        }
+    }
 
     async Task editGenotype(GenotypeWR genotype)
     {
         var edtiGenotype = await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
         if (edtiGenotype == null)
             return;
+        UpdateGlobalLocusRows();
     }
     //TODO Форма диалога не закрывается при нажатии на Enter
     async Task addGenotype()

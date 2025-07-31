@@ -1,7 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ExprodesC.ViewModels;
+using static ExprodesC.ViewModels.MainPageVM;
 
 namespace ExprodesC.Views.Pages;
 
@@ -13,10 +15,12 @@ public partial class MainPage : UserControl
     {
         InitializeComponent();
         DataContext = _mainPageVM;
+        tvGenotypes.DoubleTapped += OnTreeDoubleTapped;
     }
 
-    private void TextBlock_DoubleTapped(object? sender, Avalonia.Input.TappedEventArgs e)
+    private void OnTreeDoubleTapped(object? sender, TappedEventArgs e)
     {
-        _mainPageVM.SelectGenotypeCommand.Execute().Subscribe();
+        if (DataContext is MainPageVM vm && tvGenotypes.SelectedItem is Node genotype)
+            vm.AddColumnCommand?.Execute(genotype.GenotypeWR).Subscribe();
     }
 }

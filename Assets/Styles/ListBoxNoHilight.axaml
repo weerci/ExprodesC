@@ -1,0 +1,50 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:fa="using:FluentAvalonia.Styling">
+
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<ListBox SelectedIndex="0" Classes="NoHilightListBox draggableVirtualizingH">
+				<ItemsControl.ItemsPanel>
+					<ItemsPanelTemplate>
+						<StackPanel Orientation="Horizontal"/>
+					</ItemsPanelTemplate>
+				</ItemsControl.ItemsPanel>
+				<ListBoxItem>Test</ListBoxItem>
+				<ListBoxItem>Test</ListBoxItem>
+				<ListBoxItem>Test</ListBoxItem>
+				<ListBoxItem>Test</ListBoxItem>
+			</ListBox>
+		</Border>
+	</Design.PreviewWith>
+
+
+	<!-- Стиль для ListBoxItem -->
+	<Style Selector="ListBox.NoHilightListBox ListBoxItem">
+
+		<!-- Убираем индикатор выбора -->
+		<Style Selector="^ /template/ Rectangle#SelectionIndicator">
+			<Setter Property="IsVisible" Value="False" />
+		</Style>
+
+		<Style Selector="^:pointerover">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:selected">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Background" Value="Transparent" />
+			</Style>
+		</Style>
+
+		<Style Selector="^:pressed">
+			<Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+				<Setter Property="Opacity" Value="0.5" />
+			</Style>
+		</Style>
+		
+	</Style>
+
+</Styles>

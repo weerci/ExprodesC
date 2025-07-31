@@ -17,18 +17,22 @@
 
 	<ItemGroup>
 		<AvaloniaXaml Remove="ExprodesCTest\**" />
+		<AvaloniaXaml Remove="Extensions\**" />
 		<AvaloniaXaml Remove="release\**" />
 		<AvaloniaXaml Remove="Reports\**" />
 		<AvaloniaXaml Remove="ViewModels\Dialogs\**" />
 		<Compile Remove="ExprodesCTest\**" />
+		<Compile Remove="Extensions\**" />
 		<Compile Remove="release\**" />
 		<Compile Remove="Reports\**" />
 		<Compile Remove="ViewModels\Dialogs\**" />
 		<EmbeddedResource Remove="ExprodesCTest\**" />
+		<EmbeddedResource Remove="Extensions\**" />
 		<EmbeddedResource Remove="release\**" />
 		<EmbeddedResource Remove="Reports\**" />
 		<EmbeddedResource Remove="ViewModels\Dialogs\**" />
 		<None Remove="ExprodesCTest\**" />
+		<None Remove="Extensions\**" />
 		<None Remove="release\**" />
 		<None Remove="Reports\**" />
 		<None Remove="ViewModels\Dialogs\**" />
@@ -54,7 +58,6 @@
 		<PackageReference Include="System.Data.SQLite" Version="1.0.119" />
 		<PackageReference Include="System.Drawing.Common" Version="10.0.0-preview.3.25173.2" />
 		<PackageReference Include="System.IO.Abstractions" Version="22.0.14" />
-		<PackageReference Include="Xaml.Behaviors.Interactions.Draggable" Version="11.3.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -89,15 +92,14 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <Folder Include="Extensions\" />
-	</ItemGroup>
-	
-	<ItemGroup>
 	  <Reference Include="Calc">
 	    <HintPath>..\Calc\Calc\bin\Release\net8.0\Calc.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Func">
 	    <HintPath>..\..\Func\bin\Release\net8.0\Func.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Xaml.Behaviors.Interactions.Draggable">
+	    <HintPath>..\..\LearnAvalonia\Xaml.Behaviors\src\Xaml.Behaviors.Interactions.Draggable\bin\Release\net8.0\Xaml.Behaviors.Interactions.Draggable.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 	

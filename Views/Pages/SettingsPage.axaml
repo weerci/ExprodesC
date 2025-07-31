@@ -12,6 +12,7 @@
 	<Design.DataContext>
 		<vm:SettingsPageVM />
 	</Design.DataContext>
+	
 	<Grid x:Name="PART_Grid" ColumnDefinitions="Auto,5,3*" RowDefinitions="42,5,*,Auto">
 		<DockPanel IsVisible="{Binding !IsCompactMode}" VerticalAlignment="Center">
 			<Button Margin="0,4,4,4" DockPanel.Dock="Right" Command="{Binding GoForward}" Height="35"
@@ -83,4 +84,5 @@
 			</StackPanel>
 		</ToggleButton>
 	</Grid>
+
 </UserControl>

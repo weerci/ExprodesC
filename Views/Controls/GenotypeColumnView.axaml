@@ -1,0 +1,64 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+			 
+			 xmlns:ctrl="using:ExprodesC.Views.Controls"
+			 x:DataType="ctrl:GenotypeColumnVM"
+             RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:material="using:Material.Icons.Avalonia"
+			 Name="{Binding GenotypeWR.Genotype.Name}"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 
+			 
+             x:Class="ExprodesC.Views.Controls.GenotypeColumnView">
+	
+	<Design.DataContext>
+		<ctrl:GenotypeColumnVM />
+	</Design.DataContext>
+
+	<Border BorderBrush="{DynamicResource ButtonBorderBrush}" BorderThickness="2" CornerRadius="5" Padding="5" Margin="0 10 0 10"
+			Background="{DynamicResource SystemControlBackgroundAltHighBrush}">
+
+		<StackPanel>
+
+			<!-- Заголовок -->
+			<Border CornerRadius="3" Padding="5">
+				<DockPanel>
+					<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_close}"
+						Command="{Binding MainPageVM.RemoveColumnCommand}" DockPanel.Dock="Right">
+						<material:MaterialIcon Kind="Close"/>
+					</Button>
+					<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_edit_genotype}"
+						Command="{Binding MainPageVM.EditGenotypeCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
+						<material:MaterialIcon Kind="Edit"/>
+					</Button>
+					<TextBlock Text="{Binding GenotypeWR.Genotype.Name}" FontWeight="Bold" Margin="4 0 20 0" VerticalAlignment="Center"/>
+
+				</DockPanel>
+			</Border>
+
+			<Rectangle Fill="{DynamicResource ButtonBorderBrush}" Height="1"  HorizontalAlignment="Stretch" />
+
+			<!-- Таблица геномов -->
+			<ItemsControl ItemsSource="{Binding GenomeRows}" Padding="5">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid ColumnDefinitions="100,*" Margin="0,5">
+							<Viewbox Height="17" HorizontalAlignment="Left">
+								<TextBlock Text="{Binding LocusName}"
+										   FontWeight="Bold"/>
+							</Viewbox>
+							<Viewbox Height="17" Grid.Column="1" HorizontalAlignment="Left">
+								<TextBlock Text="{Binding Alleles}"
+										   TextWrapping="Wrap"/>
+							</Viewbox>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</StackPanel>
+	</Border>
+	
+</UserControl>
