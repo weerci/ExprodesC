@@ -42,6 +42,11 @@ public class Project : ReactiveObject, IProject
            .Do(d =>
            {
                var curr = d.First().Item.Current;
+               if (curr == null)
+               {
+                   SelectedGolumns.Clear();
+                   return;
+               }
                if (curr.IsSelected == true)
                    SelectedGolumns.Add(new GenotypeColumnVM(curr, this));
                else
@@ -50,7 +55,6 @@ public class Project : ReactiveObject, IProject
                    if (curColumn != null)
                        SelectedGolumns.Remove(curColumn);
                }
-               Debug.WriteLine(d.Count + "   " + d.First().Item.Current.Genotype.Name);
            })
            .Subscribe(s => HasSelected = SelectedGolumns.Any(n => n.GenotypeWR.IsSelected));
 
