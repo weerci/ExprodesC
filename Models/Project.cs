@@ -22,13 +22,15 @@ namespace ExprodesC.Models;
 public class Project : ReactiveObject, IProject
 {
     readonly IGenotypeStore _genotypeStore;
+    readonly IDialogService _dialogService;
     readonly IDisposable _cleanUp;
     readonly SourceList<GenotypeWR> _genotypes = new();
     readonly SourceList<GenotypeColumnVM> _selected = new();
 
-    public Project(IGenotypeStore genotypeStore)
+    public Project(IGenotypeStore genotypeStore, IDialogService dialogService)
     {
         _genotypeStore = genotypeStore;
+        _dialogService = dialogService;
         ReloadFromDb();
         IsChanged = false; // Необходимо, поскольку ReloadFromDb() устанавливает проект как измененный
 
@@ -133,6 +135,13 @@ public class Project : ReactiveObject, IProject
         PathToSavedFile = null;
     });
 
+    /// <inheritdoc/>
+    public async void  EditGenotype(GenotypeWR genotype)
+    {
+        await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
+        UpdateAllGenomeRows();
+    }
+
     private void UpdateAllGenomeRows()
     {
         if (!SelectedGolumns.Any()) return;
@@ -150,4 +159,6 @@ public class Project : ReactiveObject, IProject
             column.UpdateGenomeRows(ls);
         }
     }
+
+
 }

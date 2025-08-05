@@ -75,8 +75,8 @@ public class MainPageVM() : BaseVM
         AddGenotypeCommand = ReactiveCommand.CreateFromTask(addGenotype, canAddGenotype);
         DelGenotypeCommand = ReactiveCommand.Create(delGenotype, canDelGenotype);
         EditGenotypeCommand = ReactiveCommand.CreateFromTask<GenotypeWR>(editGenotype, canDelGenotype);
-        SelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(selectGenotype, canDelGenotype);
-        UnSelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(unSelectGenotype, canDelGenotype);
+        SelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(Project.SelectGenotype, canDelGenotype);
+        UnSelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(Project.UnSelectGenotype, canDelGenotype);
 
         //TODO для кнопок на выбранных элементах не нужно отслеживать возможность удаления в связи с выбранностью в дереве canDelGenotype
         _cleanUp = new CompositeDisposable(canDelLoader, canAddLoader, profilesLoader, controlLoader);
@@ -143,63 +143,10 @@ public class MainPageVM() : BaseVM
 
     #region Функции реализующие команды представления
 
-    private void selectGenotype(GenotypeWR genotype)
-    {
-       genotype.IsSelected = true;
-    }
-
-    private void unSelectGenotype(GenotypeWR genotype)
-    {
-        genotype.IsSelected = false;
-    }
-
     //TODO Необходимо сделать расцветку по совпадающим аллелям
 
-  /*  private void UpdateGlobalLocusRows()
-    {
-        // Собираем все уникальные локусы из всех столбцов
-        var allLoci = Columns
-            .SelectMany(c => c.GenotypeWR.Genotype.Genomes)
-            .Select(g => g.Locus)
-            .Distinct()
-            .ToList();
+     async Task editGenotype(GenotypeWR genotype) => await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
 
-        // Создаем строки для каждого локуса
-        var newRows = allLoci.Select(locus => new LocusRow(locus.Name)).ToList();
-
-        // Синхронизация строк
-        foreach (var row in newRows)
-        {
-            var existing = GlobalLocusRows.FirstOrDefault(r => r.LocusName == row.LocusName);
-            if (existing == null)
-            {
-                GlobalLocusRows.Add(row);
-            }
-        }
-
-        // Удаляем старые строки
-        for (int i = GlobalLocusRows.Count - 1; i >= 0; i--)
-        {
-            if (!newRows.Any(r => r.LocusName == GlobalLocusRows[i].LocusName))
-            {
-                GlobalLocusRows.RemoveAt(i);
-            }
-        }
-
-        // Обновляем все столбцы
-        foreach (var column in Columns)
-        {
-            column.UpdateGenomeRows(GlobalLocusRows);
-        }
-    }*/
-
-    async Task editGenotype(GenotypeWR genotype)
-    {
-        var edtiGenotype = await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
-        if (edtiGenotype == null)
-            return;
-        //UpdateGlobalLocusRows();
-    }
     //TODO Форма диалога не закрывается при нажатии на Enter
     async Task addGenotype()
     {

@@ -1,6 +1,7 @@
 ﻿using Calc.Models;
 using DynamicData;
 using DynamicData.Binding;
+using ExprodesC.Services;
 using ExprodesC.Views.Controls;
 using ExprodesC.Views.Wrappers;
 using Func;
@@ -86,6 +87,9 @@ namespace ExprodesC.Models
         /// <param name="gwr"></param>
         public void UnSelectGenotype(GenotypeWR gwr) => gwr.IsSelected = false;
 
-
+        /// <summary>
+        /// Редактирование выбранного генома
+        /// </summary>
+        public void EditGenotype(GenotypeWR genotype);
     }
 }

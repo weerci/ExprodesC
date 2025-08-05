@@ -9,7 +9,6 @@
              RenderOptions.BitmapInterpolationMode="HighQuality"
 			 xmlns:material="using:Material.Icons.Avalonia"
 			 xmlns:lang="using:ExprodesC.Lang"
-			 Name="{Binding GenotypeWR.Genotype.Name}"
 			 
              x:Class="ExprodesC.Views.Controls.GenotypeColumnView">
 	

@@ -24,6 +24,7 @@ namespace ExprodesC.Views.Controls
             Project = project;
 
             CloseCommand = ReactiveCommand.Create<GenotypeWR>((g) => { Project.UnSelectGenotype(g); });
+            EditCommand = ReactiveCommand.Create<GenotypeWR>((g) => { Project.EditGenotype(g); });
 
         }
 
@@ -43,7 +44,6 @@ namespace ExprodesC.Views.Controls
                 .ToDictionary(g => g.Locus.Name);
 
             GenomeRows.Clear();
-            int i = 0;
 
             foreach (var locus in locuses)
             {

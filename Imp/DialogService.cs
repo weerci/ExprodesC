@@ -16,7 +16,6 @@ namespace ExprodesC.Imp
 {
     public class DialogService : IDialogService
     {
-        private readonly Window? _owner;
 
         readonly ISettingsProvider<ExSettingData> _settingsProvider;
         public DialogService(ISettingsProvider<ExSettingData> settingsProvider)
