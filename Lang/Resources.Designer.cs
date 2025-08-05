@@ -385,7 +385,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Remove.
+        ///   Ищет локализованную строку, похожую на Delete.
         /// </summary>
         public static string cap_del {
             get {
@@ -588,6 +588,15 @@ namespace ExprodesC.Lang {
         public static string cap_theme {
             get {
                 return ResourceManager.GetString("cap_theme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Remove.
+        /// </summary>
+        public static string cap_unselect {
+            get {
+                return ResourceManager.GetString("cap_unselect", resourceCulture);
             }
         }
         

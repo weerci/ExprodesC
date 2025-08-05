@@ -5,6 +5,7 @@ using DynamicData;
 using DynamicData.Binding;
 using ExprodesC.Imp;
 using ExprodesC.Services;
+using ExprodesC.Views.Controls;
 using ExprodesC.Views.Wrappers;
 using Func;
 using Func.Impl;
@@ -23,6 +24,7 @@ public class Project : ReactiveObject, IProject
     readonly IGenotypeStore _genotypeStore;
     readonly IDisposable _cleanUp;
     readonly SourceList<GenotypeWR> _genotypes = new();
+    readonly SourceList<GenotypeColumnVM> _selected = new();
 
     public Project(IGenotypeStore genotypeStore)
     {
@@ -30,17 +32,37 @@ public class Project : ReactiveObject, IProject
         ReloadFromDb();
         IsChanged = false; // Необходимо, поскольку ReloadFromDb() устанавливает проект как измененный
 
-        Genotypes = _genotypes.Connect()
-            .AutoRefresh(genotype => genotype.IsSelected)
-            .Do(g => this.HasSelected = _genotypes.Items.Any(i => i.IsSelected))
-            .Publish();
+        Genotypes = _genotypes.Connect().Publish();
 
-        _cleanUp = new CompositeDisposable(Genotypes.Connect());
+        var selectedControl = _genotypes.Connect()
+           .AutoRefresh(ar => ar.IsSelected)
+           .Filter(g => g.IsSelected)
+           .Do(d =>
+           {
+               var curr = d.First().Item.Current;
+               if (curr.IsSelected == true)
+                   SelectedGolumns.Add(new GenotypeColumnVM(curr, this));
+               else
+               {
+                   var curColumn = SelectedGolumns.FirstOrDefault(n => n.GenotypeWR.Genotype.Id == curr.Genotype.Id);
+                   if (curColumn != null)
+                       SelectedGolumns.Remove(curColumn);
+               }
+               Debug.WriteLine(d.Count + "   " + d.First().Item.Current.Genotype.Name);
+           })
+           .Subscribe(s => HasSelected = SelectedGolumns.Any(n => n.GenotypeWR.IsSelected));
+
+        SelectedGolumns.CollectionChanged += (s, e) => UpdateAllGenomeRows();
+
+        _cleanUp = new CompositeDisposable(Genotypes.Connect(), selectedControl);
+
     }
+
+    public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; } = new ObservableCollectionExtended<GenotypeColumnVM>();
 
     /// <inheritdoc/>
     [Reactive]
-    public GenotypeWR? CurrentGenotype{ get; set; }
+    public GenotypeWR? CurrentGenotype { get; set; }
 
     /// <inheritdoc/>
     public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
@@ -111,4 +133,21 @@ public class Project : ReactiveObject, IProject
         PathToSavedFile = null;
     });
 
+    private void UpdateAllGenomeRows()
+    {
+        if (!SelectedGolumns.Any()) return;
+
+        // Получаем глобальный набор уникальных локусов
+        var ls = SelectedGolumns
+            .SelectMany(vm => vm.GenotypeWR.Genotype.Genomes.Select(g => g.Locus))
+            .Distinct()
+            .OrderBy(l => l.Ord())
+            .ToList();
+
+        // Обновляем все колонки
+        foreach (var column in SelectedGolumns)
+        {
+            column.UpdateGenomeRows(ls);
+        }
+    }
 }

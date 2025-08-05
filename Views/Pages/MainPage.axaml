@@ -54,9 +54,14 @@
 											  IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"
 											  Command="{Binding $parent[TreeView].DataContext.DelGenotypeCommand}"/>
 									<Separator IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"/>
-									<MenuItem Header="{x:Static lang:Resources.cap_select}" Icon="{material:MaterialIconExt Kind=FormSelect}"
+									<MenuItem Header="{x:Static lang:Resources.cap_select}" Icon="{material:MaterialIconExt Kind=SelectAll}"
 											  IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"
-											  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"/>
+											  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"
+											  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
+									<MenuItem Header="{x:Static lang:Resources.cap_unselect}" Icon="{material:MaterialIconExt Kind=TabUnselected}"
+											  IsVisible="{Binding $parent[TreeView].DataContext.ListSelected}"
+											  Command="{Binding $parent[TreeView].DataContext.UnSelectGenotypeCommand}"
+											  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
 								</MenuFlyout>
 							</TextBlock.ContextFlyout>
 						</TextBlock>
@@ -72,9 +77,9 @@
 					   Foreground="{DynamicResource ButtonBorderBrush}" />
 
 		<!-- Правая панель: Колонки -->
-		<ScrollViewer Grid.Column="2" >
-			<ListBox Classes="draggableVirtualizingH NoHilightListBox " 
-				ItemsSource="{Binding Columns}">
+		<ScrollViewer Grid.Column="2" VerticalAlignment="Top">
+			<ListBox Classes="draggableVirtualizingH NoHilightListBox"
+				ItemsSource="{Binding Project.SelectedGolumns}">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>
 						<StackPanel Orientation="Horizontal"/>

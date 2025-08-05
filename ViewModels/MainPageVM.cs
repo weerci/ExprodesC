@@ -67,12 +67,6 @@ public class MainPageVM() : BaseVM
            .Bind(out _controls!._SubNodes)
            .Subscribe();
 
-        var selectedLoader = Project.Genotypes
-            .AutoRefresh(vm => vm.IsSelected)
-            .Filter(g => g.IsSelected)
-            .Bind(SelectedProfiles)
-            .Subscribe();
-
         this.WhenAnyValue(vm => vm.SelectedNode)
             .Subscribe(n =>
                 Project.CurrentGenotype = n?.GenotypeWR
@@ -81,26 +75,17 @@ public class MainPageVM() : BaseVM
         AddGenotypeCommand = ReactiveCommand.CreateFromTask(addGenotype, canAddGenotype);
         DelGenotypeCommand = ReactiveCommand.Create(delGenotype, canDelGenotype);
         EditGenotypeCommand = ReactiveCommand.CreateFromTask<GenotypeWR>(editGenotype, canDelGenotype);
-        SelectGenotypeCommand = ReactiveCommand.Create(selectGenotype);
-        _cleanUp = new CompositeDisposable(canDelLoader, canAddLoader, profilesLoader, controlLoader, selectedLoader);
+        SelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(selectGenotype, canDelGenotype);
+        UnSelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(unSelectGenotype, canDelGenotype);
 
-        // Обновляем глобальные строки при изменении столбцов
-        this.WhenAnyValue(x => x.Columns.Count)
-            .Subscribe(_ => UpdateGlobalLocusRows());
+        //TODO для кнопок на выбранных элементах не нужно отслеживать возможность удаления в связи с выбранностью в дереве canDelGenotype
+        _cleanUp = new CompositeDisposable(canDelLoader, canAddLoader, profilesLoader, controlLoader);
 
-        AddColumnCommand = ReactiveCommand.Create<GenotypeWR>(AddColumn);
-        RemoveColumnCommand = ReactiveCommand.Create<GenotypeColumnVM>(RemoveColumn);
     }
 
     #region Properties
 
     public IProject Project { get; set; } = null!;
-
-    public ObservableCollection<GenotypeColumnVM> Columns { get; } = new();
-
-    public ObservableCollection<LocusRow> GlobalLocusRows { get; } = new();
-
-    public IObservableCollection<GenotypeWR> SelectedProfiles { get; } = new ObservableCollectionExtended<GenotypeWR>();
 
     /// <summary>
     /// Иерархический список содержащий загруженные в проект генотипы.
@@ -108,15 +93,11 @@ public class MainPageVM() : BaseVM
     /// </summary>
     public ObservableCollection<Node> Nodes { get; } = [core];
 
+
     /// <summary>
     /// Выбранный в иерархическом списке <see cref="Nodes"/> элемент
     /// </summary>
-    [Reactive]
-    public Node? SelectedNode
-    {
-        get;
-        set;
-    }
+    [Reactive] public Node? SelectedNode { get; set; }
 
     /// <summary>
     /// Выбран узловой элемент иерарахического списка
@@ -128,8 +109,6 @@ public class MainPageVM() : BaseVM
     /// </summary>
     [Reactive] public bool ListSelected { get; set; }
     
-    private GenotypeColumnVM? DraggedColumn { get; set; }
-
 
     #endregion
 
@@ -146,54 +125,37 @@ public class MainPageVM() : BaseVM
     public RxCommandUnit? AddGenotypeCommand { get; }
 
     /// <summary>
-    /// Выбор генотипа в таблицу для работы
-    /// </summary>
-    public RxCommandUnit SelectGenotypeCommand { get; } = null!;
-
-    /// <summary>
     /// Отркрывается окно для редактирования генотипа
     /// </summary>
     public RxCommandGenotype? EditGenotypeCommand { get; }
 
-    public RxCommandGenotype AddColumnCommand { get; } = null!;
-    public RxCommandGolumnVM RemoveColumnCommand { get; } = null!;
+    /// <summary>
+    /// Выбор генотипа в таблицу для работы
+    /// </summary>
+    public RxCommandGenotype SelectGenotypeCommand { get; } = null!;
+
+    /// <summary>
+    /// Удаление выбранного для работы элемента
+    /// </summary>
+    public RxCommandGenotype UnSelectGenotypeCommand { get; } = null!;
 
     #endregion
 
     #region Функции реализующие команды представления
 
-    private void AddColumn(GenotypeWR genotype)
+    private void selectGenotype(GenotypeWR genotype)
     {
-        if (Columns.Any(c => c.GenotypeWR == genotype)) return;
-
-        var column = new GenotypeColumnVM(genotype, this);
-        Columns.Add(column);
+       genotype.IsSelected = true;
     }
 
-    private void RemoveColumn(GenotypeColumnVM column)
+    private void unSelectGenotype(GenotypeWR genotype)
     {
-        Columns.Remove(column);
+        genotype.IsSelected = false;
     }
 
-    public void StartDrag(GenotypeColumnVM column)
-    {
-        DraggedColumn = column;
-    }
-
-    public void HandleDrop(GenotypeColumnVM targetColumn)
-    {
-        if (DraggedColumn == null || DraggedColumn == targetColumn) return;
-
-        int oldIndex = Columns.IndexOf(DraggedColumn);
-        int newIndex = Columns.IndexOf(targetColumn);
-
-        Columns.Move(oldIndex, newIndex);
-        DraggedColumn = null;
-    }
-    //TODO Необходимо сделать перетаскивание столбцов
     //TODO Необходимо сделать расцветку по совпадающим аллелям
 
-    private void UpdateGlobalLocusRows()
+  /*  private void UpdateGlobalLocusRows()
     {
         // Собираем все уникальные локусы из всех столбцов
         var allLoci = Columns
@@ -229,14 +191,14 @@ public class MainPageVM() : BaseVM
         {
             column.UpdateGenomeRows(GlobalLocusRows);
         }
-    }
+    }*/
 
     async Task editGenotype(GenotypeWR genotype)
     {
         var edtiGenotype = await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
         if (edtiGenotype == null)
             return;
-        UpdateGlobalLocusRows();
+        //UpdateGlobalLocusRows();
     }
     //TODO Форма диалога не закрывается при нажатии на Enter
     async Task addGenotype()
@@ -256,12 +218,6 @@ public class MainPageVM() : BaseVM
 
         Project.AddGenotypes([newGenotypeWR]).Match(g => setCurrentNode(g, isControl));
 
-    }
-
-    async void selectGenotype()
-    {
-        if (Project.CurrentGenotype != null)
-            await Task.Run(() => Project.CurrentGenotype.IsSelected = true);
     }
 
     private async void delGenotype()

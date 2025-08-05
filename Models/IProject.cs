@@ -1,7 +1,10 @@
 ﻿using Calc.Models;
 using DynamicData;
+using DynamicData.Binding;
+using ExprodesC.Views.Controls;
 using ExprodesC.Views.Wrappers;
 using Func;
+using System.Collections.ObjectModel;
 using System.Reactive.Subjects;
 
 namespace ExprodesC.Models
@@ -12,6 +15,11 @@ namespace ExprodesC.Models
         /// Список всех генотипов
         /// </summary>
         public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
+
+        /// <summary>
+        /// Список генотипов выбранных для работы
+        /// </summary>
+        public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; }
 
         /// <summary>
         /// Текущий генотип выбранный в наборе <see cref="Genotypes"/>
@@ -66,6 +74,17 @@ namespace ExprodesC.Models
         /// </summary>
         /// <returns></returns>
         public Ex<bool> Close();
+
+        /// <summary>
+        /// Выбор генотипа в список генотипов для работы
+        /// </summary>
+        public void SelectGenotype(GenotypeWR gwr) => gwr.IsSelected = true;
+
+        /// <summary>
+        /// Удаление генотипа из списока генотипов для работы
+        /// </summary>
+        /// <param name="gwr"></param>
+        public void UnSelectGenotype(GenotypeWR gwr) => gwr.IsSelected = false;
 
 
     }

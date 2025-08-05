@@ -8,9 +8,8 @@
 			 x:DataType="ctrl:GenotypeColumnVM"
              RenderOptions.BitmapInterpolationMode="HighQuality"
 			 xmlns:material="using:Material.Icons.Avalonia"
-			 Name="{Binding GenotypeWR.Genotype.Name}"
 			 xmlns:lang="using:ExprodesC.Lang"
-			 
+			 Name="{Binding GenotypeWR.Genotype.Name}"
 			 
              x:Class="ExprodesC.Views.Controls.GenotypeColumnView">
 	
@@ -27,11 +26,11 @@
 			<Border CornerRadius="3" Padding="5">
 				<DockPanel>
 					<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_close}"
-						Command="{Binding MainPageVM.RemoveColumnCommand}" DockPanel.Dock="Right">
+							Command="{Binding CloseCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
 						<material:MaterialIcon Kind="Close"/>
 					</Button>
 					<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_edit_genotype}"
-						Command="{Binding MainPageVM.EditGenotypeCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
+						Command="{Binding EditCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
 						<material:MaterialIcon Kind="Edit"/>
 					</Button>
 					<TextBlock Text="{Binding GenotypeWR.Genotype.Name}" FontWeight="Bold" Margin="4 0 20 0" VerticalAlignment="Center"/>

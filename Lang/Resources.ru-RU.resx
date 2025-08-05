@@ -357,4 +357,7 @@
   <data name="cap_add_genotype" xml:space="preserve">
     <value>Создать генотип</value>
   </data>
+  <data name="cap_unselect" xml:space="preserve">
+    <value>Убрать</value>
+  </data>
 </root>

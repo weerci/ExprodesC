@@ -3,6 +3,9 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ExprodesC.ViewModels;
+using Func.Extensions;
+using System.Reactive.Linq;
+using System.Windows.Input;
 using static ExprodesC.ViewModels.MainPageVM;
 
 namespace ExprodesC.Views.Pages;
@@ -17,10 +20,10 @@ public partial class MainPage : UserControl
         DataContext = _mainPageVM;
         tvGenotypes.DoubleTapped += OnTreeDoubleTapped;
     }
-
+    //TODO изменить стили из xaml behaviors то ли оставить как есть, то ли реалзиовать стиль в своей программе, то ли полностью перенести функционал
     private void OnTreeDoubleTapped(object? sender, TappedEventArgs e)
     {
-        if (DataContext is MainPageVM vm && tvGenotypes.SelectedItem is Node genotype)
-            vm.AddColumnCommand?.Execute(genotype.GenotypeWR).Subscribe();
+        if (tvGenotypes.SelectedItem is Node node)
+            _mainPageVM.SelectGenotypeCommand.ExecuteIfPossible(node.GenotypeWR);
     }
 }

@@ -268,7 +268,7 @@
     <value>Add</value>
   </data>
   <data name="cap_del" xml:space="preserve">
-    <value>Remove</value>
+    <value>Delete</value>
   </data>
   <data name="cap_file_save_as" xml:space="preserve">
     <value>Save as...</value>
@@ -356,5 +356,8 @@
   </data>
   <data name="cap_add_genotype" xml:space="preserve">
     <value>Create a genotype</value>
+  </data>
+  <data name="cap_unselect" xml:space="preserve">
+    <value>Remove</value>
   </data>
 </root>

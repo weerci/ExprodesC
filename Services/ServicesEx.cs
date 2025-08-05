@@ -10,7 +10,6 @@ public static class ServicesEx
         sc.AddSingleton<CalcPageVM>()
         .AddSingleton<SettingsPageVM>()
         .AddSingleton<MainPageVM>(p => new MainPageVM(p.GetRequiredService<IProject>(), p.GetRequiredService<IDialogService>()))
-        //.AddSingleton<ComparePageVM>(p => new ComparePageVM(p.GetRequiredService<MainPageVM>()))
         .AddSingleton<SettingsPageVM>();
 
 }

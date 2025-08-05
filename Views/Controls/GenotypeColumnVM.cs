@@ -1,9 +1,15 @@
-﻿using ExprodesC.ViewModels;
+﻿using Calc.Models;
+using DynamicData;
+using DynamicData.Binding;
+using ExprodesC.Models;
+using ExprodesC.ViewModels;
 using ExprodesC.Views.Wrappers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,34 +17,37 @@ namespace ExprodesC.Views.Controls
 {
     public class GenotypeColumnVM() : BaseVM
     {
-        
-        public GenotypeColumnVM(GenotypeWR genotype, MainPageVM mainPageVM) : this()
+
+        public GenotypeColumnVM(GenotypeWR genotype, IProject project) : this()
         {
             GenotypeWR = genotype;
-            MainPageVM = mainPageVM;
+            Project = project;
 
-            UpdateGenomeRows(MainPageVM.GlobalLocusRows);
+            CloseCommand = ReactiveCommand.Create<GenotypeWR>((g) => { Project.UnSelectGenotype(g); });
+
         }
 
-        public MainPageVM MainPageVM { get; set; } = null!;
+        public IProject Project { get; set; } = null!;
 
         //TODO При удалении из дерева не удаляется из списка выбранных
         [Reactive] public GenotypeWR GenotypeWR { get; set; } = null!;
-        
+
         public ObservableCollection<GenomeRow> GenomeRows { get; } = new();
 
-        public ReactiveCommand<Unit, IDisposable> CloseCommand { get; } = null!;
+        public RxCommandGenotype CloseCommand { get; } = null!;
+        public RxCommandGenotype EditCommand { get; } = null!;
 
-        public void UpdateGenomeRows(IEnumerable<LocusRow> globalRows)
+        public void UpdateGenomeRows(List<Locus> locuses)
         {
             var genomesDict = GenotypeWR.Genotype.Genomes
                 .ToDictionary(g => g.Locus.Name);
 
             GenomeRows.Clear();
+            int i = 0;
 
-            foreach (var locusRow in globalRows)
+            foreach (var locus in locuses)
             {
-                if (genomesDict.TryGetValue(locusRow.LocusName, out var genome))
+                if (genomesDict.TryGetValue(locus.Name, out var genome))
                 {
                     GenomeRows.Add(new GenomeRow(
                         genome.Locus.Name,
@@ -47,11 +56,12 @@ namespace ExprodesC.Views.Controls
                 }
                 else
                 {
-                    GenomeRows.Add(new GenomeRow(locusRow.LocusName, ""));
+                    GenomeRows.Add(new GenomeRow(locus.Name, ""));
                 }
             }
         }
-
-
     }
+
+
 }
+

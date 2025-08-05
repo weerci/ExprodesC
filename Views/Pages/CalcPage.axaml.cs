@@ -5,6 +5,9 @@ namespace ExprodesC.Views.Pages;
 
 public partial class CalcPage : UserControl
 {
+
+    MainPageVM _mainPageVM = App.Services.GetRequiredService<MainPageVM>();
+
     public CalcPage()
     {
         InitializeComponent();

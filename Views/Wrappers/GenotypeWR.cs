@@ -8,12 +8,20 @@ using System.Threading.Tasks;
 
 namespace ExprodesC.Views.Wrappers;
 
-public class GenotypeWR(Genotype genotype, bool isControl = false) : ReactiveObject
+public class GenotypeWR() : ReactiveObject
 {
-    public Genotype Genotype { get; } = genotype;
+    public GenotypeWR(Genotype genotype, bool isControl = false) : this()
+    { 
+        Genotype = genotype;
+        IsControl = isControl;
+    }
+
+
+    public Genotype Genotype { get; } 
     [Reactive] public bool IsSelected { get; set; }
 
-    [Reactive] public bool IsControl { get; set; } = isControl;
+    [Reactive] public bool IsControl { get; set; } 
+
 
     public static GenotypeWR Empty(bool isControl) => new GenotypeWR(Genotype.Empty, isControl);
 
