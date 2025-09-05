@@ -117,96 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="calc_method_lr" xml:space="preserve">
-    <value>Отношение правдоподобия</value>
-  </data>
-  <data name="calc_method_p" xml:space="preserve">
-    <value>Вероятность случайного совпадения</value>
-  </data>
-  <data name="calc_method_pp" xml:space="preserve">
-    <value>Вероятность идентичности/родства</value>
-  </data>
-  <data name="calc_mix_aa" xml:space="preserve">
-    <value>Смесь 2-х лиц (2 предполагаемых лица)</value>
-  </data>
-  <data name="calc_mix_aaa" xml:space="preserve">
-    <value>Смесь 3-х лиц (3 предполагаемых лица)</value>
-  </data>
-  <data name="calc_mix_aau" xml:space="preserve">
-    <value>Смесь 3-х лиц (2 предполагаемых + 1 неизвестное)</value>
-  </data>
-  <data name="calc_mix_au" xml:space="preserve">
-    <value>Смесь 2-х лиц (1 предполагаемое + 1 неизвестное)</value>
-  </data>
-  <data name="calc_mix_auu" xml:space="preserve">
-    <value>Смесь 3-х лиц (1 предполагаемое + 2 неизвестных)</value>
-  </data>
-  <data name="calc_mix_direct" xml:space="preserve">
-    <value>Прямая идентификация</value>
-  </data>
-  <data name="calc_mix_ka" xml:space="preserve">
-    <value>Смесь 2-х лиц (1 известное + 1 предполагаемое)</value>
-  </data>
-  <data name="calc_mix_kaa" xml:space="preserve">
-    <value>Смесь 3-х лиц (1 известное + 2 предполагаемых)</value>
-  </data>
-  <data name="calc_mix_kau" xml:space="preserve">
-    <value>Смесь 3-х лиц (1 известное + 1 предполагаемое + 1 неизвестное)</value>
-  </data>
-  <data name="calc_rel_ca" xml:space="preserve">
-    <value>Ребенок и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_caa" xml:space="preserve">
-    <value>Ребенок и два предполагаемых родителя</value>
-  </data>
-  <data name="calc_rel_cag" xml:space="preserve">
-    <value>Проверяемое лицо, предполагаемый родитель и предполагаемая бабушка (дедушка)</value>
-  </data>
-  <data name="calc_rel_cagg" xml:space="preserve">
-    <value>Проверяемое лицо, предполагаемый родитель и предполагаемая бабушка и дедушка</value>
-  </data>
-  <data name="calc_rel_cas" xml:space="preserve">
-    <value>Проверяемое лицо, предполагаемый родитель и один предполагаемый брат (сестра)</value>
-  </data>
-  <data name="calc_rel_cca" xml:space="preserve">
-    <value>Двое детей и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_ccaa" xml:space="preserve">
-    <value>Двое детей и два предполагаемых родителя</value>
-  </data>
-  <data name="calc_rel_ccca" xml:space="preserve">
-    <value>Трое детей и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_cccaa" xml:space="preserve">
-    <value>Трое детей и два предполагаемых родителя</value>
-  </data>
-  <data name="calc_rel_cccka" xml:space="preserve">
-    <value>Трое детей, один известный и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_ccka" xml:space="preserve">
-    <value>Двое детей, один известный и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_cg" xml:space="preserve">
-    <value>Проверяемое лицо и предполагаемая бабушка (дедушка)</value>
-  </data>
-  <data name="calc_rel_cgg" xml:space="preserve">
-    <value>Проверяемое лицо, предполагаемые бабушка и дедушка</value>
-  </data>
-  <data name="calc_rel_cgv" xml:space="preserve">
-    <value>Ребенок, бабушка (дедушка) и проверяемый родитель ребенка</value>
-  </data>
-  <data name="calc_rel_cka" xml:space="preserve">
-    <value>Ребенок, один известный и один предполагаемый родитель</value>
-  </data>
-  <data name="calc_rel_ckgv" xml:space="preserve">
-    <value>Ребенок, один известный родитель, бабушка (дедушка) и проверяемый родитель ребенка</value>
-  </data>
-  <data name="calc_rel_cs" xml:space="preserve">
-    <value>Проверяемое лицо и один предполагаемый брат (сестра)</value>
-  </data>
-  <data name="calc_rel_css" xml:space="preserve">
-    <value>Проверяемое лицо и два предполагаемых брата (сестры)</value>
-  </data>
   <data name="cap_calculate" xml:space="preserve">
     <value>Расчеты</value>
   </data>
@@ -239,12 +149,6 @@
   </data>
   <data name="cap_setting" xml:space="preserve">
     <value>Настройки</value>
-  </data>
-  <data name="err_empty_list" xml:space="preserve">
-    <value>Список пуст</value>
-  </data>
-  <data name="err_empty_value" xml:space="preserve">
-    <value>Значение не определено</value>
   </data>
   <data name="msg_object_saved" xml:space="preserve">
     <value>'{0}' успешно сохранен по пути '{1}'</value>
@@ -297,9 +201,6 @@
   <data name="conf_delete" xml:space="preserve">
     <value>Подтверждение удаления</value>
   </data>
-  <data name="conf_delete_genotype" xml:space="preserve">
-    <value>Подтвердите удаление генотипа '{0}'</value>
-  </data>
   <data name="cap_edit" xml:space="preserve">
     <value>Редактировать</value>
   </data>
@@ -333,12 +234,6 @@
   <data name="cap_name" xml:space="preserve">
     <value>Имя</value>
   </data>
-  <data name="desc_confirm_delete_genotype" xml:space="preserve">
-    <value>Если не выбран, то удаление генотипа будет производится без уведомления пользователя</value>
-  </data>
-  <data name="cap_theme" xml:space="preserve">
-    <value>Тема приложения</value>
-  </data>
   <data name="theme_dark" xml:space="preserve">
     <value>Темная</value>
   </data>
@@ -348,16 +243,181 @@
   <data name="theme_sys" xml:space="preserve">
     <value>Системная</value>
   </data>
-  <data name="theme_desc" xml:space="preserve">
+  <data name="set_theme_desc" xml:space="preserve">
     <value>Выберите из списка предпочитаемую тему приложения.</value>
   </data>
   <data name="cap_edit_genotype" xml:space="preserve">
-    <value>Редактировать генотип</value>
+    <value>Редактирование генотипа</value>
   </data>
   <data name="cap_add_genotype" xml:space="preserve">
     <value>Создать генотип</value>
   </data>
   <data name="cap_unselect" xml:space="preserve">
     <value>Убрать</value>
+  </data>
+  <data name="cap_hide_genotypes" xml:space="preserve">
+    <value>Скрыть генотипы</value>
+  </data>
+  <data name="cap_show_genotypes" xml:space="preserve">
+    <value>Показать генотипы</value>
+  </data>
+  <data name="err_research_calc" xml:space="preserve">
+    <value>Ошибка в расчетах</value>
+  </data>
+  <data name="set_theme" xml:space="preserve">
+    <value>Тема приложения</value>
+  </data>
+  <data name="set_priority" xml:space="preserve">
+    <value>Приоритет Pmin</value>
+  </data>
+  <data name="set_priority_desc" xml:space="preserve">
+    <value>Cлужит для указания приоритетов используемых частот, если в библиотеке локусов есть аллели с частотами меньшими, чем указанная Pmin для конкретного локуса. Когда пункт Pmin отмечен, в расчетах будет использоваться частота Pmin локуса, если частота используемой аллели меньше частоты Pmin.</value>
+  </data>
+  <data name="set_displaying_values" xml:space="preserve">
+    <value>Отображение значений</value>
+  </data>
+  <data name="set_disp_values_desk" xml:space="preserve">
+    <value>Определяет отображение результатов вычислений, в экспоненциальной или десятичной форме</value>
+  </data>
+  <data name="set_decimal_number" xml:space="preserve">
+    <value>Количество отображаемых знаков после запятой</value>
+  </data>
+  <data name="set_decimal_number_desc" xml:space="preserve">
+    <value>Показывает с точностью до какого знака будет отображаться итоговый резльтат</value>
+  </data>
+  <data name="set_number_mutation" xml:space="preserve">
+    <value>Максимальное количество мутаций</value>
+  </data>
+  <data name="set_number_mutation_desc" xml:space="preserve">
+    <value>Количество несовпадающих аллелей в генотипе, по разным локусам, после которого генотип будет считаться отличным от оригинала</value>
+  </data>
+  <data name="set_blend_methods_name" xml:space="preserve">
+    <value>Методы расчета</value>
+  </data>
+  <data name="set_method_calc_desc" xml:space="preserve">
+    <value>Значения частот мутаций локусов, данные для которых недоступны, рассчитываются этим методом из доступных (внесенных) фактических частот</value>
+  </data>
+  <data name="set_used_population" xml:space="preserve">
+    <value>Используемый профиль  частот</value>
+  </data>
+  <data name="cap_up_population" xml:space="preserve">
+    <value>Выгрузить популяцию</value>
+  </data>
+  <data name="cap_down_population" xml:space="preserve">
+    <value>Загрузить популяцию</value>
+  </data>
+  <data name="cap_up" xml:space="preserve">
+    <value>Вверх</value>
+  </data>
+  <data name="cap_down" xml:space="preserve">
+    <value>Вниз</value>
+  </data>
+  <data name="cap_synonim" xml:space="preserve">
+    <value>Синонимы</value>
+  </data>
+  <data name="cap_upload_to_excel" xml:space="preserve">
+    <value>Выгрузить в Excel</value>
+  </data>
+  <data name="cap_new_population" xml:space="preserve">
+    <value>Новая популяция</value>
+  </data>
+  <data name="cap_name_population" xml:space="preserve">
+    <value>Название популяции</value>
+  </data>
+  <data name="cap_base_population" xml:space="preserve">
+    <value>Популяция, на которой будет основана новая</value>
+  </data>
+  <data name="cap_base_population_desc" xml:space="preserve">
+    <value>При создании популяции на основе другой, для новой популяции создаются новые локусы и аллели. Данные по локусам и аллелям, в том числе имена и частоты встречаемости - копируются.</value>
+  </data>
+  <data name="err_add_population" xml:space="preserve">
+    <value>Ошибка при создании популяции</value>
+  </data>
+  <data name="conf_delete_population" xml:space="preserve">
+    <value>Подтвердите удаление популяции '{0}'</value>
+  </data>
+  <data name="conf_delete_genotype" xml:space="preserve">
+    <value>Подтвердите удаление генотипа '{0}'</value>
+  </data>
+  <data name="desc_confirm_delete_genotype" xml:space="preserve">
+    <value>Если не выбран, то удаление генотипа будет производится без уведомления пользователя</value>
+  </data>
+  <data name="msg_page_conf_delete_population" xml:space="preserve">
+    <value>Подтверждение удаления популяции</value>
+  </data>
+  <data name="desc_confirm_delete_population" xml:space="preserve">
+    <value>Если не выбран, то удаление популяции будет производится без уведомления пользователя</value>
+  </data>
+  <data name="cap_name_allele" xml:space="preserve">
+    <value>Название аллеля</value>
+  </data>
+  <data name="cap_min_freq" xml:space="preserve">
+    <value>Минимальная частота</value>
+  </data>
+  <data name="cap_mut_freq" xml:space="preserve">
+    <value>Частота мутаций</value>
+  </data>
+  <data name="cap_is_calculate" xml:space="preserve">
+    <value>Участвует в расчетах</value>
+  </data>
+  <data name="desc_is_calc" xml:space="preserve">
+    <value>Если пункт «Участвует в расчетах» не отмечен, то данный локус в математических расчетах не учитывается, но его профиль выводится в таблицу генотипов </value>
+  </data>
+  <data name="cap_new_allele" xml:space="preserve">
+    <value>Новый аллель</value>
+  </data>
+  <data name="cap_edit_population" xml:space="preserve">
+    <value>Редактирование популяции</value>
+  </data>
+  <data name="cap_edit_locus" xml:space="preserve">
+    <value>Редактирование локуса</value>
+  </data>
+  <data name="err_add_locus" xml:space="preserve">
+    <value>Ошибка при создании локуса</value>
+  </data>
+  <data name="msg_page_conf_delete_locus" xml:space="preserve">
+    <value>Подтверждение удаления локуса</value>
+  </data>
+  <data name="msg_page_conf_delete_allele" xml:space="preserve">
+    <value>Подтверждение удаления аллеля</value>
+  </data>
+  <data name="desc_confirm_delete_locus" xml:space="preserve">
+    <value>Если не выбран, то удаление локуса будет производится без уведомления пользователя</value>
+  </data>
+  <data name="desc_confirm_delete_allele" xml:space="preserve">
+    <value>Если не выбран, то удаление аллеля будет производится без уведомления пользователя</value>
+  </data>
+  <data name="cap_name_locus" xml:space="preserve">
+    <value>Название локуса</value>
+  </data>
+  <data name="cap_freq_allele" xml:space="preserve">
+    <value>Частота встречаемости аллеля</value>
+  </data>
+  <data name="cap_new_locus" xml:space="preserve">
+    <value>Новый локус</value>
+  </data>
+  <data name="conf_delete_locus" xml:space="preserve">
+    <value>Подтвердите удаление локуса '{0}'</value>
+  </data>
+  <data name="conf_delete_allele" xml:space="preserve">
+    <value>Подтвердите удаление аллеля '{0}'</value>
+  </data>
+  <data name="cap_edit_allele" xml:space="preserve">
+    <value>Редактирование аллеля</value>
+  </data>
+  <data name="msg_cant_delete_population" xml:space="preserve">
+    <value>Текущую популяцию нельзя удалить или редактировать. Нужно выбрать другую популяцию, популяцией по умолчанию и тогда уже удалить или редактировать текущую.</value>
+  </data>
+  <data name="msg_by_default" xml:space="preserve">
+    <value>(по умолчанию)</value>
+  </data>
+  <data name="cap_based_population" xml:space="preserve">
+    <value>Популяция основана на популяции</value>
+  </data>
+  <data name="err_pop_unique" xml:space="preserve">
+    <value>Имя популяции должно быть уникально</value>
+  </data>
+  <data name="err_edit_population" xml:space="preserve">
+    <value>Ошибка при редактировнии популяции</value>
   </data>
 </root>

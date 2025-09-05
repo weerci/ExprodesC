@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExprodesC.AddEditAllele"
+			 Loaded="UserControl_Loaded"
+			 
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 
+			 >
+	<StackPanel>
+		<ui:SettingsExpander Header="{x:Static lang:Resources.cap_name_allele}" IconSource="ClosedCaption">
+			<ui:SettingsExpander.Footer>
+				<TextBox x:Name="tbName" Width="270" />
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<ui:SettingsExpander Header="{x:Static lang:Resources.cap_freq_allele}" IconSource="Shuffle">
+			<ui:SettingsExpander.Footer>
+				<ui:NumberBox x:Name="nbFreq" SimpleNumberFormat="F4" />
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+	</StackPanel>
+	
+</UserControl>

@@ -1,8 +1,9 @@
 ﻿using ExprodesC.Services;
+using Func.Services;
 
 namespace ExprodesC.ViewModels;
 
-public class BaseVM : ReactiveObject, IDisposable
+public class BaseVM : ReactiveObject, IDisposable, ICanSave
 {
     protected IExpMessages Log => Init.ExpMessages;
 

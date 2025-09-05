@@ -1,0 +1,22 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+		<DockPanel>
+			<ToggleButton Content="LR" Classes="bthMethodCalc" IsChecked="True"/>
+			<ToggleButton Content="LR" Classes="bthMethodCalc"/>
+			<ToggleButton Content="LR" Classes="bthMethodCalc"/>
+			<ToggleButton Content="LR" Classes="bthMethodCalc"/>
+
+		</DockPanel>
+
+	</Border>
+  </Design.PreviewWith>
+
+	<Style Selector="RadioButton.bthMethodCalc">
+		<Setter Property="Theme" Value="{DynamicResource TransparentToggleButton}"/>
+		<Setter Property="FontFamily" Value="Times New Roman"/>
+		<Setter Property="Margin" Value="2 0"/>
+		<Setter Property="FontSize" Value="18"/>
+	</Style>
+</Styles>

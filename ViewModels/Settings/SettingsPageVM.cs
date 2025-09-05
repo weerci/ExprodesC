@@ -10,11 +10,15 @@ namespace ExprodesC.ViewModels.Settings;
 
 public class SettingsPageVM() : BaseVM
 {
-
-    public SettingsPageVM(ISettingsProvider<ExSettingData> settings) : this()
+    public SettingsPageVM(ISettingsProvider<ExSettingData> settings, IAppDb appDb) : this()
     {
         Settings = settings;
         createTree();
+       
+        UserControl _appearanceView = new AppearanceView(Settings);
+        UserControl _confrimView = new ConfrimView(Settings);
+        UserControl _calculationView = new CalculationView(Settings);
+        
         CurrentView = _appearanceView;
 
         this
@@ -31,6 +35,7 @@ public class SettingsPageVM() : BaseVM
                 };
             })
             .Subscribe();
+
 
     }
 
@@ -88,11 +93,4 @@ public class SettingsPageVM() : BaseVM
     }
     #endregion
 
-    #region Tabs
-
-    UserControl _appearanceView = new AppearanceView(App.Services.GetRequiredService<IAppHost>());
-    UserControl _confrimView = new ConfrimView();
-    UserControl _calculationView = new CalculationView();
-
-    #endregion
 }

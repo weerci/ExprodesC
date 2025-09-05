@@ -5,6 +5,7 @@
 		xmlns:views="clr-namespace:ExprodesC.Views;assembly=ExprodesC"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:ui="using:FluentAvalonia.UI.Controls"
+		
 		xmlns:conv="using:ExprodesC.Converters"
 	    RenderOptions.BitmapInterpolationMode="HighQuality"
 		x:DataType="vm:MainViewVM"

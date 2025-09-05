@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using ExprodesC.ViewModels;
+using ExprodesC.Wrappers;
 using Func.Extensions;
 using System.Reactive.Linq;
 using System.Windows.Input;
@@ -23,7 +24,7 @@ public partial class MainPage : UserControl
     //TODO изменить стили из xaml behaviors то ли оставить как есть, то ли реалзиовать стиль в своей программе, то ли полностью перенести функционал
     private void OnTreeDoubleTapped(object? sender, TappedEventArgs e)
     {
-        if (tvGenotypes.SelectedItem is Node node)
+        if (tvGenotypes.SelectedItem is GenotypeNode node)
             _mainPageVM.SelectGenotypeCommand.ExecuteIfPossible(node.GenotypeWR);
     }
 }

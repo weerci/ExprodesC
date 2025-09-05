@@ -17,9 +17,9 @@ namespace ExprodesC.ViewModels
             _dialogService = dialogService;
             Project = project;
 
-            LoadProject = ReactiveCommand.Create(loadProject);
+            LoadProject = ReactiveCommand.Create(loadProjectAsync);
+            SaveProject = ReactiveCommand.Create(saveProjectAsync, this.WhenAnyValue(vm => vm.Project.IsChanged));
             CloseMessage = ReactiveCommand.Create(() => { MessageIsOpen = false; });
-            SaveProject = ReactiveCommand.Create(saveProject, this.WhenAnyValue(vm => vm.Project.IsChanged).Select(n=>n));
             CloseProject = ReactiveCommand.Create(closeProject);
 
             Log.Errors.Subscribe(x => { Message = x.Last().Item.Current; MessageIsOpen = true; });
@@ -42,7 +42,9 @@ namespace ExprodesC.ViewModels
         /// Из файла проекта (.mgj) или из файла подготовленных к разбору генотипов (.txt, .csv) загружается проект или набор генотипов
         /// </summary>
         public RxCommandUnit? LoadProject { get; }
-        public RxCommandUnit? CloseMessage { get; }
+        public RxCommandUnit? SaveProject { get; }
+
+        public ICommand? CloseMessage { get; }
 
         /// <summary>
         /// Создается новый проект
@@ -54,16 +56,11 @@ namespace ExprodesC.ViewModels
         /// </summary>
         public ICommand? CloseProject { get; }
 
-        /// <summary>
-        /// Сохранение проекта
-        /// </summary>
-        public RxCommandUnit? SaveProject { get; }
-
         #endregion
 
         #region Imp
 
-        private async void loadProject()
+        private async void loadProjectAsync()
         {
             var file = await _dialogService!.OpenFileAsync();
             if (file is null) return;
@@ -73,7 +70,7 @@ namespace ExprodesC.ViewModels
                 .Match(OnError: e => { Log.SendError(Lang.Resources.err_load_profile, e); });
         }
 
-        private async void saveProject()
+        private async void saveProjectAsync()
         {
             if (Project.PathToSavedFile != null)
                 Project.Save(Project.PathToSavedFile);

@@ -1,0 +1,22 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+
+	</Design.PreviewWith>
+
+	<Style Selector="ListBox.library-listbox ListBoxItem">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Padding" Value="0"/>
+		<Setter Property="Margin" Value="0"/>
+	</Style>
+
+	<Style Selector="ListBox.library-listbox ListBoxItem:pointerover">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+
+	<Style Selector="ListBox.library-listbox ListBoxItem:selected">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+
+
+</Styles>

@@ -3,7 +3,7 @@ using DynamicData;
 using DynamicData.Binding;
 using ExprodesC.Services;
 using ExprodesC.Views.Controls;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using Func;
 using System.Collections.ObjectModel;
 using System.Reactive.Subjects;
@@ -13,6 +13,17 @@ namespace ExprodesC.Models
     public interface IProject
     {
         /// <summary>
+        /// Количество выбранных генотипов (нужно для срабатывания CalcConverter.EnabledCalc, чтобы делать доступными те методы расчета у которых количество 
+        /// генотипов для расчета равно или меньше выбранного количества)
+        /// </summary>
+        public int SelectedCount { get; set; }
+
+        /// <summary>
+        /// True - если проект содержит генотипы
+        /// </summary>
+        public bool HasGenotype { get; set; }
+
+        /// <summary>
         /// Список всех генотипов
         /// </summary>
         public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
@@ -20,7 +31,7 @@ namespace ExprodesC.Models
         /// <summary>
         /// Список генотипов выбранных для работы
         /// </summary>
-        public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; }
+        ReadOnlyObservableCollection<GenotypeColumnVM> SelectedGolumns { get; }
 
         /// <summary>
         /// Текущий генотип выбранный в наборе <see cref="Genotypes"/>

@@ -1,0 +1,3 @@
+﻿select * from population;
+select * from locus order by id desc;
+select * from pop_locus order by locus_id desc;

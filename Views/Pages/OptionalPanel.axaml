@@ -1,0 +1,75 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="200"
+             x:Class="ExprodesC.Views.Pages.OptionalPanel"
+			 FlowDirection="RightToLeft"
+			 Width="400"
+			 
+			 
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:set="using:ExprodesC.Imp"
+			 x:DataType="set:ExSettingData"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 xmlns:ls="using:Calc.Models"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 
+			 >
+
+	<Design.DataContext>
+		<set:ExSettingData/>
+	</Design.DataContext>
+
+	<StackPanel Spacing="10">
+		<!--Приоритет Pmin-->
+		<Grid HorizontalAlignment="Stretch" ColumnDefinitions="*, Auto">
+			<CheckBox IsChecked="{Binding Pmin}"/>
+			<TextBlock Grid.Column="1"  Text="{x:Static lang:Resources.set_priority}" VerticalAlignment="Center"/>
+		</Grid>
+
+		<!--Отображение значений-->
+		<Grid HorizontalAlignment="Stretch" ColumnDefinitions="*, Auto">
+			<ComboBox ItemsSource="{x:Static ls:CalcViewResult.Results}" SelectedItem="{Binding CalcViewResult}" FlowDirection="LeftToRight">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Name}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Grid.Column="1"  Text="{x:Static lang:Resources.set_displaying_values}" VerticalAlignment="Center"/>
+		</Grid>
+
+		<!--Максимальное количество мутаций-->
+		<Grid HorizontalAlignment="Stretch" ColumnDefinitions="*, Auto">
+			<ui:NumberBox SpinButtonPlacementMode="Compact" Value="{Binding MutCount}" Minimum="0" Maximum="10" FlowDirection="LeftToRight"/>
+			<TextBlock Grid.Column="1"  Text="{x:Static lang:Resources.set_number_mutation}" VerticalAlignment="Center"/>
+		</Grid>
+
+		<!--Методы расчета среднего-->
+		<Grid HorizontalAlignment="Stretch" ColumnDefinitions="*, Auto">
+			<ComboBox ItemsSource="{x:Static ls:CalcAverageMethod.Methods}" SelectedItem="{Binding CalcAverageMethod}" FlowDirection="LeftToRight">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Name}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Grid.Column="1"  Text="{x:Static lang:Resources.set_blend_methods_name}" VerticalAlignment="Center"/>
+		</Grid>
+
+		<!--Выбор популяции-->
+		<Grid HorizontalAlignment="Stretch" ColumnDefinitions="*, Auto">
+			<ComboBox ItemsSource="{Binding Populations}" SelectedItem="{Binding CurrentPopulation}" FlowDirection="LeftToRight">
+				<ComboBox.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Name}"/>
+					</DataTemplate>
+				</ComboBox.ItemTemplate>
+			</ComboBox>
+			<TextBlock Grid.Column="1"  Text="{x:Static lang:Resources.set_used_population}" VerticalAlignment="Center"/>
+		</Grid>
+		
+	</StackPanel>
+
+</UserControl>

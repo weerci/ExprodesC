@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExprodesC.Views.Wrappers
+namespace ExprodesC.Wrappers
 {
     public class LocusAlleleWR(LocusAllele locusAllele) : ReactiveObject
     {

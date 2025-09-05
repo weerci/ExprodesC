@@ -2,7 +2,7 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Calc.Models;
 using ExprodesC.Views.Dialogs;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 
 namespace ExprodesC;
 

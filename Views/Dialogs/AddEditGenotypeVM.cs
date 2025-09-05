@@ -3,7 +3,7 @@ using Calc.Models;
 using DynamicData;
 using DynamicData.Binding;
 using ExprodesC.ViewModels;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
@@ -25,7 +25,7 @@ public class AddEditGenotypeVM : BaseVM
         {
             Name = GenotypeWR.Genotype.Name;
 
-            if (GenotypeWR.Genotype.Genomes.Count() > 0)
+            if (GenotypeWR.Genotype.Genomes.Any())
             {
                 List<LocusAlleleWR> lavm = [];
                 foreach (Genome g in GenotypeWR.Genotype.Genomes)
@@ -33,7 +33,7 @@ public class AddEditGenotypeVM : BaseVM
                     string lName = g.Locus.Name;
                     foreach (var a in g.Alleles)
                     {
-                        LocusAllele la = new(lName, 0, false, 0, a.Name, 0, 0);
+                        LocusAllele la = new() { LName = lName, LCalc = false };
                         lavm.Add(new LocusAlleleWR(la) { IsChecked = true });
                     }
                 }
@@ -62,8 +62,7 @@ public class AddEditGenotypeVM : BaseVM
            .WhenAnyValue(x => x.SelectedLocus)
            .Select(selectedLocus => (Func<LocusAlleleWR, bool>)(item =>
                !string.IsNullOrEmpty(selectedLocus) &&
-               item.LocusAllele.LName == selectedLocus))
-           ;
+               item.LocusAllele.LName == selectedLocus));
 
         var _listAllelesForLocus = laVM.Filter(filterAlleleForLocus)
             .Sort(SortExpressionComparer<LocusAlleleWR>.Ascending(la => la.LocusAllele.LOrd).ThenBy(la => la.AOrd))

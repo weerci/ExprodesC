@@ -2,22 +2,62 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 
 			 xmlns:ui="using:FluentAvalonia.UI.Controls"
              xmlns:vm="using:ExprodesC.ViewModels.Settings"
 			 xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
 			 xmlns:lang="using:ExprodesC.Lang"
-			 x:DataType="vm:SettingsPageVM"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:set="using:ExprodesC.Imp"
+			 x:DataType="set:ExSettingData"
              x:Class="ExprodesC.ConfrimView"
 			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 
 			 >
-	<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_genotype}"
-						 IconSource="Accept"
-						 Description="{x:Static lang:Resources.desc_confirm_delete_genotype}">
-		<ui:SettingsExpander.Footer>
-			<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
-						  IsChecked="{Binding Settings.Value.ConfirmDeleteGenotype}"/>
-		</ui:SettingsExpander.Footer>
-	</ui:SettingsExpander>
+	<Design.DataContext>
+		<set:ExSettingData/>
+	</Design.DataContext>
 	
+	<StackPanel Spacing="5">
+		
+		<!--Подтверждение удаления генотипа-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_genotype}"
+							 IconSource="Accept"
+							 Description="{x:Static lang:Resources.desc_confirm_delete_genotype}">
+			<ui:SettingsExpander.Footer>
+				<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+							  IsChecked="{Binding ConfirmDeleteGenotype}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+		
+		<!--Подтверждение удаления популяции-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_population}"
+							 IconSource="Accept"
+							 Description="{x:Static lang:Resources.desc_confirm_delete_population}">
+			<ui:SettingsExpander.Footer>
+				<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+							  IsChecked="{Binding ConfirmDeletePopulation}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+		
+		<!--Подтверждение удаления локуса-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_locus}"
+							 IconSource="Accept"
+							 Description="{x:Static lang:Resources.desc_confirm_delete_locus}">
+			<ui:SettingsExpander.Footer>
+				<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+							  IsChecked="{Binding ConfirmDeleteLocus}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+		
+		<!--Подтверждение удаления аллеля-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_allele}"
+							 IconSource="Accept"
+							 Description="{x:Static lang:Resources.desc_confirm_delete_allele}">
+			<ui:SettingsExpander.Footer>
+				<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+							  IsChecked="{Binding ConfirmDeleteAllele}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+	</StackPanel>
 </UserControl>

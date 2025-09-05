@@ -18,8 +18,7 @@ public class ProjectTest
         Assert.True(project.IsSaved);
         var v = project
             .ConnectControl()
-            .Subscribe(it => Debug.WriteLine("sdfsdfsdffdsfdfsdfsdfs"));
-        Debug.WriteLine("sdfsdfsdffdsfdfsdfsdfs");
+            .Subscribe(it => 
         *//*        Assert.False(project.ConnectControl().Select(n=>n).Count() == 0);
                 Assert.False(project.Experts.Any());*//*
 

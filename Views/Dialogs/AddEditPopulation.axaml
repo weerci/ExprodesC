@@ -1,0 +1,50 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="350"
+             x:Class="ExprodesC.AddEditPopulation"
+			 Loaded="UserControl_Loaded"
+			 
+			  xmlns:vm="using:ExprodesC.ViewModels"
+			 x:DataType="vm:LibraryPageVM"
+			 
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 
+			 
+			 >
+
+	<Design.DataContext>
+		<vm:LibraryPageVM/>
+	</Design.DataContext>
+
+	<StackPanel>
+
+		<ui:SettingsExpander Header="{x:Static lang:Resources.cap_name_population}"
+						 IconSource="ClosedCaption">
+			<ui:SettingsExpander.Footer>
+				<TextBox x:Name="tbName" Width="300"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<ui:SettingsExpander  x:Name="sePopulation" Header="{x:Static lang:Resources.cap_base_population}"
+						 IconSource="AlignDistributed"
+						 Description="{x:Static lang:Resources.cap_base_population_desc}">
+			<ui:SettingsExpander.Footer>
+				<Panel>
+					<ComboBox x:Name="cbBase" Width="200" ItemsSource="{Binding Settings.Value.Populations}"
+							 >
+						<ComboBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Name}"/>
+							</DataTemplate>
+						</ComboBox.ItemTemplate>
+					</ComboBox>
+					<TextBlock x:Name="tbBase" Width="200" IsVisible="False" VerticalAlignment="Center" />
+				</Panel>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+	</StackPanel>
+</UserControl>

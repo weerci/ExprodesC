@@ -1,0 +1,40 @@
+{
+  "SettingFile": "exp.set",
+  "ConfirmDeleteGenotype": true,
+  "CurrentTheme": {
+    "Id": 0,
+    "Name": "\u0421\u0438\u0441\u0442\u0435\u043C\u043D\u0430\u044F"
+  },
+  "CurrentPopulation": {
+    "Id": 1,
+    "Name": "\u042D\u041A\u0426",
+    "Ord": 0,
+    "Locuses": []
+  },
+  "Populations": [
+    {
+      "Id": 1,
+      "Name": "\u042D\u041A\u0426",
+      "Ord": 0,
+      "Locuses": []
+    },
+    {
+      "Id": 3,
+      "Name": "\u0421\u041C\u042D",
+      "Ord": 1,
+      "Locuses": []
+    }
+  ],
+  "ConnectionString": "Data Source=key;",
+  "CalcAverageMethod": {
+    "Id": 0,
+    "Name": "\u0421\u0440\u0435\u0434\u043D\u0435\u0435"
+  },
+  "CalcViewResult": {
+    "Id": 0,
+    "Name": "\u042D\u043A\u0441\u043F\u043E\u043D\u0435\u043D\u0446\u0438\u0430\u043B\u044C\u043D\u044B\u0439"
+  },
+  "Pmin": true,
+  "DecPlaceCount": 3,
+  "MutCount": 2
+}

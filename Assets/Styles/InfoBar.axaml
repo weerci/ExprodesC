@@ -1,0 +1,38 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ui="using:FluentAvalonia.UI.Controls"
+		>
+  <Design.PreviewWith>
+    <StackPanel Spacing="10" Background="Aqua">
+		<ui:InfoBar Title="Title" IsOpen="True" Severity="Informational" Message="Essential app message for your users to be informed of, acknowledge, or take action on." />
+		<ui:InfoBar Title="Title" IsOpen="True" Severity="Success" Message="Essential app message for your users to be informed of, acknowledge, or take action on." />
+		<ui:InfoBar Title="Title" IsOpen="True" Severity="Warning" Message="Essential app message for your users to be informed of, acknowledge, or take action on." />
+		<ui:InfoBar Title="Title" IsOpen="True" Severity="Error" Message="Essential app message for your users to be informed of, acknowledge, or take action on." />
+    </StackPanel>
+  </Design.PreviewWith>
+
+  <!-- Add Styles Here -->
+	<Style Selector="ui|InfoBar">
+		<Setter Property="Opacity" Value="1"/>
+		<Setter Property="Background" Value="{DynamicResource SystemFillColorSolidNeutralBackground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource CardStrokeColorDefaultBrush}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="CornerRadius" Value="4"/>
+	</Style>
+
+	<Style Selector="ui|InfoBar[Severity=Informational]">
+		<Setter Property="Background" Value="{DynamicResource SystemFillColorSolidNeutralBackground}"/>
+	</Style>
+
+	<Style Selector="ui|InfoBar[Severity=Success]">
+		<Setter Property="Background" Value="{DynamicResource SystemFillColorSuccessBackground}"/>
+	</Style>
+
+	<Style Selector="ui|InfoBar[Severity=Warning]">
+		<Setter Property="Background" Value="{DynamicResource SystemFillColorCautionBackground}"/>
+	</Style>
+
+	<Style Selector="ui|InfoBar[Severity=Error]">
+		<Setter Property="Background" Value="{DynamicResource SystemFillColorCriticalBackground}"/>
+	</Style>
+</Styles>

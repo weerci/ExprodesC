@@ -25,6 +25,7 @@
 		<!-- Убираем индикатор выбора -->
 		<Style Selector="^ /template/ Rectangle#SelectionIndicator">
 			<Setter Property="IsVisible" Value="False" />
+			
 		</Style>
 
 		<Style Selector="^:pointerover">

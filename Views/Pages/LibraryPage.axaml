@@ -1,0 +1,172 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+			 
+			 xmlns:vm="using:ExprodesC.ViewModels"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 x:DataType="vm:LibraryPageVM"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:material="using:Material.Icons.Avalonia"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 xmlns:conv="using:ExprodesC.Converters"
+			 
+			 
+             x:Class="ExprodesC.LibraryPage">
+	<Design.DataContext>
+		<vm:LibraryPageVM/>
+	</Design.DataContext>
+
+	<Grid ColumnDefinitions="* 5 3* 5 *" >
+
+		<!--Популяции-->
+		<DockPanel >
+			<ui:CommandBar DockPanel.Dock="Top" DefaultLabelPosition="Collapsed">
+				<ui:CommandBar.PrimaryCommands>
+					<ui:CommandBarButton IconSource="ChevronUp" Label="{x:Static lang:Resources.cap_up}" ToolTip.Tip="{x:Static lang:Resources.cap_up}" 
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding MovePopulationCommand}" CommandParameter="Up"/>
+					<ui:CommandBarButton IconSource="ChevronDown" Label="{x:Static lang:Resources.cap_down}" ToolTip.Tip="{x:Static lang:Resources.cap_down}"
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding MovePopulationCommand}" />
+					<ui:CommandBarSeparator/>
+					<ui:CommandBarButton IconSource="Add" Label="{x:Static lang:Resources.cap_add}" ToolTip.Tip="{x:Static lang:Resources.cap_add}"
+										 Command="{Binding AddPopulationCommand}"/>
+					<ui:CommandBarButton IconSource="Edit" Label="{x:Static lang:Resources.cap_edit}" ToolTip.Tip="{x:Static lang:Resources.cap_edit}" 
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding EditPopulationCommand}"/>
+					<ui:CommandBarButton IconSource="Delete" Label="{x:Static lang:Resources.cap_del}" ToolTip.Tip="{x:Static lang:Resources.cap_del}"
+										 Command="{Binding DelPopulationCommand}" IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+				</ui:CommandBar.PrimaryCommands>
+				<ui:CommandBar.SecondaryCommands>
+					<ui:CommandBarButton IconSource="Download" Label="{x:Static lang:Resources.cap_down_population}" ToolTip.Tip="{x:Static lang:Resources.cap_down_population}"
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+					<ui:CommandBarButton IconSource="Upload" Label="{x:Static lang:Resources.cap_up_population}" ToolTip.Tip="{x:Static lang:Resources.cap_up_population}" 
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+				</ui:CommandBar.SecondaryCommands>
+			</ui:CommandBar>
+
+			<ListBox x:Name="lbPopulations" ItemsSource="{Binding Settings.Value.Populations}" SelectedItem="{Binding SelectedPopulation}">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="ContextFlyout">
+							<MenuFlyout ShowMode="TransientWithDismissOnPointerMoveAway" Placement="Right">
+								<MenuItem Header="{x:Static lang:Resources.cap_edit}"
+										 Icon="{material:MaterialIconExt Kind=Edit}"
+										 Command="{Binding $parent[ListBox].DataContext.EditPopulationCommand}"/>
+								<MenuItem Header="{x:Static lang:Resources.cap_del}"
+										 Icon="{material:MaterialIconExt Kind=Delete}"
+										 Command="{Binding $parent[ListBox].DataContext.DelPopulationCommand}"/>
+							</MenuFlyout>
+						</Setter>
+					</Style>
+				</ListBox.Styles>
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding ., Converter={x:Static conv:CommonConverters.PopulationByDefault}}" VerticalAlignment="Center"/>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ListBox>
+
+		</DockPanel>
+
+		<GridSplitter Grid.Column="1" Background="Transparent" Width="5" HorizontalAlignment="Stretch" />
+		<Rectangle Grid.Column="1" Fill="{DynamicResource ButtonBorderBrush}" Width="1" VerticalAlignment="Stretch" IsHitTestVisible="False"/>
+		<material:MaterialIcon Width="15" Height="15" Grid.Column="1" Kind="UnfoldMoreVertical" Foreground="{DynamicResource ButtonBorderBrush}" />
+
+		<!--Локусы-->
+		<DockPanel Grid.Column="2">
+			<ui:CommandBar DockPanel.Dock="Top" DefaultLabelPosition="Collapsed">
+				<ui:CommandBar.PrimaryCommands>
+					<ui:CommandBarButton IconSource="ChevronUp" Label="{x:Static lang:Resources.cap_up}" ToolTip.Tip="{x:Static lang:Resources.cap_up}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding MoveLocusCommand}" CommandParameter="Up"/>
+					<ui:CommandBarButton IconSource="ChevronDown" Label="{x:Static lang:Resources.cap_down}" ToolTip.Tip="{x:Static lang:Resources.cap_down}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding MoveLocusCommand}" />
+					<ui:CommandBarSeparator/>
+					<ui:CommandBarButton IconSource="Add" Label="{x:Static lang:Resources.cap_add}" ToolTip.Tip="{x:Static lang:Resources.cap_add}" 
+										 IsEnabled="{Binding SelectedPopulation, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding AddLocusCommand}"/>
+					<ui:CommandBarButton IconSource="Edit" Label="{x:Static lang:Resources.cap_edit}" ToolTip.Tip="{x:Static lang:Resources.cap_edit}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding EditLocusCommand}"/>
+					<ui:CommandBarButton IconSource="Delete" Label="{x:Static lang:Resources.cap_del}" ToolTip.Tip="{x:Static lang:Resources.cap_del}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding DelLocusCommand}"/>
+				</ui:CommandBar.PrimaryCommands>
+				<ui:CommandBar.SecondaryCommands>
+					<ui:CommandBarButton IconSource="FontSize" Label="{x:Static lang:Resources.cap_synonim}" ToolTip.Tip="{x:Static lang:Resources.cap_synonim}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+					<ui:CommandBarButton IconSource="Go" Label="{x:Static lang:Resources.cap_upload_to_excel}" ToolTip.Tip="{x:Static lang:Resources.cap_upload_to_excel}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"/>
+				</ui:CommandBar.SecondaryCommands>
+			</ui:CommandBar>
+
+			<ListBox x:Name="lbLocuses" ItemsSource="{Binding Locuses}" SelectedItem="{Binding SelectedLocus}" Classes="library-listbox">
+				
+				<ListBox.ItemTemplate>
+					<DataTemplate>
+						<Border
+						 Margin="0"
+						 Padding="8"
+						 CornerRadius="6"
+						 BorderBrush="{DynamicResource ButtonBorderBrush}"
+						 BorderThickness="1"
+						 Background="{Binding IsCalc, Converter={x:Static conv:CommonConverters.LocusCalcBackground}}">
+							<Grid ColumnDefinitions="2* *">
+								<StackPanel>
+									<TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="16"/>
+									<TextBlock Text="{Binding FreqTxt}" FontSize="12" Foreground="Gray"/>
+								</StackPanel>
+								<StackPanel Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center">
+									<TextBlock Text="{Binding IsCalcTxt}" FontSize="12" Foreground="{Binding IsCalc, Converter={x:Static conv:CommonConverters.LocusCalcForeground}}"/>
+									<!-- Иконка для нерасчётных -->
+									<material:MaterialIcon Kind="Alert" Foreground="OrangeRed" Width="20" Height="20"
+										IsVisible="{Binding IsCalc, Converter={x:Static conv:CommonConverters.LocusCalcIconVisibility}}"/>
+								</StackPanel>
+							</Grid>
+						</Border>
+					</DataTemplate>
+				</ListBox.ItemTemplate>
+			</ListBox>
+
+		</DockPanel>
+
+		<GridSplitter Grid.Column="3" Background="Transparent" Width="5" HorizontalAlignment="Stretch" />
+		<Rectangle Grid.Column="3" Fill="{DynamicResource ButtonBorderBrush}" Width="1" VerticalAlignment="Stretch" IsHitTestVisible="False"/>
+		<material:MaterialIcon Width="15" Height="15" Grid.Column="3" Kind="UnfoldMoreVertical" Foreground="{DynamicResource ButtonBorderBrush}" />
+
+		<!--Аллели-->
+		<DockPanel Grid.Column="4">
+			<ui:CommandBar DockPanel.Dock="Top" DefaultLabelPosition="Collapsed">
+				<ui:CommandBar.PrimaryCommands>
+					<ui:CommandBarButton IconSource="Add" Label="{x:Static lang:Resources.cap_add}" ToolTip.Tip="{x:Static lang:Resources.cap_add}" 
+										 IsEnabled="{Binding SelectedLocus, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding AddAlleleCommand}"/>
+					<ui:CommandBarButton IconSource="Edit" Label="{x:Static lang:Resources.cap_edit}" ToolTip.Tip="{x:Static lang:Resources.cap_edit}" 
+										 IsEnabled="{Binding SelectedAllele, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding EditAlleleCommand}"/>
+					<ui:CommandBarButton IconSource="Delete" Label="{x:Static lang:Resources.cap_del}" ToolTip.Tip="{x:Static lang:Resources.cap_del}" 
+										 IsEnabled="{Binding SelectedAllele, Converter={x:Static ObjectConverters.IsNotNull}}"
+										 Command="{Binding DelAlleleCommand}"/>
+				</ui:CommandBar.PrimaryCommands>
+			</ui:CommandBar>
+
+			<ListBox x:Name="lbAlleles" ItemsSource="{Binding Alleles}" SelectedItem="{Binding SelectedAllele}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid ColumnDefinitions="* *">
+							<TextBlock Text="{Binding AName}" VerticalAlignment="Center"/>
+							<TextBlock Text="{Binding AFreq}" VerticalAlignment="Center" Grid.Column="1"/>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ListBox>
+
+		</DockPanel>
+
+
+	</Grid>
+</UserControl>

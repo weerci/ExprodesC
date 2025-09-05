@@ -2,6 +2,7 @@
 using ExprodesC.Models;
 using ExprodesC.Services;
 using FluentAvalonia.UI.Controls;
+using System.Linq;
 
 namespace ExprodesC.Imp;
 
@@ -26,7 +27,34 @@ public class ExpMessages : IExpMessages
             Error = err
         });
 
-    public void SendMessage(string message, string caption) => _messages.Add(new() { Caption = caption, Text = message });
+    /// <inheritdoc/>
+    public void SendWarrning(string caption, string message) => _messages.Add(
+        new ()
+        {
+            Caption = caption,
+            Text = message,
+            Severity = InfoBarSeverity.Warning,
+        });
 
+    /// <inheritdoc/>
+    public void SendSuccess(string caption, string message) => _messages.Add(
+        new()
+        {
+            Caption = caption,
+            Text = message,
+            Severity = InfoBarSeverity.Success,
+        });
+
+    /// <inheritdoc/>
+    public void SendMessage(string caption, string message) => _messages.Add(new() { Caption = caption, Text = message });
+    
+    /// <inheritdoc/>
+    public void SendMessages(IEnumerable<string> messages, string caption)
+    {
+        SendMessage(messages.Aggregate("", (n, next) => n + "./n" + next), caption);
+    }
+
+    /// <inheritdoc/>
     public void SendExpMessage(ExpMessage expMessage) => _messages.Add(expMessage);
+
 }

@@ -4,7 +4,7 @@ using Avalonia.Platform.Storage;
 using Calc.Models;
 using ExprodesC.Services;
 using ExprodesC.Views.Dialogs;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using FluentAvalonia.UI.Controls;
 using Func.Services;
 using System.Collections.ObjectModel;
@@ -41,9 +41,9 @@ namespace ExprodesC.Imp
             });
         }
 
-        public async Task<object> ConfirmDeleteGenotype(string content)
+        public async Task<object> ConfirmDelete(bool confirmSetting, string content, Action<bool> action)
         {
-            if (!_settingsProvider.Value.ConfirmDeleteGenotype)
+            if (!confirmSetting)
                 return false;
 
             TaskDialog td = new()
@@ -66,18 +66,68 @@ namespace ExprodesC.Imp
             ((CheckBox)td.Footer).IsCheckedChanged += (object? sender, Avalonia.Interactivity.RoutedEventArgs e) =>
             {
                 if (sender is CheckBox cb && cb.IsChecked is bool b)
-                    _settingsProvider.Value.ConfirmDeleteGenotype = !b;
+                    action?.Invoke(b);
             };
 
             return await td.ShowAsync(true);
-
         }
 
-        public async Task<GenotypeWR?> DialogGenotype(UserControl userControl, string title)
+        /// <inheritdoc/>
+        public async Task<Population?> AddEditPopulation(UserControl content, string title)
         {
-            if (userControl is AddEditGenotype g)
+            if (content is AddEditPopulation control)
             {
-                var v = await new DialogWindow(title, userControl) { Width = 850, Height = 600 }
+                var res = await new DialogWindow(title, content) { Width = 640, Height = 290 }
+                    .ShowDialog<DialogResult>(App.MainWindow!);
+
+                if (res == DialogResult.Save)
+                {
+                    var name = control.tbName.Text;
+                    string basePop = "";
+                    if (control.cbBase.IsVisible && control.cbBase.SelectedItem is Population bp)
+                        basePop = bp.Name;
+                    else
+                        basePop = control.tbBase.Text != null ? control.tbBase.Text : Calc.Lang.Resources.cap_pop_create_manuale;
+                    if (basePop != null && name != null)
+                        return new Population() { Name = name, BaseOn = basePop };
+                }
+            }
+            return null;
+        }
+        
+        /// <inheritdoc/>
+        public async Task<LocusWR?> AddEditLocus(UserControl content, string title)
+        {
+            if (content is AddEditLocus ctrl)
+            {
+                var v = await new DialogWindow(title, content) { Width = 640, Height = 400 }
+                    .ShowDialog<DialogResult>(App.MainWindow!);
+
+                if (v == DialogResult.Save)
+                    return new LocusWR(-1, ctrl.tbName.Text!, ctrl.nbMinFreq.Value, ctrl.nbMutFreq.Value, (bool)ctrl.chbIsCalculate.IsChecked!, 0, 0);
+            }
+            return null;
+        }
+
+        /// <inheritdoc/>
+        public async Task<AlleleWR?> AddEditAllele(UserControl content, string title)
+        {
+            if (content is AddEditAllele ctrl)
+            {
+                var v = await new DialogWindow(title, content) { Width = 500, Height = 280 }
+                    .ShowDialog<DialogResult>(App.MainWindow!);
+
+                if (v == DialogResult.Save)
+                    return new AlleleWR(0, 0, ctrl.tbName.Text!, 0,  ctrl.nbFreq.Value, 0);
+            }
+            return null;
+        }
+
+        public async Task<GenotypeWR?> DialogGenotype(UserControl content, string title)
+        {
+            if (content is AddEditGenotype g)
+            {
+                var v = await new DialogWindow(title, content) { Width = 850, Height = 600 }
                     .ShowDialog<DialogResult>(App.MainWindow!);
 
                 if (v == DialogResult.Save)

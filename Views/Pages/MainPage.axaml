@@ -6,6 +6,7 @@
 			 xmlns:vm="using:ExprodesC.ViewModels"
 			 xmlns:ui="using:FluentAvalonia.UI.Controls"
 			 xmlns:ctrl="using:ExprodesC.Views.Controls"
+			 xmlns:wr="using:ExprodesC.Wrappers"
 			 
 			 xmlns:model="using:ExprodesC.Models"
 			 xmlns:material="using:Material.Icons.Avalonia"
@@ -31,7 +32,7 @@
 					<material:MaterialIcon Kind="Delete"/>
 				</Button>
 			</StackPanel>
-			<TreeView Name="tvGenotypes" ItemsSource="{Binding Nodes}" SelectionMode="Single"
+			<TreeView Name="tvGenotypes" ItemsSource="{x:Static wr:GenotypeNode.Roots}" SelectionMode="Single"
 						  SelectedItem="{Binding SelectedNode, Mode=TwoWay}">
 				<TreeView.ItemContainerTheme>
 					<ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}">
@@ -78,7 +79,7 @@
 
 		<!-- Правая панель: Колонки -->
 		<ScrollViewer Grid.Column="2" VerticalAlignment="Top">
-			<ListBox Classes="draggableVirtualizingH NoHilightListBox"
+			<ListBox x:Name="ColumnsListBox"  Classes="draggableVirtualizingH NoHilightListBox"
 				ItemsSource="{Binding Project.SelectedGolumns}">
 				<ItemsControl.ItemsPanel>
 					<ItemsPanelTemplate>

@@ -3,7 +3,7 @@ using DynamicData;
 using DynamicData.Binding;
 using ExprodesC.Models;
 using ExprodesC.ViewModels;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

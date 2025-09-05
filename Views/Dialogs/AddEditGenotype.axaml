@@ -12,6 +12,8 @@
 			 xmlns:vm="using:ExprodesC.Views.Dialogs"
 			 x:DataType="vm:AddEditGenotypeVM"
 			 x:Name="ucAddEditGenotype"
+			 
+			 
 			 >
 	<Design.DataContext>
 		<vm:AddEditGenotypeVM/>

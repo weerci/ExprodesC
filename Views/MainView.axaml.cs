@@ -1,18 +1,12 @@
 using Avalonia.Controls;
 using ExprodesC.Views.Pages;
 using FluentAvalonia.UI.Controls;
+using FluentAvalonia.UI.Media.Animation;
 
 namespace ExprodesC.Views;
 
 public partial class MainView : UserControl
 {
-    MainPage _mainPage = null!;
-    CalcPage _calcPage = null!;
-    //ComparePage _comparePage = null!;
-    //LibraryPage _libraryPage = null!;
-    SettingsPage _settingsPage = null!;
-    //HelpPage _helpPage = null!;
-
     public MainView()
     {
         InitializeComponent();
@@ -22,15 +16,14 @@ public partial class MainView : UserControl
     {
         if (e.SelectedItem is NavigationViewItem si)
         {
-            nvMain.Content = si.Name switch
-            {
-                "nviSettings" => _settingsPage ??= new SettingsPage(),
-                "nviCalc" => _calcPage ??= new CalcPage(),
-                //"nviCompare" => _comparePage ??= new ComparePage(),
-                //"nviLib" => _libraryPage ??= new LibraryPage(),
-                //"nviHelp" => _helpPage ??= new HelpPage(),
-                _ => _mainPage ??= new MainPage(),
-            };
+            if (e.SelectedItemContainer.Name == "nviSettings")
+                contentFrame.Navigate(typeof(SettingsPage), null, new EntranceNavigationTransitionInfo() { FromHorizontalOffset = 200, FromVerticalOffset = 0 }); 
+            else if (e.SelectedItemContainer.Name == "nviCalc")
+                contentFrame.Navigate(typeof(CalcPage), null, new EntranceNavigationTransitionInfo() { FromHorizontalOffset = 200, FromVerticalOffset = 0 });
+            else if (e.SelectedItemContainer.Name == "nviHome")
+                contentFrame.Navigate(typeof(MainPage), null, new EntranceNavigationTransitionInfo() { FromHorizontalOffset = 200, FromVerticalOffset = 0 });
+            else if (e.SelectedItemContainer.Name == "nviLib")
+                contentFrame.Navigate(typeof(LibraryPage), null, new EntranceNavigationTransitionInfo() { FromHorizontalOffset = 200, FromVerticalOffset = 0 });
         }
     }
 }

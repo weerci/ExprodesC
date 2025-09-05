@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExprodesC.Views.Wrappers;
+namespace ExprodesC.Wrappers;
 
 public class GenotypeWR() : ReactiveObject
 {
@@ -17,7 +17,7 @@ public class GenotypeWR() : ReactiveObject
     }
 
 
-    public Genotype Genotype { get; } 
+    public Genotype Genotype { get; } = null!;
     [Reactive] public bool IsSelected { get; set; }
 
     [Reactive] public bool IsControl { get; set; } 

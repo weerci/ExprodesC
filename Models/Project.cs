@@ -6,7 +6,7 @@ using DynamicData.Binding;
 using ExprodesC.Imp;
 using ExprodesC.Services;
 using ExprodesC.Views.Controls;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using Func;
 using Func.Impl;
 using Func.Meta;
@@ -34,41 +34,34 @@ public class Project : ReactiveObject, IProject
         ReloadFromDb();
         IsChanged = false; // Необходимо, поскольку ReloadFromDb() устанавливает проект как измененный
 
-        Genotypes = _genotypes.Connect().Publish();
+        Genotypes = _genotypes.Connect().Do(_ => { HasGenotype = _genotypes.Count > 0;}).Publish();
 
-        var selectedControl = _genotypes.Connect()
+        var selectedControl = Genotypes
            .AutoRefresh(ar => ar.IsSelected)
            .Filter(g => g.IsSelected)
-           .Do(d =>
+           .Transform(t => new GenotypeColumnVM(t, this))
+           .Bind(out _selectedGolumns)
+           .Subscribe(s =>
            {
-               var curr = d.First().Item.Current;
-               if (curr == null)
-               {
-                   SelectedGolumns.Clear();
-                   return;
-               }
-               if (curr.IsSelected == true)
-                   SelectedGolumns.Add(new GenotypeColumnVM(curr, this));
-               else
-               {
-                   var curColumn = SelectedGolumns.FirstOrDefault(n => n.GenotypeWR.Genotype.Id == curr.Genotype.Id);
-                   if (curColumn != null)
-                       SelectedGolumns.Remove(curColumn);
-               }
-           })
-           .Subscribe(s => HasSelected = SelectedGolumns.Any(n => n.GenotypeWR.IsSelected));
-
-        SelectedGolumns.CollectionChanged += (s, e) => UpdateAllGenomeRows();
+               SelectedCount = _selectedGolumns.Count;
+               HasSelected = _selectedGolumns.Count > 0;
+               UpdateAllGenomeRows();
+           });
 
         _cleanUp = new CompositeDisposable(Genotypes.Connect(), selectedControl);
 
     }
-
-    public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; } = new ObservableCollectionExtended<GenotypeColumnVM>();
+    /// <inheritdoc/>
+    [Reactive] public int SelectedCount { get; set; }
 
     /// <inheritdoc/>
-    [Reactive]
-    public GenotypeWR? CurrentGenotype { get; set; }
+    [Reactive] public bool HasGenotype { get; set; }
+
+    //public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; } = new ObservableCollectionExtended<GenotypeColumnVM>();
+    public ReadOnlyObservableCollection<GenotypeColumnVM> SelectedGolumns => _selectedGolumns;
+    public ReadOnlyObservableCollection<GenotypeColumnVM> _selectedGolumns;
+    /// <inheritdoc/>
+    [Reactive] public GenotypeWR? CurrentGenotype { get; set; }
 
     /// <inheritdoc/>
     public IConnectableObservable<IChangeSet<GenotypeWR>> Genotypes { get; }
@@ -140,7 +133,7 @@ public class Project : ReactiveObject, IProject
     });
 
     /// <inheritdoc/>
-    public async void  EditGenotype(GenotypeWR genotype)
+    public async void EditGenotype(GenotypeWR genotype)
     {
         await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
         UpdateAllGenomeRows();

@@ -1,17 +1,17 @@
 ﻿using Calc.Models;
 using DynamicData;
 using DynamicData.Binding;
+using ExprodesC.Imp;
 using ExprodesC.Models;
 using ExprodesC.Services;
 using ExprodesC.Views.Controls;
-using ExprodesC.Views.Wrappers;
+using ExprodesC.Wrappers;
 using FluentAvalonia.UI.Controls;
 using Func;
 using Func.Meta;
+using Func.Services;
 using System.Collections.ObjectModel;
-using System.Data.Common;
 using System.Diagnostics;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
@@ -19,23 +19,21 @@ using System.Threading.Tasks;
 
 namespace ExprodesC.ViewModels;
 
-public class MainPageVM() : BaseVM
+public class MainPageVM() : BaseVM, IDisposable
 {
-    readonly IDisposable _cleanUp = null!;
-    readonly IDialogService _dialogService = null!;
-    readonly static Node? _profiles = new(new(new(Lang.Resources.cap_profiles, []) { Id = Node.GuidProfile }));
-    readonly static Node? _controls = new(new(new(Lang.Resources.cap_contols, []) { Id = Node.GuidControl }));
-    readonly static Node core = new(
-            new(new(Lang.Resources.cap_genotypes, []) { Id = Node.GuidGenotypes }),
-            new([_profiles, _controls]));
-    public MainPageVM(IProject project, IDialogService dialogService) : this()
+    private readonly IDisposable _cleanUp;
+    private readonly IDialogService _dialogService;
+    private readonly ISettingsProvider<ExSettingData> _settings;
+
+    public MainPageVM(IProject project, IDialogService dialogService, ISettingsProvider<ExSettingData> settings) : this()
     {
-        Project = project;
-        _dialogService = dialogService;
+        Project = project ?? throw new ArgumentNullException(nameof(project));
+        _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
+        _settings = settings ?? throw new ArgumentNullException(nameof(settings));
 
         var canAddGenotype = this
             .WhenAnyValue(x => x.Project.CurrentGenotype)
-            .Select(curr => { return curr?.Genotype.Id == Node.GuidProfile || curr?.Genotype.Id == Node.GuidControl; });
+            .Select(curr => curr?.Genotype.Id == GenotypeNode.GuidProfile || curr?.Genotype.Id == GenotypeNode.GuidControl);
         var canAddLoader = canAddGenotype.Subscribe(x => NodeSelected = x);
 
         var canDelGenotype = this
@@ -44,114 +42,60 @@ public class MainPageVM() : BaseVM
             {
                 if (curr == null)
                     return false;
-                //TODO Не отображается название "Новый проект" или название файла проекта 
-                return
-                    curr?.Genotype.Id != Node.GuidGenotypes &&
-                    curr?.Genotype.Id != Node.GuidProfile &&
-                    curr?.Genotype.Id != Node.GuidControl;
+                return curr.Genotype.Id != GenotypeNode.GuidGenotypes &&
+                       curr.Genotype.Id != GenotypeNode.GuidProfile &&
+                       curr.Genotype.Id != GenotypeNode.GuidControl;
             });
         var canDelLoader = canDelGenotype.Subscribe(b => ListSelected = b);
 
         var profilesLoader = Project.Genotypes
-            .Filter(g =>
-            !g.IsControl)
-            .Transform(g => new Node(g))
-            .Sort(SortExpressionComparer<Node>.Ascending(n => n.GenotypeWR.Genotype.Name))
-            .Bind(out _profiles!._SubNodes)
+            .Filter(g => !g.IsControl)
+            .Transform(g => new GenotypeNode(g))
+            .Sort(SortExpressionComparer<GenotypeNode>.Ascending(n => n.GenotypeWR.Genotype.Name))
+            .Bind(out GenotypeNode.Profiles!._SubNodes)
             .Subscribe();
 
         var controlLoader = Project.Genotypes
            .Filter(g => g.IsControl)
-           .Transform(g => new Node(g))
-           .Sort(SortExpressionComparer<Node>.Ascending(n => n.GenotypeWR.Genotype.Name))
-           .Bind(out _controls!._SubNodes)
+           .Transform(g => new GenotypeNode(g))
+           .Sort(SortExpressionComparer<GenotypeNode>.Ascending(n => n.GenotypeWR.Genotype.Name))
+           .Bind(out GenotypeNode.Controls!._SubNodes)
            .Subscribe();
 
         this.WhenAnyValue(vm => vm.SelectedNode)
-            .Subscribe(n =>
-                Project.CurrentGenotype = n?.GenotypeWR
-            );
+            .Subscribe(n => Project.CurrentGenotype = n?.GenotypeWR);
 
         AddGenotypeCommand = ReactiveCommand.CreateFromTask(addGenotype, canAddGenotype);
-        DelGenotypeCommand = ReactiveCommand.Create(delGenotype, canDelGenotype);
+        DelGenotypeCommand = ReactiveCommand.CreateFromTask(delGenotype, canDelGenotype);
         EditGenotypeCommand = ReactiveCommand.CreateFromTask<GenotypeWR>(editGenotype, canDelGenotype);
         SelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(Project.SelectGenotype, canDelGenotype);
         UnSelectGenotypeCommand = ReactiveCommand.Create<GenotypeWR>(Project.UnSelectGenotype, canDelGenotype);
 
-        //TODO для кнопок на выбранных элементах не нужно отслеживать возможность удаления в связи с выбранностью в дереве canDelGenotype
         _cleanUp = new CompositeDisposable(canDelLoader, canAddLoader, profilesLoader, controlLoader);
-
     }
 
     #region Properties
-
-    public IProject Project { get; set; } = null!;
-
-    /// <summary>
-    /// Иерархический список содержащий загруженные в проект генотипы.
-    /// Состоит из двух частей - профили и контроли. 
-    /// </summary>
-    public ObservableCollection<Node> Nodes { get; } = [core];
-
-
-    /// <summary>
-    /// Выбранный в иерархическом списке <see cref="Nodes"/> элемент
-    /// </summary>
-    [Reactive] public Node? SelectedNode { get; set; }
-
-    /// <summary>
-    /// Выбран узловой элемент иерарахического списка
-    /// </summary>
+    public IProject Project { get; }
+    [Reactive] public GenotypeNode? SelectedNode { get; set; }
     [Reactive] public bool NodeSelected { get; set; }
-
-    /// <summary>
-    /// Выбран лист списка (профиль или контрол)
-    /// </summary>
     [Reactive] public bool ListSelected { get; set; }
-    
-
     #endregion
 
-    #region Command
-
-    /// <summary>
-    /// Команда удаления генотипа из иерархического списка
-    /// </summary>
+    #region Commands
     public RxCommandUnit? DelGenotypeCommand { get; }
-
-    /// <summary>
-    /// Команда добаления генотипа в иерархический список
-    /// </summary>
     public RxCommandUnit? AddGenotypeCommand { get; }
-
-    /// <summary>
-    /// Отркрывается окно для редактирования генотипа
-    /// </summary>
     public RxCommandGenotype? EditGenotypeCommand { get; }
-
-    /// <summary>
-    /// Выбор генотипа в таблицу для работы
-    /// </summary>
-    public RxCommandGenotype SelectGenotypeCommand { get; } = null!;
-
-    /// <summary>
-    /// Удаление выбранного для работы элемента
-    /// </summary>
-    public RxCommandGenotype UnSelectGenotypeCommand { get; } = null!;
-
+    public RxCommandGenotype SelectGenotypeCommand { get; }
+    public RxCommandGenotype UnSelectGenotypeCommand { get; }
     #endregion
 
-    #region Функции реализующие команды представления
+    #region Command Logic
+    private async Task editGenotype(GenotypeWR genotype)
+        => await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
 
-    //TODO Необходимо сделать расцветку по совпадающим аллелям
-
-     async Task editGenotype(GenotypeWR genotype) => await _dialogService.DialogGenotype(new AddEditGenotype(genotype), Lang.Resources.cap_edit_genotype);
-
-    //TODO Форма диалога не закрывается при нажатии на Enter
-    async Task addGenotype()
+    private async Task addGenotype()
     {
-        var isControl = SelectedNode?.GenotypeWR.Genotype.Id == Node.GuidControl;
-
+        var isControl = SelectedNode?.GenotypeWR.Genotype.Id == GenotypeNode.GuidControl;
         var newGenotypeWR = await _dialogService.DialogGenotype(new AddEditGenotype(GenotypeWR.Empty(isControl)), Lang.Resources.cap_add_genotype);
         if (newGenotypeWR == null)
             return;
@@ -159,18 +103,18 @@ public class MainPageVM() : BaseVM
         void setCurrentNode(GenotypeWR g, bool isControl)
         {
             SelectedNode = isControl ?
-                _controls?.SubNodes?.FirstOrDefault(n => n.GenotypeWR == g) :
-                _profiles?.SubNodes?.FirstOrDefault(n => n.GenotypeWR == g);
+                GenotypeNode.Controls?.SubNodes?.FirstOrDefault(n => n.GenotypeWR == g) :
+                GenotypeNode.Profiles?.SubNodes?.FirstOrDefault(n => n.GenotypeWR == g);
         }
 
-        Project.AddGenotypes([newGenotypeWR]).Match(g => setCurrentNode(g, isControl));
-
+        Project.AddGenotypes(new[] { newGenotypeWR }).Match(g => setCurrentNode(g, isControl));
     }
 
-    private async void delGenotype()
+    private async Task delGenotype()
     {
-        var res = await _dialogService.ConfirmDeleteGenotype(
-            string.Format(Lang.Resources.conf_delete_genotype, SelectedNode?.GenotypeWR.Genotype.Name));
+        var res = await _dialogService.ConfirmDelete(_settings.Value.ConfirmDeleteGenotype,
+            string.Format(Lang.Resources.conf_delete_genotype, SelectedNode?.GenotypeWR.Genotype.Name),
+            b => { _settings.Value.ConfirmDeleteGenotype = !b; });
 
         if (res is TaskDialogStandardResult r && r != TaskDialogStandardResult.Yes)
             return;
@@ -179,59 +123,26 @@ public class MainPageVM() : BaseVM
         {
             var isControl = SelectedNode.GenotypeWR.IsControl;
             var idx = isControl ?
-               _controls?.SubNodes?.IndexOf(SelectedNode) ?? 0 :
-               _profiles?.SubNodes?.IndexOf(SelectedNode) ?? 0;
+               GenotypeNode.Controls?.SubNodes?.IndexOf(SelectedNode) ?? 0 :
+               GenotypeNode.Profiles?.SubNodes?.IndexOf(SelectedNode) ?? 0;
 
             var nextNode = idx switch
             {
-                > 0 => isControl ? _controls?.SubNodes?.ElementAt(idx - 1) : _profiles?.SubNodes?.ElementAt(idx - 1),
-                _ => isControl ? _controls : _profiles
+                > 0 => isControl ? GenotypeNode.Controls?.SubNodes?.ElementAt(idx - 1) : GenotypeNode.Profiles?.SubNodes?.ElementAt(idx - 1),
+                _ => isControl ? GenotypeNode.Controls : GenotypeNode.Profiles
             };
 
-            Project.RemoveGenotypes([SelectedNode.GenotypeWR]);
+            Project.RemoveGenotypes(new[] { SelectedNode.GenotypeWR });
             SelectedNode = nextNode;
         }
-
-        #endregion
     }
+    #endregion
 
-    public class Node
+    #region IDisposable
+    public void Dispose()
     {
-        /// <summary>
-        /// Верхний уровень дерева генотипов содежит название "Генотипы"
-        /// </summary>
-        public static string GuidGenotypes => "{CF211558-2576-4B6A-B612-E990C949A041}";
-        /// <summary>
-        /// Поддерево "Профили"
-        /// </summary>
-        public static string GuidProfile => "{CF211558-2576-4B6A-B612-E990C949A042}";
-        /// <summary>
-        /// Поддерево "Эксперты/контроли"
-        /// </summary>
-        public static string GuidControl => "{CF211558-2576-4B6A-B612-E990C949A043}";
-
-        public ReadOnlyObservableCollection<Node>? SubNodes => _SubNodes;
-        public ReadOnlyObservableCollection<Node>? _SubNodes;
-        public GenotypeWR GenotypeWR { get; }
-
-        /// <summary>
-        /// True - если выбранный node является предопределенной папкой (генотипы, проект, контроль/эксперт)
-        /// </summary>
-        public bool IsFolder =>
-            GenotypeWR.Genotype.Id == "{CF211558-2576-4B6A-B612-E990C949A041}" ||
-            GenotypeWR.Genotype.Id == "{CF211558-2576-4B6A-B612-E990C949A042}" ||
-            GenotypeWR.Genotype.Id == "{CF211558-2576-4B6A-B612-E990C949A043}";
-
-        public Node(GenotypeWR genotypeWr)
-        {
-            GenotypeWR = genotypeWr;
-        }
-
-        public Node(GenotypeWR genotypeWR, ReadOnlyObservableCollection<Node> subNodes)
-        {
-            GenotypeWR = genotypeWR;
-            _SubNodes = subNodes;
-        }
-
+        _cleanUp?.Dispose();
+        GC.SuppressFinalize(this);
     }
+    #endregion
 }

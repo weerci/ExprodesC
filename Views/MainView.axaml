@@ -15,8 +15,9 @@
 	<Design.DataContext>
 		<vm:MainViewVM />
 	</Design.DataContext>
-	
+
 	<Grid RowDefinitions="Auto, *">
+
 		<Grid Name="TitleBarHost" ColumnDefinitions="Auto Auto * Auto">
 			<ToggleButton Name="tbIcon" Theme="{DynamicResource TransparentButton}" Padding="11,5,7,6" Margin="3,0,0,0">
 				<Image
@@ -55,17 +56,18 @@
 			</Menu>
 
 		</Grid>
+
 		<ui:NavigationView x:Name="nvMain" PaneDisplayMode="Left" Grid.Row="1"
 							   IsPaneOpen="{Binding ElementName=tbIcon, Path=IsChecked}"
 							   IsPaneToggleButtonVisible="False" IsSettingsVisible="False"
 							   SelectionChanged="NavigationView_SelectionChanged">
-			
+			<ui:NavigationView.Content>
+				<ui:Frame x:Name="contentFrame"/>
+			</ui:NavigationView.Content>
 			<ui:NavigationView.MenuItems>
 				<ui:NavigationViewItem Name="nviHome" IsSelected="True" Content="{x:Static lang:Resources.cap_projects_select}" IconSource="Home"/>
 				<ui:NavigationViewItem Name="nviCalc" Content="{x:Static lang:Resources.cap_calculate}" IconSource="Calculator"
-									   IsEnabled="{Binding Project.HasSelected}"/>
-				<!--ui:NavigationViewItem Name="nviCompare" Content="{x:Static lang:Resources.cap_compare}" IconSource="Ruler"
-									   IsEnabled="{Binding Project.HasSelected}"/-->
+									   IsEnabled="{Binding Project.HasGenotype}"/>
 				<ui:NavigationViewItem Name="nviLib" Content="{x:Static lang:Resources.cap_library}" IconSource="Library" />
 			</ui:NavigationView.MenuItems>
 			<ui:NavigationView.FooterMenuItems>

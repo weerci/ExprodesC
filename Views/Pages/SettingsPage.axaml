@@ -65,13 +65,13 @@
 		<GridSplitter IsVisible="{Binding !IsCompactMode}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
                       Background="Transparent" Width="5" HorizontalAlignment="Stretch" />
 		<Rectangle IsVisible="{Binding !IsCompactMode}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3"
-                   Fill="{DynamicResource ButtonBorderBrush}" Width="1" VerticalAlignment="Stretch" />
-		
+                   Fill="{DynamicResource ButtonBorderBrush}" Width="1" VerticalAlignment="Stretch" IsHitTestVisible="False"/>
 		<avalonia:MaterialIcon IsVisible="{Binding !IsCompactMode}" Grid.Row="0" Grid.RowSpan="3" Width="15"
                                Height="15" Grid.Column="1" Kind="UnfoldMoreVertical"
                                Foreground="{DynamicResource ButtonBorderBrush}" />
+		
 		<Rectangle Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Fill="{DynamicResource ButtonBorderBrush}"
-                   Height="1" HorizontalAlignment="Stretch" />
+                   Height="1" HorizontalAlignment="Stretch"/>
 		<ContentControl Grid.Row="2" Grid.Column="2" Content="{Binding CurrentView}" />
 		<ToggleButton Height="100" Theme="{DynamicResource TransparentButton}" Padding="0" Margin="-4,0,0,0"
 					 Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center"

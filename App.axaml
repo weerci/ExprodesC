@@ -4,14 +4,21 @@
              xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			 xmlns:ctrl="using:ExprodesC.Views.Controls"
              x:Class="ExprodesC.App"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
              >
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
   
     <Application.Styles>
 		<styling:FluentAvaloniaTheme PreferSystemTheme="False" PreferUserAccentColor="True" />
-		<StyleInclude Source="avares://Xaml.Behaviors.Interactions.Draggable/Styles.axaml" />
 		<StyleInclude Source="avares://ExprodesC/Assets/Styles/ListBoxNoHilight.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/Flyout.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/DataGrid.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/Buttons.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/CommandBar.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/InfoBar.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/LibraryPage.axaml" />
 		<avalonia:MaterialIconStyles />
+
 	</Application.Styles>
 
 </Application>

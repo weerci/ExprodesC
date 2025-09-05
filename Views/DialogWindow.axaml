@@ -4,21 +4,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="ExprodesC.DialogWindow"
-		xmlns:vm="using:ExprodesC.ViewModels"
-		x:DataType="vm:BaseVM"
+		xmlns:fs="using:Func.Services"
+		x:DataType="fs:ICanSave"
 		
 		xmlns:lang="using:ExprodesC.Lang"
 		SizeToContent="Manual"
 		WindowStartupLocation="CenterOwner"
 		ShowInTaskbar="False"
 		ExtendClientAreaToDecorationsHint="True"
+		RenderOptions.BitmapInterpolationMode="HighQuality"
+		xmlns:material="using:Material.Icons.Avalonia"
+		
+        ExtendClientAreaChromeHints="NoChrome"
+		
 		>
-	<Design.DataContext>
-		<vm:BaseVM/>
-	</Design.DataContext>
+	
 	<Grid RowDefinitions="Auto * Auto" Margin="10">
-		<TextBlock x:Name="tbTitle" />
-		<ContentControl x:Name="ccPlace" Grid.Row="1" Margin="10"/>
+		<DockPanel >
+			<TextBlock x:Name="tbTitle" DockPanel.Dock="Left"/>
+			<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_close}" DockPanel.Dock="Right" Click="ButtonClose_Click">
+			<material:MaterialIcon Kind="Close"/>
+			</Button>
+			<Panel/>
+		</DockPanel>
+		<ContentControl x:Name="ccPlace" Grid.Row="1" Margin="0 10"/>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Grid.Row="2">
 			<Button x:Name="btnSave" Content="{x:Static lang:Resources.cap_save}" IsEnabled="{Binding CanSave}" Click="ButtonSave_Click"  Width="100"/>
 			<Button Content="{x:Static lang:Resources.cap_close}" Click="ButtonClose_Click" Width="100"/>

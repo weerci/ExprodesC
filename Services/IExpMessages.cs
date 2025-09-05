@@ -33,6 +33,27 @@ public interface IExpMessages
     public void SendMessage(string message, string caption);
 
     /// <summary>
+    /// Отправление предупреждения
+    /// </summary>
+    /// <param name="message">Предупреждение</param>
+    /// <param name="caption">Заголовок предупреждения</param>
+    public void SendWarrning(string message, string caption);
+
+    /// <summary>
+    /// Отправление сообщения об удачном завершении задачи
+    /// </summary>
+    /// <param name="message">Сообщение об удачном завершении</param>
+    /// <param name="caption">Заголовок сообщения</param>
+    public void SendSuccess(string message, string caption);
+
+    /// <summary>
+    /// Отправление нескольких сообщений (объединяются в строку с разделителями /n)
+    /// </summary>
+    /// <param name="messages">Сообщениия</param>
+    /// <param name="caption">Заголовок сообщения</param>
+    public void SendMessages(IEnumerable<string> messages, string caption);
+
+    /// <summary>
     /// Отправления произвольного сообщения
     /// </summary>
     /// <param name="expMessage">Произвольное сообщение</param>

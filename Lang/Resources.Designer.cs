@@ -61,276 +61,6 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Likelihood ratio.
-        /// </summary>
-        public static string calc_method_lr {
-            get {
-                return ResourceManager.GetString("calc_method_lr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The probability of a random match.
-        /// </summary>
-        public static string calc_method_p {
-            get {
-                return ResourceManager.GetString("calc_method_p", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Probability of identity/kinship.
-        /// </summary>
-        public static string calc_method_pp {
-            get {
-                return ResourceManager.GetString("calc_method_pp", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 2 persons (2 assumed persons).
-        /// </summary>
-        public static string calc_mix_aa {
-            get {
-                return ResourceManager.GetString("calc_mix_aa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 3 persons (3 assumed persons).
-        /// </summary>
-        public static string calc_mix_aaa {
-            get {
-                return ResourceManager.GetString("calc_mix_aaa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 3 persons (2 suspected + 1 unknown).
-        /// </summary>
-        public static string calc_mix_aau {
-            get {
-                return ResourceManager.GetString("calc_mix_aau", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 2 persons (1 assumed + 1 unknown).
-        /// </summary>
-        public static string calc_mix_au {
-            get {
-                return ResourceManager.GetString("calc_mix_au", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 3 persons (1 presumed + 2 unknown).
-        /// </summary>
-        public static string calc_mix_auu {
-            get {
-                return ResourceManager.GetString("calc_mix_auu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Direct identification.
-        /// </summary>
-        public static string calc_mix_direct {
-            get {
-                return ResourceManager.GetString("calc_mix_direct", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 2 persons (1 known + 1 assumed).
-        /// </summary>
-        public static string calc_mix_ka {
-            get {
-                return ResourceManager.GetString("calc_mix_ka", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 3 persons (1 known + 2 suspected).
-        /// </summary>
-        public static string calc_mix_kaa {
-            get {
-                return ResourceManager.GetString("calc_mix_kaa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A mixture of 3 persons (1 known + 1 assumed + 1 unknown).
-        /// </summary>
-        public static string calc_mix_kau {
-            get {
-                return ResourceManager.GetString("calc_mix_kau", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A child and one prospective parent.
-        /// </summary>
-        public static string calc_rel_ca {
-            get {
-                return ResourceManager.GetString("calc_rel_ca", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A child and two prospective parents.
-        /// </summary>
-        public static string calc_rel_caa {
-            get {
-                return ResourceManager.GetString("calc_rel_caa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked, the intended parent, and the intended grandparent.
-        /// </summary>
-        public static string calc_rel_cag {
-            get {
-                return ResourceManager.GetString("calc_rel_cag", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked, the alleged parent, and the alleged grandparents.
-        /// </summary>
-        public static string calc_rel_cagg {
-            get {
-                return ResourceManager.GetString("calc_rel_cagg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked, the alleged parent, and one alleged sibling.
-        /// </summary>
-        public static string calc_rel_cas {
-            get {
-                return ResourceManager.GetString("calc_rel_cas", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Two children and one prospective parent.
-        /// </summary>
-        public static string calc_rel_cca {
-            get {
-                return ResourceManager.GetString("calc_rel_cca", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Two children and two prospective parents.
-        /// </summary>
-        public static string calc_rel_ccaa {
-            get {
-                return ResourceManager.GetString("calc_rel_ccaa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Three children and one prospective parent.
-        /// </summary>
-        public static string calc_rel_ccca {
-            get {
-                return ResourceManager.GetString("calc_rel_ccca", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Three children and two prospective parents.
-        /// </summary>
-        public static string calc_rel_cccaa {
-            get {
-                return ResourceManager.GetString("calc_rel_cccaa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Three children, one known and one alleged parent.
-        /// </summary>
-        public static string calc_rel_cccka {
-            get {
-                return ResourceManager.GetString("calc_rel_cccka", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Two children, one known and one alleged parent.
-        /// </summary>
-        public static string calc_rel_ccka {
-            get {
-                return ResourceManager.GetString("calc_rel_ccka", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked and the alleged grandmother (grandfather).
-        /// </summary>
-        public static string calc_rel_cg {
-            get {
-                return ResourceManager.GetString("calc_rel_cg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked, the alleged grandparents.
-        /// </summary>
-        public static string calc_rel_cgg {
-            get {
-                return ResourceManager.GetString("calc_rel_cgg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The child, the grandparent, and the verified parent of the child.
-        /// </summary>
-        public static string calc_rel_cgv {
-            get {
-                return ResourceManager.GetString("calc_rel_cgv", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Child, one known and one presumed parent.
-        /// </summary>
-        public static string calc_rel_cka {
-            get {
-                return ResourceManager.GetString("calc_rel_cka", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на A child, one known parent, a grandparent, and a verifiable parent of the child.
-        /// </summary>
-        public static string calc_rel_ckgv {
-            get {
-                return ResourceManager.GetString("calc_rel_ckgv", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person being checked and one alleged brother (sister).
-        /// </summary>
-        public static string calc_rel_cs {
-            get {
-                return ResourceManager.GetString("calc_rel_cs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на The person under review and two alleged siblings.
-        /// </summary>
-        public static string calc_rel_css {
-            get {
-                return ResourceManager.GetString("calc_rel_css", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Add.
         /// </summary>
         public static string cap_add {
@@ -345,6 +75,33 @@ namespace ExprodesC.Lang {
         public static string cap_add_genotype {
             get {
                 return ResourceManager.GetString("cap_add_genotype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Base population.
+        /// </summary>
+        public static string cap_base_population {
+            get {
+                return ResourceManager.GetString("cap_base_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на При создании популяции на основе другой, для новой популяции создаются новые локусы и аллели. Данные по локусам и аллелям, в том числе имена и частоты встречаемости - копируются..
+        /// </summary>
+        public static string cap_base_population_desc {
+            get {
+                return ResourceManager.GetString("cap_base_population_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на A population is based on a population.
+        /// </summary>
+        public static string cap_based_population {
+            get {
+                return ResourceManager.GetString("cap_based_population", resourceCulture);
             }
         }
         
@@ -394,6 +151,24 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Down.
+        /// </summary>
+        public static string cap_down {
+            get {
+                return ResourceManager.GetString("cap_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download population.
+        /// </summary>
+        public static string cap_down_population {
+            get {
+                return ResourceManager.GetString("cap_down_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Edit.
         /// </summary>
         public static string cap_edit {
@@ -403,11 +178,38 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Edit the genotype.
+        ///   Ищет локализованную строку, похожую на Editing the allele.
+        /// </summary>
+        public static string cap_edit_allele {
+            get {
+                return ResourceManager.GetString("cap_edit_allele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Editing the genotype.
         /// </summary>
         public static string cap_edit_genotype {
             get {
                 return ResourceManager.GetString("cap_edit_genotype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Editing the locus.
+        /// </summary>
+        public static string cap_edit_locus {
+            get {
+                return ResourceManager.GetString("cap_edit_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Editing the population.
+        /// </summary>
+        public static string cap_edit_population {
+            get {
+                return ResourceManager.GetString("cap_edit_population", resourceCulture);
             }
         }
         
@@ -417,6 +219,15 @@ namespace ExprodesC.Lang {
         public static string cap_file_save_as {
             get {
                 return ResourceManager.GetString("cap_file_save_as", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Frequency of occurrence of the allele.
+        /// </summary>
+        public static string cap_freq_allele {
+            get {
+                return ResourceManager.GetString("cap_freq_allele", resourceCulture);
             }
         }
         
@@ -457,6 +268,24 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Hide genotypes.
+        /// </summary>
+        public static string cap_hide_genotypes {
+            get {
+                return ResourceManager.GetString("cap_hide_genotypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Is calculated.
+        /// </summary>
+        public static string cap_is_calculate {
+            get {
+                return ResourceManager.GetString("cap_is_calculate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Library.
         /// </summary>
         public static string cap_library {
@@ -466,11 +295,83 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Min. frequency.
+        /// </summary>
+        public static string cap_min_freq {
+            get {
+                return ResourceManager.GetString("cap_min_freq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Frequency of mutation.
+        /// </summary>
+        public static string cap_mut_freq {
+            get {
+                return ResourceManager.GetString("cap_mut_freq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Name.
         /// </summary>
         public static string cap_name {
             get {
                 return ResourceManager.GetString("cap_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name of allele.
+        /// </summary>
+        public static string cap_name_allele {
+            get {
+                return ResourceManager.GetString("cap_name_allele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name of locus.
+        /// </summary>
+        public static string cap_name_locus {
+            get {
+                return ResourceManager.GetString("cap_name_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name of population.
+        /// </summary>
+        public static string cap_name_population {
+            get {
+                return ResourceManager.GetString("cap_name_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New allele.
+        /// </summary>
+        public static string cap_new_allele {
+            get {
+                return ResourceManager.GetString("cap_new_allele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New locus.
+        /// </summary>
+        public static string cap_new_locus {
+            get {
+                return ResourceManager.GetString("cap_new_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New population.
+        /// </summary>
+        public static string cap_new_population {
+            get {
+                return ResourceManager.GetString("cap_new_population", resourceCulture);
             }
         }
         
@@ -583,11 +484,20 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Theme.
+        ///   Ищет локализованную строку, похожую на Show genotypes.
         /// </summary>
-        public static string cap_theme {
+        public static string cap_show_genotypes {
             get {
-                return ResourceManager.GetString("cap_theme", resourceCulture);
+                return ResourceManager.GetString("cap_show_genotypes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Synonoms.
+        /// </summary>
+        public static string cap_synonim {
+            get {
+                return ResourceManager.GetString("cap_synonim", resourceCulture);
             }
         }
         
@@ -601,11 +511,47 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Up.
+        /// </summary>
+        public static string cap_up {
+            get {
+                return ResourceManager.GetString("cap_up", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Upload population.
+        /// </summary>
+        public static string cap_up_population {
+            get {
+                return ResourceManager.GetString("cap_up_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Upload to Excel.
+        /// </summary>
+        public static string cap_upload_to_excel {
+            get {
+                return ResourceManager.GetString("cap_upload_to_excel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Confirmation of deletion.
         /// </summary>
         public static string conf_delete {
             get {
                 return ResourceManager.GetString("conf_delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirm the deletion of the allele&apos;{0}&apos;.
+        /// </summary>
+        public static string conf_delete_allele {
+            get {
+                return ResourceManager.GetString("conf_delete_allele", resourceCulture);
             }
         }
         
@@ -619,11 +565,65 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirm the deletion of the locus&apos;{0}&apos;.
+        /// </summary>
+        public static string conf_delete_locus {
+            get {
+                return ResourceManager.GetString("conf_delete_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirm the deletion of the population &apos;{0}&apos;.
+        /// </summary>
+        public static string conf_delete_population {
+            get {
+                return ResourceManager.GetString("conf_delete_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на If not selected, the allele will be deleted without notifying the user..
+        /// </summary>
+        public static string desc_confirm_delete_allele {
+            get {
+                return ResourceManager.GetString("desc_confirm_delete_allele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на If not selected, the genotype will be deleted without notifying the user..
         /// </summary>
         public static string desc_confirm_delete_genotype {
             get {
                 return ResourceManager.GetString("desc_confirm_delete_genotype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на If not selected, the locus will be deleted without notifying the user..
+        /// </summary>
+        public static string desc_confirm_delete_locus {
+            get {
+                return ResourceManager.GetString("desc_confirm_delete_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на If not selected, the population will be deleted without notifying the user..
+        /// </summary>
+        public static string desc_confirm_delete_population {
+            get {
+                return ResourceManager.GetString("desc_confirm_delete_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Если пункт «Участвует в расчетах» не отмечен, то данный локус в математических расчетах не учитывается, но его профиль выводится в таблицу генотипов .
+        /// </summary>
+        public static string desc_is_calc {
+            get {
+                return ResourceManager.GetString("desc_is_calc", resourceCulture);
             }
         }
         
@@ -637,20 +637,29 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The list is empty.
+        ///   Ищет локализованную строку, похожую на Error adding locus.
         /// </summary>
-        public static string err_empty_list {
+        public static string err_add_locus {
             get {
-                return ResourceManager.GetString("err_empty_list", resourceCulture);
+                return ResourceManager.GetString("err_add_locus", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The value is empty.
+        ///   Ищет локализованную строку, похожую на Error when creating a population.
         /// </summary>
-        public static string err_empty_value {
+        public static string err_add_population {
             get {
-                return ResourceManager.GetString("err_empty_value", resourceCulture);
+                return ResourceManager.GetString("err_add_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error when editing the population.
+        /// </summary>
+        public static string err_edit_population {
+            get {
+                return ResourceManager.GetString("err_edit_population", resourceCulture);
             }
         }
         
@@ -660,6 +669,42 @@ namespace ExprodesC.Lang {
         public static string err_load_profile {
             get {
                 return ResourceManager.GetString("err_load_profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The population name must be unique..
+        /// </summary>
+        public static string err_pop_unique {
+            get {
+                return ResourceManager.GetString("err_pop_unique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Calculation error.
+        /// </summary>
+        public static string err_research_calc {
+            get {
+                return ResourceManager.GetString("err_research_calc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на (by default).
+        /// </summary>
+        public static string msg_by_default {
+            get {
+                return ResourceManager.GetString("msg_by_default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The current population cannot be deleted or edited. You need to select a different population, the default population, and then delete or edit the current one..
+        /// </summary>
+        public static string msg_cant_delete_population {
+            get {
+                return ResourceManager.GetString("msg_cant_delete_population", resourceCulture);
             }
         }
         
@@ -709,11 +754,38 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirmation of allele deletion.
+        /// </summary>
+        public static string msg_page_conf_delete_allele {
+            get {
+                return ResourceManager.GetString("msg_page_conf_delete_allele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Confirmation of genotype deletion.
         /// </summary>
         public static string msg_page_conf_delete_genotype {
             get {
                 return ResourceManager.GetString("msg_page_conf_delete_genotype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirmation of locus deletion.
+        /// </summary>
+        public static string msg_page_conf_delete_locus {
+            get {
+                return ResourceManager.GetString("msg_page_conf_delete_locus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirmation of population deletion.
+        /// </summary>
+        public static string msg_page_conf_delete_population {
+            get {
+                return ResourceManager.GetString("msg_page_conf_delete_population", resourceCulture);
             }
         }
         
@@ -745,20 +817,128 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Dark.
+        ///   Ищет локализованную строку, похожую на Methods of calculation.
         /// </summary>
-        public static string theme_dark {
+        public static string set_blend_methods_name {
             get {
-                return ResourceManager.GetString("theme_dark", resourceCulture);
+                return ResourceManager.GetString("set_blend_methods_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на calc_decimal_places,The number of decimal places displayed.
+        /// </summary>
+        public static string set_decimal_number {
+            get {
+                return ResourceManager.GetString("set_decimal_number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Shows exactly up to which character the final result will be displayed..
+        /// </summary>
+        public static string set_decimal_number_desc {
+            get {
+                return ResourceManager.GetString("set_decimal_number_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Defines the display of calculation results, in exponential or decimal form.
+        /// </summary>
+        public static string set_disp_values_desk {
+            get {
+                return ResourceManager.GetString("set_disp_values_desk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Displaying values.
+        /// </summary>
+        public static string set_displaying_values {
+            get {
+                return ResourceManager.GetString("set_displaying_values", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The values of mutation frequencies of locuses for which data are not available are calculated by this method from the available (entered) actual frequencies,,.
+        /// </summary>
+        public static string set_method_calc_desc {
+            get {
+                return ResourceManager.GetString("set_method_calc_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Maximum number of mutations.
+        /// </summary>
+        public static string set_number_mutation {
+            get {
+                return ResourceManager.GetString("set_number_mutation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The number of mismatched alleles in the genotype, at different loci, after which the genotype will be considered different from the original.
+        /// </summary>
+        public static string set_number_mutation_desc {
+            get {
+                return ResourceManager.GetString("set_number_mutation_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Priority Pmin.
+        /// </summary>
+        public static string set_priority {
+            get {
+                return ResourceManager.GetString("set_priority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на It is used to indicate the priorities of the frequencies used if the library of loci contains alleles with frequencies lower than the specified Pmin for a particular locus. When the Pmin point is marked, the frequency of the Pmin locus will be used in calculations if the frequency of the allele used is less than the frequency of the Pmin..
+        /// </summary>
+        public static string set_priority_desc {
+            get {
+                return ResourceManager.GetString("set_priority_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Application Theme.
+        /// </summary>
+        public static string set_theme {
+            get {
+                return ResourceManager.GetString("set_theme", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Select your preferred application theme from the list..
         /// </summary>
-        public static string theme_desc {
+        public static string set_theme_desc {
             get {
-                return ResourceManager.GetString("theme_desc", resourceCulture);
+                return ResourceManager.GetString("set_theme_desc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Frequency profile used.
+        /// </summary>
+        public static string set_used_population {
+            get {
+                return ResourceManager.GetString("set_used_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Dark.
+        /// </summary>
+        public static string theme_dark {
+            get {
+                return ResourceManager.GetString("theme_dark", resourceCulture);
             }
         }
         

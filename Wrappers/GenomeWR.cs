@@ -12,7 +12,7 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExprodesC.Views.Wrappers
+namespace ExprodesC.Wrappers
 {
     public class GenomeWR : ReactiveObject
     {
@@ -43,7 +43,7 @@ namespace ExprodesC.Views.Wrappers
         /// В процессе работы с формой набор аллелей в каждом геноме изменяется. Метод позволяет получить genom с актуальным набором аллелй
         /// </summary>
         /// <returns></returns>
-        public Genome GetActualGenome => this.Genome.EditGenome(Genome.Locus.Name, Lvms?.ToList().Select(n => new Allele(n.LocusAllele.AName)) ?? []);
+        public Genome GetActualGenome => Genome.EditGenome(Genome.Locus.Name, Lvms?.ToList().Select(n => new Allele(n.LocusAllele.AName)) ?? []);
 
         public Genome Genome { get; }
 

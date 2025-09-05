@@ -2,7 +2,95 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="ExprodesC.CalculationView">
-  Calculation view!
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             x:Class="ExprodesC.CalculationView"
+			 
+			 xmlns:material="using:Material.Icons.Avalonia"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 xmlns:set="using:ExprodesC.Imp"
+			 xmlns:ls="using:Calc.Models"
+			 xmlns:conv="using:ExprodesC.Converters"
+			 x:DataType="set:ExSettingData"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 
+			 >
+	<Design.DataContext>
+		<set:ExSettingData/>
+	</Design.DataContext>
+
+	<StackPanel ScrollViewer.VerticalScrollBarVisibility="Auto">
+		<!--Pmin-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_priority}" Grid.Row="1"
+								 IconSource="ClosedCaption"
+								 Description="{x:Static lang:Resources.set_priority_desc}">
+			<ui:SettingsExpander.Footer>
+				<CheckBox IsChecked="{Binding Pmin}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<!--Отображение значений-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_displaying_values}" Grid.Row="1"
+							 IconSource="View"
+							 Description="{x:Static lang:Resources.set_disp_values_desk}">
+			<ui:SettingsExpander.Footer>
+				<ComboBox ItemsSource="{x:Static ls:CalcViewResult.Results}" SelectedItem="{Binding CalcViewResult}">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<!--Количество знаков после запятой-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_decimal_number}" Grid.Row="1"
+							 IconSource="More"
+							 Description="{x:Static lang:Resources.set_decimal_number_desc}">
+			<ui:SettingsExpander.Footer>
+				<ui:NumberBox SpinButtonPlacementMode="Inline" Value="{Binding DecPlaceCount}" Minimum="0" Maximum="10" />
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<!-- Количество допустимых мутаций-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_number_mutation}" Grid.Row="1"
+							 IconSource="Bookmarks"
+							 Description="{x:Static lang:Resources.set_number_mutation_desc}">
+			<ui:SettingsExpander.Footer>
+				<ui:NumberBox SpinButtonPlacementMode="Inline" Value="{Binding MutCount}" Minimum="0" Maximum="10" />
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<!--Список методов вычисления-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_blend_methods_name}" Grid.Row="1"
+							 IconSource="BrowsePhotos"
+							 Description="{x:Static lang:Resources.set_method_calc_desc}">
+			<ui:SettingsExpander.Footer>
+				<ComboBox ItemsSource="{x:Static ls:CalcAverageMethod.Methods}" SelectedItem="{Binding CalcAverageMethod}">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<!--Выбор популяции-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.set_used_population}" Grid.Row="1"
+							 IconSource="BrowsePhotos">
+			<ui:SettingsExpander.Footer>
+				<ComboBox ItemsSource="{Binding Populations}" SelectedItem="{Binding CurrentPopulation}">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding Name}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+	</StackPanel>
+
 </UserControl>

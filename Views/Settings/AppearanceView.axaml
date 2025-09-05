@@ -8,14 +8,16 @@
 			 xmlns:ui="using:FluentAvalonia.UI.Controls"
 			 xmlns:uip="using:FluentAvalonia.UI.Controls.Primitives"
 			 xmlns:lang="using:ExprodesC.Lang"
-			 
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
 			 
 			 >
-	<ui:SettingsExpander Header="{x:Static lang:Resources.cap_theme}"
+
+	<ui:SettingsExpander Header="{x:Static lang:Resources.set_theme}"
 						 IconSource="DarkTheme"
-						 Description="{x:Static lang:Resources.theme_desc}">
+						 Description="{x:Static lang:Resources.set_theme_desc}">
 		<ui:SettingsExpander.Footer>
-			<ComboBox x:Name="cbTheme"/>
+			<ComboBox x:Name="cbTheme">
+			</ComboBox>
 		</ui:SettingsExpander.Footer>
 	</ui:SettingsExpander>
 </UserControl>
