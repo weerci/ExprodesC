@@ -42,7 +42,7 @@ public partial class AddEditAllele : UserControl
 
     private bool canSave()
     {
-        return tbName.Text?.Length > 0 &&
+        return tbName.Text?.Length > 0 && !String.IsNullOrWhiteSpace(tbName.Text) &&
               nbFreq.Value > 0 && nbFreq.Value < 1;
     }
 

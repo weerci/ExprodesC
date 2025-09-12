@@ -7,9 +7,11 @@ using ExprodesC.Models;
 using ExprodesC.Services;
 using ExprodesC.ViewModels.Settings;
 using ExprodesC.Views.Controls;
+using ExprodesC.Views.Synonym;
 using ExprodesC.Wrappers;
 using Func;
 using Func.Services;
+using Moq;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -19,6 +21,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Xml.Linq;
 using Tmds.DBus.Protocol;
 
 namespace ExprodesC.Imp;
@@ -35,7 +38,7 @@ public class AppDb : CalcDb, IAppDb
     public IEnumerable<LocusAllele> GetAllPopLocuses()
     {
         using SQLiteCommand cmd = _settings.Value.Connect.CreateCommand();
-        cmd.CommandText = "select name, ord, is_calc, mutant, allele_name, freq, min_freq, pop_id, id, allele_id from LA_SYN";
+        cmd.CommandText = "select name, ord, is_calc, mutant, allele_name, freq, min_freq, pop_id, id, allele_id, sname, is_synonym from LA_SYN; ";
 
         using SQLiteDataReader rd = cmd.ExecuteReader();
         while (rd.Read())
@@ -52,6 +55,8 @@ public class AppDb : CalcDb, IAppDb
                 PopId = rd.AsInt32(7),
                 LocusId = rd.AsInt32(8),
                 AlleleId = rd.AsInt32(9),
+                SName = rd.AsString(10),
+                IsSynonym = rd.AsInt32(11),
             };
         }
     }
@@ -141,7 +146,7 @@ public class AppDb : CalcDb, IAppDb
 
         using SQLiteTransaction transaction = _settings.Value.Connect.BeginTransaction();
         using SQLiteCommand? cmd = new SQLiteCommand(findSql, _settings.Value.Connect, transaction);
-        
+
         cmd.Parameters.Add("@name", DbType.String).Value = lwr.Name;
         using (var reader = cmd.ExecuteReader())
         {
@@ -309,5 +314,58 @@ public class AppDb : CalcDb, IAppDb
         return result;
     }
 
+    /// <inheritdoc/>
+    public IEnumerable<SynonymWR> GetAllSynonyms()
+    {
+        using SQLiteCommand cmd = new("select s.id, s.name, l.id, l.name, l.ord from synonym s left join locus l on l.id = s.locus_id;", _settings.Value.Connect);
+
+        SQLiteDataReader r = cmd.ExecuteReader();
+        while (r.Read())
+            yield return new SynonymWR(r.AsInt32(0), r.AsString(1),  r.AsInt32(2), r.AsString(3), r.AsInt32(4));
+    }
+
+    /// <inheritdoc/>
+    public int InsertSynonym(SynonymWR swr)
+    {
+        using SQLiteCommand cmd = new("insert into synonym (name, locus_id) values (@name, @locus_id); select last_insert_rowid(); ", _settings.Value.Connect);
+
+        cmd.Parameters.Add("@name", DbType.String).Value = swr.Name;
+        cmd.Parameters.Add("@locus_id", DbType.Int32).Value = swr.LocusId;
+
+        return cmd.ExecuteScalar().AsInt64();
+
+    }
+
+    /// <inheritdoc/>
+    public void UpdateSynonym(SynonymWR swr)
+    {
+        using SQLiteCommand cmd = new("update synonym set name = @name, locus_id = @locus_id where id = @id; ", _settings.Value.Connect);
+
+        cmd.Parameters.Add("@id", DbType.Int32).Value = swr.Id;
+        cmd.Parameters.Add("@name", DbType.String).Value = swr.Name;
+        cmd.Parameters.Add("locus_id", DbType.Int32).Value = swr.LocusId;
+        cmd.ExecuteNonQuery();
+    }
+
+    /// <inheritdoc/>
+    public int DeleteSynonym(IEnumerable<SynonymWR> swrs)
+    {
+        if (!swrs.Any())
+            return 0;
+
+        using SQLiteTransaction ft = _settings.Value.Connect.BeginTransaction();
+        using SQLiteCommand cmd = new SQLiteCommand("delete from synonym where id = @id", _settings.Value.Connect, ft);
+
+        int result = 0;
+
+        cmd.Parameters.Add("@id", DbType.Int32);
+        foreach (var item in swrs)
+        {
+            cmd.Parameters[0].Value = item.Id;
+            result += cmd.ExecuteNonQuery();
+        }
+        ft.Commit();
+        return result;
+    }
 
 }

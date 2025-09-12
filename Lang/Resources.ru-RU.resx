@@ -312,9 +312,6 @@
   <data name="cap_down" xml:space="preserve">
     <value>Вниз</value>
   </data>
-  <data name="cap_synonim" xml:space="preserve">
-    <value>Синонимы</value>
-  </data>
   <data name="cap_upload_to_excel" xml:space="preserve">
     <value>Выгрузить в Excel</value>
   </data>
@@ -419,5 +416,26 @@
   </data>
   <data name="err_edit_population" xml:space="preserve">
     <value>Ошибка при редактировнии популяции</value>
+  </data>
+  <data name="cap_add_synonym" xml:space="preserve">
+    <value>Создать синоним</value>
+  </data>
+  <data name="cap_edit_synonym" xml:space="preserve">
+    <value>Редактирование синонима</value>
+  </data>
+  <data name="cap_locuses" xml:space="preserve">
+    <value>Локусы</value>
+  </data>
+  <data name="cap_synonyms" xml:space="preserve">
+    <value>Синонимы</value>
+  </data>
+  <data name="cap_new_synonym" xml:space="preserve">
+    <value>Новый синоним</value>
+  </data>
+  <data name="err_add_synonym" xml:space="preserve">
+    <value>Ошибка при создании синонима</value>
+  </data>
+  <data name="err_synonym_unique" xml:space="preserve">
+    <value>Имя синонима должно быть уникально</value>
   </data>
 </root>

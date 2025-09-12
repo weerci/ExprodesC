@@ -1,0 +1,80 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ExprodesC.SynonymView"
+			 
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:vm="using:ExprodesC.Views.Synonym"
+			 xmlns:conv="using:ExprodesC.Converters"
+			 x:DataType="vm:SynonymVM"
+             xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 
+			 >
+	<Design.DataContext>
+		<vm:SynonymVM/>
+	</Design.DataContext>
+
+	<Grid RowDefinitions="auto *">
+
+		<ui:CommandBar DefaultLabelPosition="Collapsed" IsVisible="{Binding ElementName=tvSynonyms, Path=SelectedIndex, Converter={x:Static conv:CommonConverters.IntToVisibility}}" >
+			<ui:CommandBar.PrimaryCommands>
+				<ui:CommandBarButton IconSource="Add" Label="{x:Static lang:Resources.cap_add}" ToolTip.Tip="{x:Static lang:Resources.cap_add}"
+									 Command="{Binding AddSynonymCommand}"/>
+				<ui:CommandBarButton IconSource="Edit" Label="{x:Static lang:Resources.cap_edit}" ToolTip.Tip="{x:Static lang:Resources.cap_edit}"
+									 IsEnabled="{Binding SelectedSynonym, Converter={x:Static ObjectConverters.IsNotNull}}"
+									 Command="{Binding EditSynonymCommand}" CommandParameter="{Binding SelectedSynonym}"/>
+				<ui:CommandBarButton IconSource="Delete" Label="{x:Static lang:Resources.cap_del}" ToolTip.Tip="{x:Static lang:Resources.cap_del}"
+									 IsEnabled="{Binding SelectedSynonym, Converter={x:Static ObjectConverters.IsNotNull}}"
+									 Command="{Binding DelSynonymCommand}" CommandParameter="{Binding SelectedSynonym}"/>
+			</ui:CommandBar.PrimaryCommands>
+		</ui:CommandBar>
+
+		<ui:TabView x:Name="tvSynonyms" Grid.Row="1"  IsAddTabButtonVisible="False">
+
+			<!-- Локусы для которых существуют синонимы  -->
+			<ui:TabViewItem Header="{x:Static lang:Resources.cap_locuses}" IconSource="DockRight" IsClosable="False" >
+				<DataGrid ItemsSource="{Binding LocusGroups}"  >
+					<DataGrid.Styles>
+						<Style Selector="DataGridRow">
+							<Setter Property="Margin" Value="0 2"/>
+						</Style>
+					</DataGrid.Styles>
+					<DataGrid.Columns>
+						<DataGridTextColumn  Header="{x:Static lang:Resources.cap_locuses}" Width="*" Binding="{Binding LocusName}"/>
+						<DataGridTemplateColumn Header="{x:Static lang:Resources.cap_synonyms}" Width="*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<ItemsControl ItemsSource="{Binding Synonyms}">
+										<ItemsControl.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding Synonym}"
+														   VerticalAlignment="Center"/>
+											</DataTemplate>
+										</ItemsControl.ItemTemplate>
+									</ItemsControl>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</ui:TabViewItem>
+			
+			<!--Синонимы по списку-->
+			<ui:TabViewItem Header="{x:Static lang:Resources.cap_synonyms}" Tag="a" IconSource="DockLeft" IsClosable="False" >
+				<DataGrid ItemsSource="{Binding Synonyms}" SelectedItem="{Binding SelectedSynonym}">
+					<DataGrid.Columns>
+						<DataGridTextColumn  Header="{x:Static lang:Resources.cap_synonyms}" Width="*" Binding="{Binding Name}"/>
+						<DataGridTextColumn  Header="{x:Static lang:Resources.cap_locuses}" Width="*" Binding="{Binding LocusName}"/>
+					</DataGrid.Columns>
+				</DataGrid>
+			</ui:TabViewItem>
+			
+			
+		</ui:TabView>
+
+	</Grid>
+
+</UserControl>

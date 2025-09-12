@@ -31,5 +31,15 @@ public interface IDialogService
     /// Форма создания генотипа
     /// </summary>
     public Task<GenotypeWR?> DialogGenotype(UserControl content, string title);
+
+    /// <summary>
+    /// Форма синонимов
+    /// </summary>
+    public Task<SynonymWR?> DialogSynonyms(UserControl content, string title);
+
+    /// <summary>
+    /// Форма создания и редактирования синонима
+    /// </summary>
+    public Task<SynonymWR?> AddEditSynonym(UserControl content, string title);
 }
 

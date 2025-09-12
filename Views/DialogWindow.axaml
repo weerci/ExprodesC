@@ -30,7 +30,7 @@
 		<ContentControl x:Name="ccPlace" Grid.Row="1" Margin="0 10"/>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Grid.Row="2">
 			<Button x:Name="btnSave" Content="{x:Static lang:Resources.cap_save}" IsEnabled="{Binding CanSave}" Click="ButtonSave_Click"  Width="100"/>
-			<Button Content="{x:Static lang:Resources.cap_close}" Click="ButtonClose_Click" Width="100"/>
+			<Button x:Name="btnClose" Content="{x:Static lang:Resources.cap_close}" Click="ButtonClose_Click" Width="100" />
 		</StackPanel>
 
 	</Grid>

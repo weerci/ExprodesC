@@ -312,9 +312,6 @@
   <data name="cap_down" xml:space="preserve">
     <value>Down</value>
   </data>
-  <data name="cap_synonim" xml:space="preserve">
-    <value>Synonoms</value>
-  </data>
   <data name="cap_upload_to_excel" xml:space="preserve">
     <value>Upload to Excel</value>
   </data>
@@ -419,5 +416,26 @@
   </data>
   <data name="err_edit_population" xml:space="preserve">
     <value>Error when editing the population</value>
+  </data>
+  <data name="cap_add_synonym" xml:space="preserve">
+    <value>Create a synonym</value>
+  </data>
+  <data name="cap_edit_synonym" xml:space="preserve">
+    <value>Editing the synonym</value>
+  </data>
+  <data name="cap_locuses" xml:space="preserve">
+    <value>Locuses</value>
+  </data>
+  <data name="cap_synonyms" xml:space="preserve">
+    <value>Synonyms</value>
+  </data>
+  <data name="cap_new_synonym" xml:space="preserve">
+    <value>New synonym</value>
+  </data>
+  <data name="err_add_synonym" xml:space="preserve">
+    <value>Error when creating a synonyn</value>
+  </data>
+  <data name="err_synonym_unique" xml:space="preserve">
+    <value>The synonym name must be unique.</value>
   </data>
 </root>

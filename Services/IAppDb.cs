@@ -79,5 +79,24 @@ namespace ExprodesC.Services
         /// </summary>
         public int DeleteAllele(IEnumerable<AlleleWR> awrs);
 
+        /// <summary>
+        /// Получает список всех синонимов
+        /// </summary>
+        public IEnumerable<SynonymWR> GetAllSynonyms();
+
+        /// <summary>
+        /// Сохранение синонима в базе данных
+        /// </summary>
+        public int InsertSynonym(SynonymWR awr);
+
+        /// <summary>
+        /// Обновление синонима в базе данных
+        /// </summary>
+        public void UpdateSynonym(SynonymWR awr);
+
+        /// <summary>
+        /// Удаление синонима из базы данных
+        /// </summary>
+        public int DeleteSynonym(IEnumerable<SynonymWR> awrs);
     }
 }

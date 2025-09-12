@@ -98,7 +98,7 @@
 	
 	<ItemGroup>
 	  <None Update="key">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
 	

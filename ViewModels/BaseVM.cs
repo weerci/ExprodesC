@@ -1,4 +1,5 @@
-﻿using ExprodesC.Services;
+﻿using Avalonia.Controls;
+using ExprodesC.Services;
 using Func.Services;
 
 namespace ExprodesC.ViewModels;
@@ -8,6 +9,7 @@ public class BaseVM : ReactiveObject, IDisposable, ICanSave
     protected IExpMessages Log => Init.ExpMessages;
 
     [Reactive] public bool CanSave { get; set; }
+    public Window? Owner { get; set; }
 
     #region Dispose
 

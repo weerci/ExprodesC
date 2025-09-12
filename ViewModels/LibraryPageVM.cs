@@ -19,6 +19,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
+using System.Reactive.Subjects;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,8 +28,8 @@ namespace ExprodesC.ViewModels;
 public class LibraryPageVM() : BaseVM
 {
     readonly SourceList<LocusAllele> _la = new();
-    readonly IDialogService _dialogService;
-    readonly IAppDb _appDb;
+    readonly IDialogService _dialogService = null!;
+    readonly IAppDb _appDb = null!;
     IDisposable? _cleanUp;
 
     public LibraryPageVM(ISettingsProvider<ExSettingData> settings, IAppDb appDb, IDialogService dialogService) : this()
@@ -41,7 +42,7 @@ public class LibraryPageVM() : BaseVM
 
         #region tunnel
 
-        var las = _la.Connect().Publish();
+        LocusesAlleles = _la.Connect().Publish();
         if (settings.Value.Populations != null)
             SelectedPopulation = settings.Value.Populations.FirstOrDefault(p => p.Id == settings.Value.CurrentPopulation.Id);
 
@@ -50,12 +51,10 @@ public class LibraryPageVM() : BaseVM
            .WhenAnyValue(x => x.SelectedPopulation!.Id)
            .Select(idx => (Func<LocusAllele, bool>)(la => la.PopId == idx));
 
-        var locusesLoader = las.Filter(filterLocusByPopulation)
-            .Do(it => Debug.WriteLine($"Locuses changed"))
+        var locusesLoader = LocusesAlleles.Filter(filterLocusByPopulation)
             .GroupOn(g => (g.LocusId, g.LName, g.AMinFreq, g.MutFreq, g.LCalc, g.LOrd, g.PopId))
             .Transform(k =>
                 new LocusWR(k.GroupKey.LocusId, k.GroupKey.LName, k.GroupKey.AMinFreq, k.GroupKey.MutFreq, k.GroupKey.LCalc, k.GroupKey.LOrd, k.GroupKey.PopId))
-
             .Sort(SortExpressionComparer<LocusWR>.Ascending(l => l.Ord))
             .Bind(out _locuses)
             .Subscribe();
@@ -70,12 +69,12 @@ public class LibraryPageVM() : BaseVM
                 la.AlleleId != 0 &&
                 la.PopId == SelectedPopulation.Id));
 
-        var allelesLoader = las.Filter(filterAlleleByLocus)
+        var allelesLoader = LocusesAlleles.Filter(filterAlleleByLocus)
            .Sort(SortExpressionComparer<LocusAllele>.Ascending(la => new Allele(la.AName).Ord))
            .Bind(out _alleles)
            .Subscribe();
 
-        _cleanUp = new CompositeDisposable(las.Connect(), locusesLoader, allelesLoader);
+        _cleanUp = new CompositeDisposable(LocusesAlleles.Connect(), locusesLoader, allelesLoader);
 
         #endregion
 
@@ -93,11 +92,16 @@ public class LibraryPageVM() : BaseVM
         AddAlleleCommand = ReactiveCommand.CreateFromTask(addAllele);
         EditAlleleCommand = ReactiveCommand.CreateFromTask<LocusAllele>(editAllele);
         DelAlleleCommand = ReactiveCommand.CreateFromTask(delAllele);
+
+        SynonymsCommand = ReactiveCommand.CreateFromTask<LocusWR>(openSymonyms);
+
     }
 
-
     #region Porperties
-    public ISettingsProvider<ExSettingData> Settings { get; set; }
+
+    IConnectableObservable<IChangeSet<LocusAllele>> LocusesAlleles { get; set; } = null!;
+
+    public ISettingsProvider<ExSettingData>? Settings { get; set; }
 
     public ReadOnlyObservableCollection<LocusAllele>? Alleles => _alleles;
     private ReadOnlyObservableCollection<LocusAllele>? _alleles;
@@ -129,6 +133,9 @@ public class LibraryPageVM() : BaseVM
     public RxCommandLocusAllele? EditAlleleCommand { get; }
     public RxCommandUnit? DelAlleleCommand { get; }
 
+    // Синонимы
+    public RxCommandLocusWR? SynonymsCommand { get; }
+
     #endregion
 
     #region Helper
@@ -137,7 +144,7 @@ public class LibraryPageVM() : BaseVM
     private async Task addPopulation()
     {
         var res = await _dialogService.AddEditPopulation(new AddEditPopulation(), Lang.Resources.cap_new_population);
-        if (res != null)
+        if (res != null && _dialogService != null && _appDb != null)
         {
             try
             {
@@ -163,7 +170,7 @@ public class LibraryPageVM() : BaseVM
     }
     private async Task editPopulation(Population population)
     {
-        if (SelectedPopulation != null)
+        if (SelectedPopulation != null && _dialogService != null && _appDb != null)
         {
             if (SelectedPopulation == Settings.Value.CurrentPopulation)
             {
@@ -201,28 +208,32 @@ public class LibraryPageVM() : BaseVM
             return;
         }
 
-        var res = await _dialogService.ConfirmDelete(Settings.Value.ConfirmDeletePopulation, string.Format(Lang.Resources.conf_delete_population, SelectedPopulation?.Name),
+        if (_dialogService != null && _appDb !=  null)
+        {
+            var res = await _dialogService.ConfirmDelete(Settings.Value.ConfirmDeletePopulation, string.Format(Lang.Resources.conf_delete_population, SelectedPopulation?.Name),
             (b) => { Settings.Value.ConfirmDeletePopulation = !b; });
 
-        if (res is TaskDialogStandardResult r && r != TaskDialogStandardResult.Yes)
-            return;
+            if (res is TaskDialogStandardResult r && r != TaskDialogStandardResult.Yes)
+                return;
 
-        if (Settings.Value.Populations?.Any() != true || SelectedPopulation == null)
-            return;
+            if (Settings.Value.Populations?.Any() != true || SelectedPopulation == null)
+                return;
 
-        var currIdx = Settings.Value.Populations!.IndexOf(SelectedPopulation!);
-        var cnt = Settings.Value.Populations!.Count;
+            var currIdx = Settings.Value.Populations!.IndexOf(SelectedPopulation!);
+            var cnt = Settings.Value.Populations!.Count;
 
-        _appDb.DeletePopulations(new[] { SelectedPopulation! });
-        Settings.Value.SourcePopulation.Remove(SelectedPopulation!);
+            _appDb.DeletePopulations(new[] { SelectedPopulation! });
+            Settings.Value.SourcePopulation.Remove(SelectedPopulation!);
 
-        SelectedPopulation = currIdx switch
-        {
-            0 when cnt > 1 => Settings.Value.Populations.First(),
-            var idx when idx == cnt - 1 => Settings.Value.Populations.Last(),
-            var idx when idx < cnt - 1 => Settings.Value.Populations.ElementAt(idx),
-            _ => SelectedPopulation
-        };
+            SelectedPopulation = currIdx switch
+            {
+                0 when cnt > 1 => Settings.Value.Populations.First(),
+                var idx when idx == cnt - 1 => Settings.Value.Populations.Last(),
+                var idx when idx < cnt - 1 => Settings.Value.Populations.ElementAt(idx),
+                _ => SelectedPopulation
+            };
+        }
+
     }
     private void movePopulation(string s)
     {
@@ -407,7 +418,7 @@ public class LibraryPageVM() : BaseVM
     // Аллели
     private async Task addAllele()
     {
-        if (SelectedLocus != null && SelectedPopulation != null && 
+        if (SelectedLocus != null && SelectedPopulation != null &&
             await _dialogService.AddEditAllele(new AddEditAllele(), Lang.Resources.cap_new_allele) is var res && res != null)
         {
             try
@@ -510,11 +521,15 @@ public class LibraryPageVM() : BaseVM
             };
         }
     }
+
+    private async Task openSymonyms(LocusWR locusWR) => await _dialogService.DialogSynonyms(new SynonymView(), Lang.Resources.cap_synonyms);
+   
     //TODO не работает сортировка аллелей после добавления/редактирования аллелей на форме редактирования локусов
     #endregion
 
     private void RefreshLocuses()
     {
+
         _la.Clear();
         _la.AddRange(_appDb.GetAllPopLocuses());
     }

@@ -44,7 +44,7 @@ public partial class AddEditPopulation : UserControl
 
     bool canSave()
     {
-        return tbName.Text?.Length > 0;
+        return tbName.Text?.Length > 0 && !String.IsNullOrWhiteSpace(tbName.Text);
     }
 
     private void UserControl_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

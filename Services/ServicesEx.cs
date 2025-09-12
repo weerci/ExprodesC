@@ -4,6 +4,7 @@ using ExprodesC.Models;
 using ExprodesC.ViewModels;
 using ExprodesC.ViewModels.Settings;
 using ExprodesC.Views.Pages;
+using ExprodesC.Views.Synonym;
 using Func.Services;
 using System.Diagnostics.Metrics;
 
@@ -18,6 +19,7 @@ public static class ServicesEx
             p.GetRequiredService<IDialogService>(),
             p.GetRequiredService<ISettingsProvider<ExSettingData>>()))
         .AddSingleton<CalcPageVM>()
-        .AddSingleton<LibraryPageVM>();
+        .AddSingleton<LibraryPageVM>()
+        .AddSingleton<SynonymVM>();
 
 }

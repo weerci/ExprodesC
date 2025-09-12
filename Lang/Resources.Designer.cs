@@ -79,6 +79,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Create a synonym.
+        /// </summary>
+        public static string cap_add_synonym {
+            get {
+                return ResourceManager.GetString("cap_add_synonym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Base population.
         /// </summary>
         public static string cap_base_population {
@@ -214,6 +223,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Editing the synonym.
+        /// </summary>
+        public static string cap_edit_synonym {
+            get {
+                return ResourceManager.GetString("cap_edit_synonym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Save as....
         /// </summary>
         public static string cap_file_save_as {
@@ -295,6 +313,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Locuses.
+        /// </summary>
+        public static string cap_locuses {
+            get {
+                return ResourceManager.GetString("cap_locuses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Min. frequency.
         /// </summary>
         public static string cap_min_freq {
@@ -372,6 +399,15 @@ namespace ExprodesC.Lang {
         public static string cap_new_population {
             get {
                 return ResourceManager.GetString("cap_new_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на New synonym.
+        /// </summary>
+        public static string cap_new_synonym {
+            get {
+                return ResourceManager.GetString("cap_new_synonym", resourceCulture);
             }
         }
         
@@ -493,11 +529,11 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Synonoms.
+        ///   Ищет локализованную строку, похожую на Synonyms.
         /// </summary>
-        public static string cap_synonim {
+        public static string cap_synonyms {
             get {
-                return ResourceManager.GetString("cap_synonim", resourceCulture);
+                return ResourceManager.GetString("cap_synonyms", resourceCulture);
             }
         }
         
@@ -655,6 +691,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Error when creating a synonyn.
+        /// </summary>
+        public static string err_add_synonym {
+            get {
+                return ResourceManager.GetString("err_add_synonym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Error when editing the population.
         /// </summary>
         public static string err_edit_population {
@@ -687,6 +732,15 @@ namespace ExprodesC.Lang {
         public static string err_research_calc {
             get {
                 return ResourceManager.GetString("err_research_calc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The synonym name must be unique..
+        /// </summary>
+        public static string err_synonym_unique {
+            get {
+                return ResourceManager.GetString("err_synonym_unique", resourceCulture);
             }
         }
         

@@ -1,0 +1,39 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="470" d:DesignHeight="200"
+             x:Class="ExprodesC.AddEditSynonym"
+			 
+			 Loaded="UserControl_Loaded"
+			 xmlns:vm="using:ExprodesC.Views.Synonym"
+			 x:DataType="vm:SynonymVM"
+			 RenderOptions.BitmapInterpolationMode="HighQuality"
+			 xmlns:ui="using:FluentAvalonia.UI.Controls"
+			 xmlns:lang="using:ExprodesC.Lang"
+			 
+			 >
+	<Design.DataContext>
+		<vm:SynonymVM/>
+	</Design.DataContext>
+
+	<StackPanel>
+		<ui:SettingsExpander Header="{x:Static lang:Resources.cap_locuses}" IconSource="ClosedCaption">
+			<ui:SettingsExpander.Footer>
+				<ComboBox x:Name="cbLocuses" Width="270" ItemsSource="{Binding LocusGroups}" SelectionChanged="ComboBox_SelectionChanged">
+					<ComboBox.ItemTemplate>
+						<DataTemplate>
+							<TextBlock Text="{Binding LocusName}"/>
+						</DataTemplate>
+					</ComboBox.ItemTemplate>
+				</ComboBox>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+
+		<ui:SettingsExpander Header="{x:Static lang:Resources.cap_synonyms}" IconSource="Font">
+			<ui:SettingsExpander.Footer>
+				<TextBox x:Name="tbName"  Width="270" TextChanged="TextBox_TextChanged"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
+	</StackPanel>
+</UserControl>

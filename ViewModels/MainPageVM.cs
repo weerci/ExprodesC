@@ -75,7 +75,7 @@ public class MainPageVM() : BaseVM, IDisposable
     }
 
     #region Properties
-    public IProject Project { get; }
+    public IProject Project { get; } = null!;
     [Reactive] public GenotypeNode? SelectedNode { get; set; }
     [Reactive] public bool NodeSelected { get; set; }
     [Reactive] public bool ListSelected { get; set; }
@@ -85,8 +85,8 @@ public class MainPageVM() : BaseVM, IDisposable
     public RxCommandUnit? DelGenotypeCommand { get; }
     public RxCommandUnit? AddGenotypeCommand { get; }
     public RxCommandGenotype? EditGenotypeCommand { get; }
-    public RxCommandGenotype SelectGenotypeCommand { get; }
-    public RxCommandGenotype UnSelectGenotypeCommand { get; }
+    public RxCommandGenotype SelectGenotypeCommand { get; } = null!;
+    public RxCommandGenotype UnSelectGenotypeCommand { get; } = null!;
     #endregion
 
     #region Command Logic

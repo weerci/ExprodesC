@@ -22,6 +22,7 @@ public static class CalcConverters
     public static CheckedCalcMethodConverter EnabledMethod => new();
     public static VisibleCalcMethodConverter VisibleMethod => new();
 
+    
     public class EnabledCalcResearchConverter : IValueConverter
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)

@@ -45,7 +45,7 @@ public partial class AddEditLocus : UserControl
 
     bool canSave()
     {
-        return tbName.Text?.Length > 0 &&
+        return tbName.Text?.Length > 0 && !String.IsNullOrEmpty(tbName.Text)&&
                nbMinFreq.Value > 0 && nbMinFreq.Value < 1 &&
                nbMutFreq.Value > 0 && nbMutFreq.Value < 1;
     }
