@@ -144,7 +144,7 @@ public class LibraryPageVM() : BaseVM
     private async Task addPopulation()
     {
         var res = await _dialogService.AddEditPopulation(new AddEditPopulation(), Lang.Resources.cap_new_population);
-        if (res != null && _dialogService != null && _appDb != null)
+        if (res != null && _dialogService != null && _appDb != null && Settings != null)
         {
             try
             {
@@ -170,7 +170,7 @@ public class LibraryPageVM() : BaseVM
     }
     private async Task editPopulation(Population population)
     {
-        if (SelectedPopulation != null && _dialogService != null && _appDb != null)
+        if (SelectedPopulation != null && _dialogService != null && _appDb != null && Settings != null)
         {
             if (SelectedPopulation == Settings.Value.CurrentPopulation)
             {
@@ -202,7 +202,7 @@ public class LibraryPageVM() : BaseVM
     }
     private async Task delPopulation()
     {
-        if (SelectedPopulation == Settings.Value.CurrentPopulation)
+        if (Settings != null && SelectedPopulation == Settings.Value.CurrentPopulation)
         {
             Log.SendWarrning(Lang.Resources.msg_cant_delete_population, Lang.Resources.cap_edit_population);
             return;
@@ -237,7 +237,7 @@ public class LibraryPageVM() : BaseVM
     }
     private void movePopulation(string s)
     {
-        if (Settings.Value.Populations == null || SelectedPopulation == null)
+        if (Settings == null || Settings.Value.Populations == null || SelectedPopulation == null)
             return;
 
         var index = Settings.Value.Populations!.IndexOf(SelectedPopulation!);

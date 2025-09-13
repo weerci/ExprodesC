@@ -226,7 +226,7 @@
     <value>Нет</value>
   </data>
   <data name="msg_page_conf_delete_genotype" xml:space="preserve">
-    <value>Подтверждение удаления генотипа</value>
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление генотипа</value>
   </data>
   <data name="cap_select" xml:space="preserve">
     <value>Выбрать</value>
@@ -340,7 +340,7 @@
     <value>Если не выбран, то удаление генотипа будет производится без уведомления пользователя</value>
   </data>
   <data name="msg_page_conf_delete_population" xml:space="preserve">
-    <value>Подтверждение удаления популяции</value>
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление популяции</value>
   </data>
   <data name="desc_confirm_delete_population" xml:space="preserve">
     <value>Если не выбран, то удаление популяции будет производится без уведомления пользователя</value>
@@ -373,10 +373,10 @@
     <value>Ошибка при создании локуса</value>
   </data>
   <data name="msg_page_conf_delete_locus" xml:space="preserve">
-    <value>Подтверждение удаления локуса</value>
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление локуса</value>
   </data>
   <data name="msg_page_conf_delete_allele" xml:space="preserve">
-    <value>Подтверждение удаления аллеля</value>
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление аллеля</value>
   </data>
   <data name="desc_confirm_delete_locus" xml:space="preserve">
     <value>Если не выбран, то удаление локуса будет производится без уведомления пользователя</value>
@@ -437,5 +437,11 @@
   </data>
   <data name="err_synonym_unique" xml:space="preserve">
     <value>Имя синонима должно быть уникально</value>
+  </data>
+  <data name="msg_page_conf_delete_synonym" xml:space="preserve">
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление синонима</value>
+  </data>
+  <data name="conf_delete_synonym" xml:space="preserve">
+    <value>Подтвердите удаление синонима '{0}'</value>
   </data>
 </root>

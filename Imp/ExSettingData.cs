@@ -42,6 +42,11 @@ public class ExSettingData : AppSettingsData
     [Reactive] public bool ConfirmDeleteAllele { get; set; } = true;
 
     /// <summary>
+    /// Если true - то при попытке удалить синоним, появляется окно подтверждения на удаление синонима
+    /// </summary>
+    [Reactive] public bool ConfirmDeleteSynonym { get; set; } = true;
+
+    /// <summary>
     /// Текущая тема приложения
     /// </summary>
     [Reactive] public Themes CurrentTheme { get; set; } = Themes[0];

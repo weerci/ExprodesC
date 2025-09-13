@@ -619,6 +619,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirm the deletion of the synonym &apos;{0}&apos;.
+        /// </summary>
+        public static string conf_delete_synonym {
+            get {
+                return ResourceManager.GetString("conf_delete_synonym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на If not selected, the allele will be deleted without notifying the user..
         /// </summary>
         public static string desc_confirm_delete_allele {
@@ -808,7 +817,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Confirmation of allele deletion.
+        ///   Ищет локализованную строку, похожую на If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the allele.
         /// </summary>
         public static string msg_page_conf_delete_allele {
             get {
@@ -817,7 +826,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Confirmation of genotype deletion.
+        ///   Ищет локализованную строку, похожую на If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the genotype.
         /// </summary>
         public static string msg_page_conf_delete_genotype {
             get {
@@ -826,7 +835,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Confirmation of locus deletion.
+        ///   Ищет локализованную строку, похожую на If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the locus.
         /// </summary>
         public static string msg_page_conf_delete_locus {
             get {
@@ -835,11 +844,20 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Confirmation of population deletion.
+        ///   Ищет локализованную строку, похожую на If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the population..
         /// </summary>
         public static string msg_page_conf_delete_population {
             get {
                 return ResourceManager.GetString("msg_page_conf_delete_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the synonym..
+        /// </summary>
+        public static string msg_page_conf_delete_synonym {
+            get {
+                return ResourceManager.GetString("msg_page_conf_delete_synonym", resourceCulture);
             }
         }
         

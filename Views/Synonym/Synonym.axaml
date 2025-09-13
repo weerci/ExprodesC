@@ -36,7 +36,7 @@
 
 			<!-- Локусы для которых существуют синонимы  -->
 			<ui:TabViewItem Header="{x:Static lang:Resources.cap_locuses}" IconSource="DockRight" IsClosable="False" >
-				<DataGrid ItemsSource="{Binding LocusGroups}"  >
+				<DataGrid x:Name="dgLocuses" ItemsSource="{Binding LocusGroups}" >
 					<DataGrid.Styles>
 						<Style Selector="DataGridRow">
 							<Setter Property="Margin" Value="0 2"/>

@@ -226,7 +226,7 @@
     <value>No</value>
   </data>
   <data name="msg_page_conf_delete_genotype" xml:space="preserve">
-    <value>Confirmation of genotype deletion</value>
+    <value>If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the genotype</value>
   </data>
   <data name="cap_select" xml:space="preserve">
     <value>Select</value>
@@ -340,7 +340,7 @@
     <value>If not selected, the genotype will be deleted without notifying the user.</value>
   </data>
   <data name="msg_page_conf_delete_population" xml:space="preserve">
-    <value>Confirmation of population deletion</value>
+    <value>If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the population.</value>
   </data>
   <data name="desc_confirm_delete_population" xml:space="preserve">
     <value>If not selected, the population will be deleted without notifying the user.</value>
@@ -373,10 +373,10 @@
     <value>Error adding locus</value>
   </data>
   <data name="msg_page_conf_delete_locus" xml:space="preserve">
-    <value>Confirmation of locus deletion</value>
+    <value>If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the locus</value>
   </data>
   <data name="msg_page_conf_delete_allele" xml:space="preserve">
-    <value>Confirmation of allele deletion</value>
+    <value>If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the allele</value>
   </data>
   <data name="desc_confirm_delete_locus" xml:space="preserve">
     <value>If not selected, the locus will be deleted without notifying the user.</value>
@@ -437,5 +437,11 @@
   </data>
   <data name="err_synonym_unique" xml:space="preserve">
     <value>The synonym name must be unique.</value>
+  </data>
+  <data name="msg_page_conf_delete_synonym" xml:space="preserve">
+    <value>If the flag is set, then when trying to delete a synonym, a window appears asking for confirmation to delete the synonym.</value>
+  </data>
+  <data name="conf_delete_synonym" xml:space="preserve">
+    <value>Confirm the deletion of the synonym '{0}'</value>
   </data>
 </root>
