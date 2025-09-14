@@ -4,6 +4,7 @@ using Avalonia.Markup.Xaml;
 using ExprodesC.ViewModels;
 using ExprodesC.Views.Synonym;
 using ExprodesC.Wrappers;
+using Func.Extensions;
 
 namespace ExprodesC;
 
@@ -20,16 +21,7 @@ public partial class SynonymView : UserControl
 
     private void DgLocuses_DoubleTapped(object? sender, Avalonia.Input.TappedEventArgs e)
     {
-        /*if (sender is DataGrid lb)
-        {
-            switch (lb.Name)
-            {
-                case "lbPopulations": _libraryPageVM.EditPopulationCommand?.ExecuteIfPossible(_libraryPageVM.SelectedPopulation); break;
-                case "lbLocuses": _libraryPageVM.EditLocusCommand?.ExecuteIfPossible(_libraryPageVM.SelectedLocus); break;
-                case "lbAlleles": _libraryPageVM.EditAlleleCommand?.ExecuteIfPossible(_libraryPageVM.SelectedAllele); break;
-                default:
-                    break;
-            }
-        }*/
+        if (sender is DataGrid lb)
+            _synonymVM.EditSynonymCommand?.ExecuteIfPossible(_synonymVM.SelectedSynonym);
     }
 }

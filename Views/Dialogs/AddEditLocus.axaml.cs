@@ -46,8 +46,8 @@ public partial class AddEditLocus : UserControl
     bool canSave()
     {
         return tbName.Text?.Length > 0 && !String.IsNullOrEmpty(tbName.Text)&&
-               nbMinFreq.Value > 0 && nbMinFreq.Value < 1 &&
-               nbMutFreq.Value > 0 && nbMutFreq.Value < 1;
+               nbMinFreq.Value > 0 && nbMinFreq.Value <= 1 &&
+               nbMutFreq.Value > 0 && nbMutFreq.Value <= 1;
     }
 
     private void UserControl_Loaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

@@ -65,8 +65,8 @@ public class DialogService : IDialogService
                 TaskDialogButton.YesButton,
                 TaskDialogButton.NoButton
             },
-            XamlRoot = App.MainWindow,
         };
+        td.XamlRoot = getOwner(td);
         ((CheckBox)td.Footer).IsCheckedChanged += (object? sender, Avalonia.Interactivity.RoutedEventArgs e) =>
         {
             if (sender is CheckBox cb && cb.IsChecked is bool b)
@@ -173,7 +173,7 @@ public class DialogService : IDialogService
         return null;
     }
 
-    Window getOwner(UserControl? uc = null)
+    Window getOwner(ContentControl? uc = null)
     {
         if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop )
             return desktop.Windows.FirstOrDefault(w => w.IsActive, App.MainWindow!);
