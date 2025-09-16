@@ -59,5 +59,15 @@
 							  IsChecked="{Binding ConfirmDeleteAllele}"/>
 			</ui:SettingsExpander.Footer>
 		</ui:SettingsExpander>
+
+		<!--Подтверждение удаления синонима-->
+		<ui:SettingsExpander Header="{x:Static lang:Resources.msg_page_conf_delete_synonym}"
+							 IconSource="Accept"
+							 Description="{x:Static lang:Resources.desc_confirm_delete_synonym}">
+			<ui:SettingsExpander.Footer>
+				<ToggleSwitch OffContent="{x:Static lang:Resources.cap_off}" OnContent="{x:Static lang:Resources.cap_on}"
+							  IsChecked="{Binding ConfirmDeleteSynonym}"/>
+			</ui:SettingsExpander.Footer>
+		</ui:SettingsExpander>
 	</StackPanel>
 </UserControl>

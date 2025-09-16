@@ -664,6 +664,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на If not selected, the population will be deleted without notifying the user..
+        /// </summary>
+        public static string desc_confirm_delete_synonym {
+            get {
+                return ResourceManager.GetString("desc_confirm_delete_synonym", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Если пункт «Участвует в расчетах» не отмечен, то данный локус в математических расчетах не учитывается, но его профиль выводится в таблицу генотипов .
         /// </summary>
         public static string desc_is_calc {

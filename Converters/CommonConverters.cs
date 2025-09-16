@@ -5,6 +5,7 @@ using Avalonia.Styling;
 using Calc.Calculation;
 using Calc.Models;
 using ExprodesC.Imp;
+using ExprodesC.Wrappers;
 using FluentAvalonia.UI.Controls;
 using Func.Services;
 using System;
@@ -23,6 +24,7 @@ public static class CommonConverters
     public static PopulationByDefaultConverter PopulationByDefault => new();
     public static BoolToVisibilityConverter BoolToVisibility => new();
     public static IntToVisibilityConverter IntToVisibility => new();
+    public static IsExpandedToVisibilityConverter IsExpandedToVisibility => new();
 
     public static LocusCalcBackgroundConverter LocusCalcBackground => new();
     public static LocusCalcForegroundConverter LocusCalcForeground => new();
@@ -133,6 +135,19 @@ public static class CommonConverters
             => throw new NotImplementedException();
     }
 
+    public class IsExpandedToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+        {
+            // Предполагаем, что если значение не null, то это объект ErWR с свойством IsExpanded
+            return value is ErWR erwr && erwr.IsExpanded;
+        }
+
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
 
     public static IValueConverter CollapseExpand { get; } =
       new FuncValueConverter<bool, object>(isExpanded =>

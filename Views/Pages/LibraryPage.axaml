@@ -112,6 +112,20 @@
 			</ui:CommandBar>
 
 			<ListBox x:Name="lbLocuses" ItemsSource="{Binding Locuses}" SelectedItem="{Binding SelectedLocus}" Classes="library-listbox">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="ContextFlyout">
+							<MenuFlyout ShowMode="TransientWithDismissOnPointerMoveAway" Placement="Right">
+								<MenuItem Header="{x:Static lang:Resources.cap_edit}"
+										 Icon="{material:MaterialIconExt Kind=Edit}"
+										 Command="{Binding $parent[ListBox].DataContext.EditLocusCommand}"/>
+								<MenuItem Header="{x:Static lang:Resources.cap_del}"
+										 Icon="{material:MaterialIconExt Kind=Delete}"
+										 Command="{Binding $parent[ListBox].DataContext.DelLocusCommand}"/>
+							</MenuFlyout>
+						</Setter>
+					</Style>
+				</ListBox.Styles>
 				<ListBox.ItemTemplate>
 					<DataTemplate>
 						<Border
@@ -161,6 +175,20 @@
 			</ui:CommandBar>
 
 			<ListBox x:Name="lbAlleles" ItemsSource="{Binding Alleles}" SelectedItem="{Binding SelectedAllele}" Classes="library-listbox">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="ContextFlyout">
+							<MenuFlyout ShowMode="TransientWithDismissOnPointerMoveAway" Placement="Right">
+								<MenuItem Header="{x:Static lang:Resources.cap_edit}"
+										 Icon="{material:MaterialIconExt Kind=Edit}"
+										 Command="{Binding $parent[ListBox].DataContext.EditAlleleCommand}"/>
+								<MenuItem Header="{x:Static lang:Resources.cap_del}"
+										 Icon="{material:MaterialIconExt Kind=Delete}"
+										 Command="{Binding $parent[ListBox].DataContext.DelAlleleCommand}"/>
+							</MenuFlyout>
+						</Setter>
+					</Style>
+				</ListBox.Styles>
 				<ItemsControl.ItemTemplate>
 					<DataTemplate>
 						<Border

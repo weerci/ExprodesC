@@ -444,4 +444,7 @@
   <data name="conf_delete_synonym" xml:space="preserve">
     <value>Confirm the deletion of the synonym '{0}'</value>
   </data>
+  <data name="desc_confirm_delete_synonym" xml:space="preserve">
+    <value>If not selected, the population will be deleted without notifying the user.</value>
+  </data>
 </root>

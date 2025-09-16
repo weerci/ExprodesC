@@ -2,19 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:vm="using:ExprodesC.ViewModels"
-			 
-			 x:DataType="vm:CalcPageVM"
-			 RenderOptions.BitmapInterpolationMode="HighQuality"
-			 xmlns:material="using:Material.Icons.Avalonia"
+             xmlns:vm="using:ExprodesC.ViewModels"
+             
+             x:DataType="vm:CalcPageVM"
+             RenderOptions.BitmapInterpolationMode="HighQuality"
+             xmlns:material="using:Material.Icons.Avalonia"
              xmlns:ui="using:FluentAvalonia.UI.Controls"
-			 xmlns:lang="using:ExprodesC.Lang"
-			 xmlns:langCalc="using:Calc.Lang"
-			 xmlns:wr="using:ExprodesC.Wrappers"
-			 xmlns:op="using:ExprodesC.Views.Pages"
-			 xmlns:conv="using:ExprodesC.Converters"
-			 
-			 
+             xmlns:lang="using:ExprodesC.Lang"
+             xmlns:langCalc="using:Calc.Lang"
+             xmlns:wr="using:ExprodesC.Wrappers"
+             xmlns:op="using:ExprodesC.Views.Pages"
+             xmlns:conv="using:ExprodesC.Converters"
+             
+             
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ExprodesC.Views.Pages.CalcPage">
 
@@ -51,11 +51,11 @@
 						<TextBlock.ContextFlyout>
 							<MenuFlyout ShowMode="TransientWithDismissOnPointerMoveAway" Placement="Right" >
 								<MenuItem Header="{x:Static lang:Resources.cap_select}" Icon="{material:MaterialIconExt Kind=SelectAll}"
-										  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"
-										  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
+									  Command="{Binding $parent[TreeView].DataContext.SelectGenotypeCommand}"
+									  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
 								<MenuItem Header="{x:Static lang:Resources.cap_unselect}" Icon="{material:MaterialIconExt Kind=TabUnselected}"
-										  Command="{Binding $parent[TreeView].DataContext.UnSelectGenotypeCommand}"
-										  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
+									  Command="{Binding $parent[TreeView].DataContext.UnSelectGenotypeCommand}"
+									  CommandParameter="{Binding $parent[TreeView].DataContext.SelectedNode.GenotypeWR}"/>
 							</MenuFlyout>
 						</TextBlock.ContextFlyout>
 					</TextBlock>
@@ -72,7 +72,7 @@
 						  ToolTip.Tip="{x:Static lang:Resources.cap_show_genotypes}"
 						  DockPanel.Dock="Left">
 				<material:MaterialIcon Kind="Menu"/>
-			</ToggleButton>
+				</ToggleButton>
 
 			<!-- Кнопки выбора метода расчета -->
 			<Button DockPanel.Dock="Right" Classes="bthMethodCalc" Content="...">
@@ -84,26 +84,26 @@
 			</Button>
 			
 			<RadioButton Classes="bthMethodCalc"
-						  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=PP, Mode=OneWay}"
-						  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=PP, Mode=OneWay}"
-						  Command="{Binding CalcMethodCommand}" CommandParameter="PP"
-						  Content="PP"
-						  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_pp}"
-						  DockPanel.Dock="Right"/>
+					  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=PP, Mode=OneWay}"
+					  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=PP, Mode=OneWay}"
+					  Command="{Binding CalcMethodCommand}" CommandParameter="PP"
+					  Content="PP"
+					  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_pp}"
+					  DockPanel.Dock="Right"/>
 			<RadioButton Classes="bthMethodCalc"
-						  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=LR, Mode=OneWay}"
-						  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=LR, Mode=OneWay}"
-						  Command="{Binding CalcMethodCommand}" CommandParameter="LR"
-						  Content="LR"
-						  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_lr}"
-						  DockPanel.Dock="Right"/>
+					  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=LR, Mode=OneWay}"
+					  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=LR, Mode=OneWay}"
+					  Command="{Binding CalcMethodCommand}" CommandParameter="LR"
+					  Content="LR"
+					  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_lr}"
+					  DockPanel.Dock="Right"/>
 			<RadioButton Classes="bthMethodCalc"
-						  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=P, Mode=OneWay}"
-						  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=P, Mode=OneWay}"
-						  Command="{Binding CalcMethodCommand}" CommandParameter="P"
-						  Content="P"
-						  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_p}"
-						  DockPanel.Dock="Right"/>
+					  IsVisible="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.VisibleMethod}, ConverterParameter=P, Mode=OneWay}"
+					  IsChecked="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.EnabledMethod}, ConverterParameter=P, Mode=OneWay}"
+					  Command="{Binding CalcMethodCommand}" CommandParameter="P"
+					  Content="P"
+					  ToolTip.Tip="{x:Static langCalc:Resources.calc_method_p}"
+					  DockPanel.Dock="Right"/>
 			
 			<!-- Выбор расчета -->
 			<Button x:Name="btnKinship" Content="{x:Static langCalc:Resources.calc_kinship}" HorizontalAlignment="Center" Width="80" IsEnabled="{Binding Project.HasSelected}">
@@ -113,54 +113,54 @@
 						<!-- Родители -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_parents}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ca}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_caa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_caa}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_caa}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cka}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cca}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccca}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccka}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cccka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccka}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccaa}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccaa}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cccaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccaa}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccaa}}"/>
 						</ui:MenuFlyoutSubItem>
 
 						<!-- Прародители -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_progenitors}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cgv}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgv}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgv}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ckgv}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ckgv}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ckgv}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cg}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cg}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cgg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgg}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgg}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cag}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cag}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cag}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cagg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cagg}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cagg}}"/>
 
 						</ui:MenuFlyoutSubItem>
 
 						<!-- Сиблинги -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_siblings}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cs}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cs}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cs}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_css}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_css}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_css}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cas}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cas}}"/>
+									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cas}}"/>
 						</ui:MenuFlyoutSubItem>
 
 
-					</ui:FAMenuFlyout>
+				</ui:FAMenuFlyout>
 				</Button.Flyout>
 			</Button>
 			<Button Content="{x:Static langCalc:Resources.calc_mix}" HorizontalAlignment="Center" Margin="5 0 0 0"
@@ -170,23 +170,23 @@
 					<ui:FAMenuFlyout Placement="BottomEdgeAlignedLeft" >
 
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_direct}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_direct}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_direct}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_ka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_ka}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_ka}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_au}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_au}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_au}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aaa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aaa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_kaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kaa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kaa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_kau}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kau}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kau}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_auu}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_auu}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_auu}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aau}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-											   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aau}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aau}}"/>
 					</ui:FAMenuFlyout>
 				</Button.Flyout>
 			</Button>
@@ -199,7 +199,7 @@
 		<!--Сплиттер для генотипов-->
 		<GridSplitter IsVisible="{Binding ElementName=tbHiderGenotypes, Path=!IsChecked}" Grid.Column="1" Grid.RowSpan="3" Background="Transparent" Width="5" HorizontalAlignment="Stretch" />
 		<Rectangle IsVisible="{Binding ElementName=tbHiderGenotypes, Path=!IsChecked}" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Fill="{DynamicResource ButtonBorderBrush}" Width="1" 
-				   VerticalAlignment="Stretch" IsHitTestVisible="False"/>
+			   VerticalAlignment="Stretch" IsHitTestVisible="False"/>
 		<material:MaterialIcon IsVisible="{Binding ElementName=tbHiderGenotypes, Path=!IsChecked}" Grid.Row="0" Grid.RowSpan="3" Width="15" Height="15" Grid.Column="1" Kind="UnfoldMoreVertical" Foreground="{DynamicResource ButtonBorderBrush}" />
 
 		<!--Полоса разделяющая заголовок и содержание-->
@@ -223,7 +223,7 @@
 							<Border CornerRadius="3" Padding="5">
 								<DockPanel>
 									<Button Theme="{DynamicResource TransparentButton}" ToolTip.Tip="{x:Static lang:Resources.cap_close}"
-											Command="{Binding CloseCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
+										Command="{Binding CloseCommand}" CommandParameter="{Binding GenotypeWR}" DockPanel.Dock="Right">
 										<material:MaterialIcon Kind="Close"/>
 									</Button>
 									<TextBlock Text="{Binding GenotypeWR.Genotype.Name}" FontWeight="Bold" Margin="4 0 20 0" VerticalAlignment="Center"/>
@@ -236,48 +236,127 @@
 			</ListBox>
 
 
-			<!-- Таблица с результатами расчета -->
-			<DataGrid Grid.Row="1" ItemsSource="{Binding Items}" IsVisible="{Binding IsVisibleGrid}" >
-				<DataGrid.Columns>
-					<DataGridTemplateColumn Width="Auto">
-						<DataGridTemplateColumn.CellTemplate>
-							<DataTemplate>
-								<Button Command="{Binding ToggleExpandCommand}"
-										Content="{Binding IsExpanded, Converter={x:Static conv:CommonConverters.CollapseExpand}}"
-										Foreground="Gray"
-										Background="Transparent"
-										BorderThickness="0"/>
-							</DataTemplate>
-						</DataGridTemplateColumn.CellTemplate>
-					</DataGridTemplateColumn>
+            <!-- Таблица с результатами расчета -->
+            <DataGrid Grid.Row="1" 
+                      ItemsSource="{Binding Items}" 
+                      IsVisible="{Binding IsVisibleGrid}" 
+                      RowDetailsVisibilityMode="Visible">
+				
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate x:DataType="wr:ErWR">
+                        <Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
+                               BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
+                               BorderThickness="1"
+                               CornerRadius="4"
+                               Margin="4"
+                               Padding="12"
+                               IsVisible="{Binding IsExpanded}">
+                            <StackPanel Orientation="Vertical" Margin="32,0,0,0">
+                                <DockPanel LastChildFill="True" Margin="0,0,0,4">
+                                    <TextBlock Text="{Binding Er.DirFormula}" 
+                                               FontFamily="Consolas"
+                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Left"/>
+                                    <TextBlock Text="{Binding Er.DirExpression.Value}"
+                                               FontFamily="Consolas"
+                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                               Margin="16,0,0,0"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               DockPanel.Dock="Right"/>
+                                </DockPanel>
+                                <DockPanel LastChildFill="True">
+                                    <TextBlock Text="{Binding Er.RevFormula}" 
+                                               FontFamily="Consolas"
+                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                               VerticalAlignment="Center"
+                                               DockPanel.Dock="Left"/>
+                                    <TextBlock Text="{Binding Er.RevExpression.Value}"
+                                               FontFamily="Consolas"
+                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+                                               Margin="16,0,0,0"
+                                               VerticalAlignment="Center"
+                                               TextWrapping="Wrap"
+                                               DockPanel.Dock="Right"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+                
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="Auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Command="{Binding ToggleExpandCommand}"
+                                        Content="{Binding IsExpanded, Converter={x:Static conv:CommonConverters.CollapseExpand}}"
+                                        Background="Transparent"
+                                        BorderThickness="0"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-					<DataGridTextColumn Binding="{Binding Er.Locus.Name}"
-									   FontSize="14"
-									   FontWeight="DemiBold">
-						<DataGridTextColumn.HeaderTemplate>
-							<DataTemplate>
-								<TextBlock Text="{x:Static lang:Resources.cap_add}"
+                    <DataGridTextColumn Binding="{Binding Er.Locus.Name}"
+                               FontSize="14"
+                           FontWeight="DemiBold">
+                        <DataGridTextColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{x:Static lang:Resources.cap_add}"
                                            HorizontalAlignment="Center" />
-							</DataTemplate>
-						</DataGridTextColumn.HeaderTemplate>
-					</DataGridTextColumn>
+                            </DataTemplate>
+                        </DataGridTextColumn.HeaderTemplate>
+                    </DataGridTextColumn>
 
-					<DataGridTextColumn Header="Name"  Width="*"/>
-					<DataGridTextColumn Header="Name"  Width="*"/>
-					<DataGridTextColumn Header="Name"  Width="*"/>
-				</DataGrid.Columns>
-				<DataGrid.RowDetailsTemplate>
-					<DataTemplate>
-						<Border Background="#252525" Padding="10">
-							<TextBlock Text="asdfffffffffffffffff"
-									   TextWrapping="Wrap"
-									   FontFamily="Consolas"/>
-						</Border>
-					</DataTemplate>
-				</DataGrid.RowDetailsTemplate>
-			</DataGrid>
-		</Grid>
+                    <!-- Новый столбец с аллелями -->
+                    <DataGridTemplateColumn Header="Аллели">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ItemsControl ItemsSource="{Binding SortedUniqueAlleles}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border BorderBrush="{DynamicResource ButtonBorderBrush}" BorderThickness="1" CornerRadius="3" Margin="2" Padding="4 2" Background="{DynamicResource SystemControlBackgroundAltHighBrush}">
+                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-	</Grid>
+                    <!-- Столбец с формулой прямой вероятности -->
+                    <DataGridTemplateColumn Header="Формула (P)">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Er.DirFormula}" VerticalAlignment="Center" IsVisible="{Binding ShowDirect}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Столбец с формулой обратной вероятности -->
+                    <DataGridTemplateColumn Header="Формула (P_rev)">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Er.RevFormula}" VerticalAlignment="Center" IsVisible="{Binding ShowReverse}" TextWrapping="Wrap"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!-- Столбец с результатом прямой вероятности -->
+                    <DataGridTextColumn Header="P (результат)" Binding="{Binding Er.DirResult, StringFormat=E3}" FontWeight="SemiBold"/>
+                    <!-- Столбец с результатом обратной вероятности -->
+                    <DataGridTextColumn Header="P_rev (результат)" Binding="{Binding Er.RevResult, StringFormat=E3}" FontWeight="SemiBold"/>
+                </DataGrid.Columns>
+                
+            </DataGrid>
+        </Grid>
+
+    </Grid>
 
 </UserControl>

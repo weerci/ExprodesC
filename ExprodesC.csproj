@@ -56,19 +56,21 @@
 
 	<ItemGroup>
 		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-		<PackageReference Include="Avalonia" Version="11.3.2" />
-		<PackageReference Include="Avalonia.Desktop" Version="11.3.2" />
-		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.2" />
-		<PackageReference Include="Avalonia.ReactiveUI" Version="11.3.2" />
-		<PackageReference Include="FluentAvaloniaUI" Version="2.4.0-preview1" />
+		<PackageReference Include="Avalonia" Version="11.3.6" />
+		<PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.6" />
+		<PackageReference Include="Avalonia.Desktop" Version="11.3.6" />
+		<PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.6" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="11.3.6" />
+		<PackageReference Include="FluentAvaloniaUI" Version="2.4.0" />
 		<PackageReference Include="Material.Icons.Avalonia" Version="2.4.1" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-preview.3.25171.5" />
-		<PackageReference Include="Moq" Version="4.18.2" />
+		<PackageReference Include="Moq" Version="4.20.72" />
 		<PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
 		<PackageReference Include="System.Data.SQLite" Version="1.0.119" />
 		<PackageReference Include="System.Drawing.Common" Version="10.0.0-preview.3.25173.2" />
-		<PackageReference Include="System.IO.Abstractions" Version="22.0.14" />
+		<PackageReference Include="System.IO.Abstractions" Version="22.0.16" />
+		<PackageReference Include="System.Text.Json" Version="9.0.9" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using Calc.Calculation;
+using Calc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,12 @@ public class ErWR : ReactiveObject
     {
         Er = er;
 
-        ToggleExpandCommand = ReactiveCommand.Create(() => IsExpanded = !IsExpanded);
+        ToggleExpandCommand = ReactiveCommand.Create(fff);
+    }
+
+    private void fff()
+    {
+        IsExpanded = !IsExpanded;
     }
 
     #region Properties
@@ -25,6 +31,12 @@ public class ErWR : ReactiveObject
     public bool ShowDirect =>  !string.IsNullOrEmpty(Er.DirFormula);
 
     [Reactive] public bool IsExpanded { get; set; }
+
+    /// <summary>
+    /// Sorted unique alleles from all genomes in this ER
+    /// </summary>
+    public IEnumerable<Allele> SortedUniqueAlleles =>
+        Er.Genomes?.Where(g => g.IsSuccess).SelectMany(g => g.Value!.Alleles).Distinct().OrderBy(a => a.Ord) ?? Enumerable.Empty<Allele>();
 
     #endregion
 

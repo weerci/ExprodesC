@@ -226,7 +226,7 @@
     <value>Нет</value>
   </data>
   <data name="msg_page_conf_delete_genotype" xml:space="preserve">
-    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление генотипа</value>
+    <value>Подтверждение удаления генотипа</value>
   </data>
   <data name="cap_select" xml:space="preserve">
     <value>Выбрать</value>
@@ -337,13 +337,13 @@
     <value>Подтвердите удаление генотипа '{0}'</value>
   </data>
   <data name="desc_confirm_delete_genotype" xml:space="preserve">
-    <value>Если не выбран, то удаление генотипа будет производится без уведомления пользователя</value>
+    <value> Если флаг установлен - то при попытке удалить генотип, появляется окно запрашивающее подтверждение на удаление генотипа</value>
   </data>
   <data name="msg_page_conf_delete_population" xml:space="preserve">
-    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление популяции</value>
+    <value>Подтверждение удаления популяции</value>
   </data>
   <data name="desc_confirm_delete_population" xml:space="preserve">
-    <value>Если не выбран, то удаление популяции будет производится без уведомления пользователя</value>
+    <value> Если флаг установлен - то при попытке удалить популяцию, появляется окно запрашивающее подтверждение на удаление популяции</value>
   </data>
   <data name="cap_name_allele" xml:space="preserve">
     <value>Название аллеля</value>
@@ -373,16 +373,16 @@
     <value>Ошибка при создании локуса</value>
   </data>
   <data name="msg_page_conf_delete_locus" xml:space="preserve">
-    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление локуса</value>
+    <value>Подтверждение удаления локуса</value>
   </data>
   <data name="msg_page_conf_delete_allele" xml:space="preserve">
-    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление аллеля</value>
+    <value>Подтверждение удаления аллеля</value>
   </data>
   <data name="desc_confirm_delete_locus" xml:space="preserve">
-    <value>Если не выбран, то удаление локуса будет производится без уведомления пользователя</value>
+    <value> Если флаг установлен - то при попытке удалить локус, появляется окно запрашивающее подтверждение на удаление локуса</value>
   </data>
   <data name="desc_confirm_delete_allele" xml:space="preserve">
-    <value>Если не выбран, то удаление аллеля будет производится без уведомления пользователя</value>
+    <value> Если флаг установлен - то при попытке удалить аллель, появляется окно запрашивающее подтверждение на удаление аллеля</value>
   </data>
   <data name="cap_name_locus" xml:space="preserve">
     <value>Название локуса</value>
@@ -439,9 +439,12 @@
     <value>Имя синонима должно быть уникально</value>
   </data>
   <data name="msg_page_conf_delete_synonym" xml:space="preserve">
-    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление синонима</value>
+    <value>Подтверждение удаления синонима</value>
   </data>
   <data name="conf_delete_synonym" xml:space="preserve">
     <value>Подтвердите удаление синонима '{0}'</value>
+  </data>
+  <data name="desc_confirm_delete_synonym" xml:space="preserve">
+    <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление синонима</value>
   </data>
 </root>
