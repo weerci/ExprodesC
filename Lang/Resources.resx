@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cap_calculate" xml:space="preserve">
-    <value>Calculations</value>
+    <value>Calculation</value>
   </data>
   <data name="cap_close" xml:space="preserve">
     <value>Close</value>
   </data>
   <data name="cap_compare" xml:space="preserve">
-    <value>Comparison of genotypes</value>
+    <value>Genotype comparison</value>
   </data>
   <data name="cap_from_file" xml:space="preserve">
     <value>From file</value>
@@ -142,7 +142,7 @@
     <value>Project</value>
   </data>
   <data name="cap_projects_select" xml:space="preserve">
-    <value>Project Selection</value>
+    <value>Select Project</value>
   </data>
   <data name="cap_save" xml:space="preserve">
     <value>Save</value>
@@ -151,10 +151,10 @@
     <value>Settings</value>
   </data>
   <data name="msg_object_saved" xml:space="preserve">
-    <value>The '{0}' was saved successfully on the way '{1}'</value>
+    <value>The '{0}' was successfully saved to '{1}'</value>
   </data>
   <data name="tpl_empty_template" xml:space="preserve">
-    <value>The default template</value>
+    <value>Default template</value>
   </data>
   <data name="cap_project_load" xml:space="preserve">
     <value>Load</value>
@@ -163,7 +163,7 @@
     <value>Open</value>
   </data>
   <data name="cap_project_files_select" xml:space="preserve">
-    <value>Select a project or a file with genotypes</value>
+    <value>Select a project or genotype file</value>
   </data>
   <data name="cap_genotypes_list" xml:space="preserve">
     <value>List of genotypes</value>
@@ -178,10 +178,10 @@
     <value>Save as...</value>
   </data>
   <data name="cap_contols" xml:space="preserve">
-    <value>Experts/Controls</value>
+    <value>Experts / Controls</value>
   </data>
   <data name="msg_uploading_file" xml:space="preserve">
-    <value>Uploading a file</value>
+    <value>Uploading file</value>
   </data>
   <data name="msg_genotype_not_selected" xml:space="preserve">
     <value>Genotype is not selected</value>
@@ -253,7 +253,7 @@
     <value>Create a genotype</value>
   </data>
   <data name="cap_unselect" xml:space="preserve">
-    <value>Remove</value>
+    <value>Unselect</value>
   </data>
   <data name="cap_hide_genotypes" xml:space="preserve">
     <value>Hide genotypes</value>
@@ -268,22 +268,22 @@
     <value>Application Theme</value>
   </data>
   <data name="set_priority" xml:space="preserve">
-    <value>Priority Pmin</value>
+    <value>Pmin priority</value>
   </data>
   <data name="set_priority_desc" xml:space="preserve">
-    <value>It is used to indicate the priorities of the frequencies used if the library of loci contains alleles with frequencies lower than the specified Pmin for a particular locus. When the Pmin point is marked, the frequency of the Pmin locus will be used in calculations if the frequency of the allele used is less than the frequency of the Pmin.</value>
+    <value>Used to specify the priority of frequencies. If the loci library contains alleles with frequencies lower than the specified Pmin for a locus, the Pmin frequency will be used in calculations instead.</value>
   </data>
   <data name="set_displaying_values" xml:space="preserve">
     <value>Displaying values</value>
   </data>
   <data name="set_disp_values_desk" xml:space="preserve">
-    <value>Defines the display of calculation results, in exponential or decimal form</value>
+    <value>Defines how calculation results are displayed: in exponential or decimal form.</value>
   </data>
   <data name="set_decimal_number" xml:space="preserve">
-    <value>calc_decimal_places,The number of decimal places displayed</value>
+    <value>Number of decimal places displayed</value>
   </data>
   <data name="set_decimal_number_desc" xml:space="preserve">
-    <value>Shows exactly up to which character the final result will be displayed.</value>
+    <value>Specifies the number of decimal places to display in the final result.</value>
   </data>
   <data name="set_number_mutation" xml:space="preserve">
     <value>Maximum number of mutations</value>
@@ -292,13 +292,13 @@
     <value>The number of mismatched alleles in the genotype, at different loci, after which the genotype will be considered different from the original</value>
   </data>
   <data name="set_blend_methods_name" xml:space="preserve">
-    <value>Methods of calculation</value>
+    <value>Calculation methods</value>
   </data>
   <data name="set_method_calc_desc" xml:space="preserve">
-    <value>The values of mutation frequencies of locuses for which data are not available are calculated by this method from the available (entered) actual frequencies,,</value>
+    <value>Mutation frequencies for loci without available data are calculated using this method from the available actual frequencies.</value>
   </data>
   <data name="set_used_population" xml:space="preserve">
-    <value>Frequency profile used</value>
+    <value>Used frequency profile</value>
   </data>
   <data name="cap_up_population" xml:space="preserve">
     <value>Upload population</value>
@@ -313,13 +313,13 @@
     <value>Down</value>
   </data>
   <data name="cap_upload_to_excel" xml:space="preserve">
-    <value>Upload to Excel</value>
+    <value>Export to Excel</value>
   </data>
   <data name="cap_new_population" xml:space="preserve">
     <value>New population</value>
   </data>
   <data name="cap_name_population" xml:space="preserve">
-    <value>Name of population</value>
+    <value>Population name</value>
   </data>
   <data name="cap_base_population" xml:space="preserve">
     <value>Base population</value>
@@ -409,7 +409,7 @@
     <value>(by default)</value>
   </data>
   <data name="cap_based_population" xml:space="preserve">
-    <value>A population is based on a population</value>
+    <value>Population based on another population</value>
   </data>
   <data name="err_pop_unique" xml:space="preserve">
     <value>The population name must be unique.</value>
@@ -433,7 +433,7 @@
     <value>New synonym</value>
   </data>
   <data name="err_add_synonym" xml:space="preserve">
-    <value>Error when creating a synonyn</value>
+    <value>Error when creating a synonym</value>
   </data>
   <data name="err_synonym_unique" xml:space="preserve">
     <value>The synonym name must be unique.</value>
@@ -445,6 +445,6 @@
     <value>Confirm the deletion of the synonym '{0}'</value>
   </data>
   <data name="desc_confirm_delete_synonym" xml:space="preserve">
-    <value>If not selected, the population will be deleted without notifying the user.</value>
+    <value>If not selected, the synonym will be deleted without notifying the user.</value>
   </data>
 </root>

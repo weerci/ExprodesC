@@ -240,7 +240,7 @@
             <DataGrid Grid.Row="1" 
                       ItemsSource="{Binding Items}" 
                       IsVisible="{Binding IsVisibleGrid}" 
-                      RowDetailsVisibilityMode="Visible">
+                      RowDetailsVisibilityMode="Collapsed">
 				
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate x:DataType="wr:ErWR">
