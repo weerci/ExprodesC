@@ -2,8 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="using:ExprodesC.ViewModels"
              
+			 
+			 xmlns:vm="using:ExprodesC.ViewModels"
              x:DataType="vm:CalcPageVM"
              RenderOptions.BitmapInterpolationMode="HighQuality"
              xmlns:material="using:Material.Icons.Avalonia"
@@ -13,6 +14,7 @@
              xmlns:wr="using:ExprodesC.Wrappers"
              xmlns:op="using:ExprodesC.Views.Pages"
              xmlns:conv="using:ExprodesC.Converters"
+			 xmlns:ctrl="using:ExprodesC.Views.Controls"
              
              
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
@@ -237,124 +239,8 @@
 
 
             <!-- Таблица с результатами расчета -->
-            <DataGrid Grid.Row="1" 
-                      ItemsSource="{Binding Items}" 
-                      IsVisible="{Binding IsVisibleGrid}" 
-                      RowDetailsVisibilityMode="Collapsed">
-				
-                <DataGrid.RowDetailsTemplate>
-                    <DataTemplate x:DataType="wr:ErWR">
-                        <Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
-                               BorderBrush="{DynamicResource CardStrokeColorDefaultBrush}"
-                               BorderThickness="1"
-                               CornerRadius="4"
-                               Margin="4"
-                               Padding="12"
-                               IsVisible="{Binding IsExpanded}">
-                            <StackPanel Orientation="Vertical" Margin="32,0,0,0">
-                                <DockPanel LastChildFill="True" Margin="0,0,0,4">
-                                    <TextBlock Text="{Binding Er.DirFormula}" 
-                                               FontFamily="Consolas"
-                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                                               VerticalAlignment="Center"
-                                               DockPanel.Dock="Left"/>
-                                    <TextBlock Text="{Binding Er.DirExpression.Value}"
-                                               FontFamily="Consolas"
-                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                                               Margin="16,0,0,0"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap"
-                                               DockPanel.Dock="Right"/>
-                                </DockPanel>
-                                <DockPanel LastChildFill="True">
-                                    <TextBlock Text="{Binding Er.RevFormula}" 
-                                               FontFamily="Consolas"
-                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                                               VerticalAlignment="Center"
-                                               DockPanel.Dock="Left"/>
-                                    <TextBlock Text="{Binding Er.RevExpression.Value}"
-                                               FontFamily="Consolas"
-                                               Foreground="{DynamicResource TextFillColorPrimaryBrush}"
-                                               Margin="16,0,0,0"
-                                               VerticalAlignment="Center"
-                                               TextWrapping="Wrap"
-                                               DockPanel.Dock="Right"/>
-                                </DockPanel>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </DataGrid.RowDetailsTemplate>
-                
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="Auto">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Command="{Binding ToggleExpandCommand}"
-                                        Content="{Binding IsExpanded, Converter={x:Static conv:CommonConverters.CollapseExpand}}"
-                                        Background="Transparent"
-                                        BorderThickness="0"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <DataGridTextColumn Binding="{Binding Er.Locus.Name}"
-                               FontSize="14"
-                           FontWeight="DemiBold">
-                        <DataGridTextColumn.HeaderTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{x:Static lang:Resources.cap_add}"
-                                           HorizontalAlignment="Center" />
-                            </DataTemplate>
-                        </DataGridTextColumn.HeaderTemplate>
-                    </DataGridTextColumn>
-
-                    <!-- Новый столбец с аллелями -->
-                    <DataGridTemplateColumn Header="Аллели">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <ItemsControl ItemsSource="{Binding SortedUniqueAlleles}">
-                                    <ItemsControl.ItemsPanel>
-                                        <ItemsPanelTemplate>
-                                            <StackPanel Orientation="Horizontal"/>
-                                        </ItemsPanelTemplate>
-                                    </ItemsControl.ItemsPanel>
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <Border BorderBrush="{DynamicResource ButtonBorderBrush}" BorderThickness="1" CornerRadius="3" Margin="2" Padding="4 2" Background="{DynamicResource SystemControlBackgroundAltHighBrush}">
-                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"/>
-                                            </Border>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <!-- Столбец с формулой прямой вероятности -->
-                    <DataGridTemplateColumn Header="Формула (P)">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Er.DirFormula}" VerticalAlignment="Center" IsVisible="{Binding ShowDirect}" TextWrapping="Wrap"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <!-- Столбец с формулой обратной вероятности -->
-                    <DataGridTemplateColumn Header="Формула (P_rev)">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Er.RevFormula}" VerticalAlignment="Center" IsVisible="{Binding ShowReverse}" TextWrapping="Wrap"/>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
-                    <!-- Столбец с результатом прямой вероятности -->
-                    <DataGridTextColumn Header="P (результат)" Binding="{Binding Er.DirResult, StringFormat=E3}" FontWeight="SemiBold"/>
-                    <!-- Столбец с результатом обратной вероятности -->
-                    <DataGridTextColumn Header="P_rev (результат)" Binding="{Binding Er.RevResult, StringFormat=E3}" FontWeight="SemiBold"/>
-                </DataGrid.Columns>
-                
-            </DataGrid>
+            <ctrl:ResultsDataGrid Grid.Row="1"/>
+			
         </Grid>
 
     </Grid>
