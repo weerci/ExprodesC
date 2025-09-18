@@ -19,7 +19,7 @@
 
 	<DataGrid ItemsSource="{Binding Items}"
               IsVisible="{Binding IsVisibleGrid}"
-              RowDetailsVisibilityMode="Collapsed">
+              RowDetailsVisibilityMode="Visible">
 		<DataGrid.RowDetailsTemplate>
 			<DataTemplate x:DataType="wr:ErWR">
 				<Border Background="{DynamicResource CardBackgroundFillColorDefaultBrush}"
