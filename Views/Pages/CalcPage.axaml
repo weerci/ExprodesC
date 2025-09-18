@@ -115,50 +115,50 @@
 						<!-- Родители -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_parents}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ca}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_caa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_caa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_caa}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cka}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cca}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccca}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccca}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccca}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccka}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cccka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccka}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccka}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ccaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccaa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ccaa}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cccaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccaa}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cccaa}}"/>
 						</ui:MenuFlyoutSubItem>
 
 						<!-- Прародители -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_progenitors}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cgv}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgv}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgv}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_ckgv}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ckgv}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_ckgv}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cg}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cg}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cgg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgg}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cgg}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cag}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cag}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cag}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cagg}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cagg}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cagg}}"/>
 
 						</ui:MenuFlyoutSubItem>
 
 						<!-- Сиблинги -->
 						<ui:MenuFlyoutSubItem Text="{x:Static langCalc:Resources.cap_siblings}">
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cs}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cs}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cs}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_css}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_css}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_css}}"/>
 							<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_rel_cas}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-									   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cas}}"/>
+								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_rel_cas}}"/>
 						</ui:MenuFlyoutSubItem>
 
 
@@ -172,23 +172,23 @@
 					<ui:FAMenuFlyout Placement="BottomEdgeAlignedLeft" >
 
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_direct}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_direct}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_direct}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aa}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_ka}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_ka}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_ka}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_au}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_au}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_au}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aaa}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aaa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_kaa}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kaa}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kaa}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_kau}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kau}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_kau}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_auu}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_auu}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_auu}}"/>
 						<ui:MenuFlyoutItem Text="{x:Static langCalc:Resources.calc_mix_aau}" Command="{Binding CalcCommand}" CommandParameter="{Binding $self.Text}"
-								   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aau}}"/>
+							   IsEnabled="{Binding Project.SelectedCount, Converter={x:Static conv:CalcConverters.EnabledCalc}, ConverterParameter={x:Static langCalc:Resources.calc_mix_aau}}"/>
 					</ui:FAMenuFlyout>
 				</Button.Flyout>
 			</Button>
@@ -238,11 +238,19 @@
 			</ListBox>
 
 
-            <!-- Таблица с результатами расчета -->
-            <ctrl:ResultsDataGrid Grid.Row="1"/>
+			<!-- Таблица с результатами расчета с анимацией -->
+			<Border x:Name="ResultsGridContainer" Grid.Row="1" Opacity="1" Margin="0">
+				<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Opacity" Duration="0:0:0.15" />
+							<ThicknessTransition Property="Margin" Duration="0:0:0.15" />
+						</Transitions>
+				</Border.Transitions>
+				<ctrl:ResultsDataGrid/>
+			</Border>
 			
-        </Grid>
+		</Grid>
 
-    </Grid>
+	</Grid>
 
 </UserControl>
