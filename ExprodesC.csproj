@@ -45,6 +45,7 @@
 	  <AvaloniaXaml Remove="Assets\Styles\Flyout.axaml" />
 	  <AvaloniaXaml Remove="Assets\Styles\InfoBar.axaml" />
 	  <AvaloniaXaml Remove="Assets\Styles\LibraryPage.axaml" />
+	  <AvaloniaXaml Remove="Assets\Styles\TextBoxAsBlock.axaml" />
 	  <AvaloniaXaml Remove="Assets\Styles\ToggleRadioButton.axaml" />
 	</ItemGroup>
 
@@ -130,6 +131,9 @@
 	    <SubType>Designer</SubType>
 	  </AvaloniaResource>
 	  <AvaloniaResource Update="Assets\Styles\LibraryPage.axaml">
+	    <SubType>Designer</SubType>
+	  </AvaloniaResource>
+	  <AvaloniaResource Update="Assets\Styles\TextBoxAsBlock.axaml">
 	    <SubType>Designer</SubType>
 	  </AvaloniaResource>
 	  <AvaloniaResource Update="Assets\Styles\ToggleRadioButton.axaml">

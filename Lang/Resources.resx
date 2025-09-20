@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cap_calculate" xml:space="preserve">
-    <value>Calculation</value>
+    <value>Calculations</value>
   </data>
   <data name="cap_close" xml:space="preserve">
     <value>Close</value>
@@ -446,5 +446,11 @@
   </data>
   <data name="desc_confirm_delete_synonym" xml:space="preserve">
     <value>If not selected, the synonym will be deleted without notifying the user.</value>
+  </data>
+  <data name="cap_formula" xml:space="preserve">
+    <value>Formula:</value>
+  </data>
+  <data name="cap_calc" xml:space="preserve">
+    <value>Calculate:</value>
   </data>
 </root>

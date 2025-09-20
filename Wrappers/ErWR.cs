@@ -1,5 +1,6 @@
 ﻿using Calc.Calculation;
 using Calc.Models;
+using Func;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ using System.Windows.Input;
 
 namespace ExprodesC.Wrappers;
 
-public class ErWR : ReactiveObject
+public partial class ErWR : ReactiveObject
 {
+    
     public ErWR(ER er)
     {
         Er = er;

@@ -17,6 +17,7 @@
 		<StyleInclude Source="avares://ExprodesC/Assets/Styles/CommandBar.axaml" />
 		<StyleInclude Source="avares://ExprodesC/Assets/Styles/InfoBar.axaml" />
 		<StyleInclude Source="avares://ExprodesC/Assets/Styles/LibraryPage.axaml" />
+		<StyleInclude Source="avares://ExprodesC/Assets/Styles/TextBoxAsBlock.axaml" />
 		<avalonia:MaterialIconStyles />
 
 	</Application.Styles>

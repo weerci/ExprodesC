@@ -106,11 +106,20 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на A population is based on a population.
+        ///   Ищет локализованную строку, похожую на Population based on another population.
         /// </summary>
         public static string cap_based_population {
             get {
                 return ResourceManager.GetString("cap_based_population", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Calculate:.
+        /// </summary>
+        public static string cap_calc {
+            get {
+                return ResourceManager.GetString("cap_calc", resourceCulture);
             }
         }
         
@@ -133,7 +142,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Comparison of genotypes.
+        ///   Ищет локализованную строку, похожую на Genotype comparison.
         /// </summary>
         public static string cap_compare {
             get {
@@ -142,7 +151,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Experts/Controls.
+        ///   Ищет локализованную строку, похожую на Experts / Controls.
         /// </summary>
         public static string cap_contols {
             get {
@@ -237,6 +246,15 @@ namespace ExprodesC.Lang {
         public static string cap_file_save_as {
             get {
                 return ResourceManager.GetString("cap_file_save_as", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Formula:.
+        /// </summary>
+        public static string cap_formula {
+            get {
+                return ResourceManager.GetString("cap_formula", resourceCulture);
             }
         }
         
@@ -367,7 +385,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Name of population.
+        ///   Ищет локализованную строку, похожую на Population name.
         /// </summary>
         public static string cap_name_population {
             get {
@@ -457,7 +475,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Select a project or a file with genotypes.
+        ///   Ищет локализованную строку, похожую на Select a project or genotype file.
         /// </summary>
         public static string cap_project_files_select {
             get {
@@ -484,7 +502,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Project Selection.
+        ///   Ищет локализованную строку, похожую на Select Project.
         /// </summary>
         public static string cap_projects_select {
             get {
@@ -538,7 +556,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Remove.
+        ///   Ищет локализованную строку, похожую на Unselect.
         /// </summary>
         public static string cap_unselect {
             get {
@@ -565,7 +583,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Upload to Excel.
+        ///   Ищет локализованную строку, похожую на Export to Excel.
         /// </summary>
         public static string cap_upload_to_excel {
             get {
@@ -664,7 +682,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на If not selected, the population will be deleted without notifying the user..
+        ///   Ищет локализованную строку, похожую на If not selected, the synonym will be deleted without notifying the user..
         /// </summary>
         public static string desc_confirm_delete_synonym {
             get {
@@ -709,7 +727,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Error when creating a synonyn.
+        ///   Ищет локализованную строку, похожую на Error when creating a synonym.
         /// </summary>
         public static string err_add_synonym {
             get {
@@ -799,7 +817,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The &apos;{0}&apos; was saved successfully on the way &apos;{1}&apos;.
+        ///   Ищет локализованную строку, похожую на The &apos;{0}&apos; was successfully saved to &apos;{1}&apos;.
         /// </summary>
         public static string msg_object_saved {
             get {
@@ -889,7 +907,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Uploading a file.
+        ///   Ищет локализованную строку, похожую на Uploading file.
         /// </summary>
         public static string msg_uploading_file {
             get {
@@ -898,7 +916,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Methods of calculation.
+        ///   Ищет локализованную строку, похожую на Calculation methods.
         /// </summary>
         public static string set_blend_methods_name {
             get {
@@ -907,7 +925,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на calc_decimal_places,The number of decimal places displayed.
+        ///   Ищет локализованную строку, похожую на Number of decimal places displayed.
         /// </summary>
         public static string set_decimal_number {
             get {
@@ -916,7 +934,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Shows exactly up to which character the final result will be displayed..
+        ///   Ищет локализованную строку, похожую на Specifies the number of decimal places to display in the final result..
         /// </summary>
         public static string set_decimal_number_desc {
             get {
@@ -925,7 +943,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Defines the display of calculation results, in exponential or decimal form.
+        ///   Ищет локализованную строку, похожую на Defines how calculation results are displayed: in exponential or decimal form..
         /// </summary>
         public static string set_disp_values_desk {
             get {
@@ -943,7 +961,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The values of mutation frequencies of locuses for which data are not available are calculated by this method from the available (entered) actual frequencies,,.
+        ///   Ищет локализованную строку, похожую на Mutation frequencies for loci without available data are calculated using this method from the available actual frequencies..
         /// </summary>
         public static string set_method_calc_desc {
             get {
@@ -970,7 +988,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Priority Pmin.
+        ///   Ищет локализованную строку, похожую на Pmin priority.
         /// </summary>
         public static string set_priority {
             get {
@@ -979,7 +997,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на It is used to indicate the priorities of the frequencies used if the library of loci contains alleles with frequencies lower than the specified Pmin for a particular locus. When the Pmin point is marked, the frequency of the Pmin locus will be used in calculations if the frequency of the allele used is less than the frequency of the Pmin..
+        ///   Ищет локализованную строку, похожую на Used to specify the priority of frequencies. If the loci library contains alleles with frequencies lower than the specified Pmin for a locus, the Pmin frequency will be used in calculations instead..
         /// </summary>
         public static string set_priority_desc {
             get {
@@ -1006,7 +1024,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Frequency profile used.
+        ///   Ищет локализованную строку, похожую на Used frequency profile.
         /// </summary>
         public static string set_used_population {
             get {
@@ -1042,7 +1060,7 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на The default template.
+        ///   Ищет локализованную строку, похожую на Default template.
         /// </summary>
         public static string tpl_empty_template {
             get {

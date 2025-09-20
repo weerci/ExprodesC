@@ -447,4 +447,10 @@
   <data name="desc_confirm_delete_synonym" xml:space="preserve">
     <value> Если флаг установлен - то при попытке удалить синоним, появляется окно запрашивающее подтверждение на удаление синонима</value>
   </data>
+  <data name="cap_formula" xml:space="preserve">
+    <value>Формула:</value>
+  </data>
+  <data name="cap_calc" xml:space="preserve">
+    <value>Расчет:</value>
+  </data>
 </root>
