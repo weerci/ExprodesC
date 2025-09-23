@@ -43,7 +43,7 @@
 					   Height="65"
                        IsVisible="{Binding IsExpanded}">
 					<Grid RowDefinitions="auto auto" ColumnDefinitions="auto auto auto" Margin="44 0 0 0">
-						
+
 						<!--Прямое вычисление-->
 						<TextBlock Grid.RowSpan="2" Text="{Binding Er.AllelesToStr}" VerticalAlignment="Center"/>
 						<TextBlock Text="{Binding DirFormulaView}" VerticalAlignment="Center" Grid.Column="1" Margin="15 0 0 0"/>
@@ -80,7 +80,7 @@
 				FontWeight="DemiBold"/>
 
 			<!--Аллели участвующие в расчете-->
-			<DataGridTemplateColumn 
+			<DataGridTemplateColumn
 				Header="{x:Static lang:Resources.cap_alleles}">
 				<DataGridTemplateColumn.CellTemplate>
 					<DataTemplate>
@@ -102,7 +102,8 @@
 				</DataGridTemplateColumn.CellTemplate>
 			</DataGridTemplateColumn>
 
-			<DataGridTemplateColumn Header="Формула (P)" IsVisible="{Binding ShowDirect}">
+			<!--Формула прямой вероятности - всегда показывается-->
+			<DataGridTemplateColumn Header="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.CollumnFormula}}">
 				<DataGridTemplateColumn.CellTemplate>
 					<DataTemplate>
 						<TextBlock Text="{Binding Er.DirFormula}" VerticalAlignment="Center" TextWrapping="Wrap"/>
@@ -110,16 +111,31 @@
 				</DataGridTemplateColumn.CellTemplate>
 			</DataGridTemplateColumn>
 
-			<DataGridTemplateColumn Header="Формула (P_rev)" IsVisible="{Binding ShowReverse}" >
+			<!--Формула обратной вероятности показывается только когда расчет LR-->
+			<DataGridTemplateColumn Header="{x:Static lang:Resources.gc_rev_hypothesis}" IsVisible="{Binding ShowReverse}">
 				<DataGridTemplateColumn.CellTemplate>
 					<DataTemplate>
 						<TextBlock Text="{Binding Er.RevFormula}" VerticalAlignment="Center" TextWrapping="Wrap"/>
 					</DataTemplate>
 				</DataGridTemplateColumn.CellTemplate>
 			</DataGridTemplateColumn>
+			
+			<!--Вероятность прямой гипотезы-->
+			<DataGridTemplateColumn Header="{Binding SelectedCalcResearch, Converter={x:Static conv:CalcConverters.CollumnProbability}}">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate>
+						<TextBlock Text="{Binding Er.DirResult, StringFormat=E3}" VerticalAlignment="Center" TextWrapping="Wrap"/>
+					</DataTemplate>
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
 
-			<DataGridTextColumn Header="P (результат)" Binding="{Binding Er.DirResult, StringFormat=E3}" FontWeight="SemiBold"/>
-			<DataGridTextColumn Header="P_rev (результат)" Binding="{Binding Er.RevResult, StringFormat=E3}" FontWeight="SemiBold" IsVisible="{Binding ShowReverse}"/>
+			<!--Верояность обратной гипотезы показывается только когда расчет LR-->
+			<DataGridTextColumn
+				Header="{x:Static lang:Resources.gc_probability_rev}"
+				Binding="{Binding Er.RevResult, StringFormat=E3}"
+				IsVisible="{Binding ShowReverse}"/>
+
+
 		</DataGrid.Columns>
 	</DataGrid>
 

@@ -468,9 +468,6 @@
   <data name="gc_grandfather_grandmother" xml:space="preserve">
     <value>Дедушка (бабушка)</value>
   </data>
-  <data name="gc_presumed_gg" xml:space="preserve">
-    <value>Дедушка/Бабушка</value>
-  </data>
   <data name="gc_person_verification" xml:space="preserve">
     <value>Проверяемое лицо</value>
   </data>
@@ -479,5 +476,26 @@
   </data>
   <data name="cap_alleles" xml:space="preserve">
     <value>Аллели</value>
+  </data>
+  <data name="gc_presumed_gg" xml:space="preserve">
+    <value>Дедушка/Бабушка</value>
+  </data>
+  <data name="gc_formula" xml:space="preserve">
+    <value>Формула</value>
+  </data>
+  <data name="gc_probability" xml:space="preserve">
+    <value>Вероятность</value>
+  </data>
+  <data name="gc_direct_hypothesis" xml:space="preserve">
+    <value>Прямая гипотеза P (R)</value>
+  </data>
+  <data name="gc_probability_dir" xml:space="preserve">
+    <value>Вероятность P (R)</value>
+  </data>
+  <data name="gc_probability_rev" xml:space="preserve">
+    <value>Вероятность P (R')</value>
+  </data>
+  <data name="gc_rev_hypothesis" xml:space="preserve">
+    <value>Обратная гипотеза P (R')</value>
   </data>
 </root>

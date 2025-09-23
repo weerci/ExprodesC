@@ -799,6 +799,24 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Direct hypothesis P (R).
+        /// </summary>
+        public static string gc_direct_hypothesis {
+            get {
+                return ResourceManager.GetString("gc_direct_hypothesis", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Formula.
+        /// </summary>
+        public static string gc_formula {
+            get {
+                return ResourceManager.GetString("gc_formula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Grandfather (grandmother).
         /// </summary>
         public static string gc_grandfather_grandmother {
@@ -858,6 +876,42 @@ namespace ExprodesC.Lang {
         public static string gc_presumed_gg {
             get {
                 return ResourceManager.GetString("gc_presumed_gg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Probability.
+        /// </summary>
+        public static string gc_probability {
+            get {
+                return ResourceManager.GetString("gc_probability", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Probability P (R).
+        /// </summary>
+        public static string gc_probability_dir {
+            get {
+                return ResourceManager.GetString("gc_probability_dir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Probability P (R&apos;).
+        /// </summary>
+        public static string gc_probability_rev {
+            get {
+                return ResourceManager.GetString("gc_probability_rev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Inverse hypothesis P (R&apos;).
+        /// </summary>
+        public static string gc_rev_hypothesis {
+            get {
+                return ResourceManager.GetString("gc_rev_hypothesis", resourceCulture);
             }
         }
         

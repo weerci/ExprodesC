@@ -156,6 +156,8 @@ public class CalcPageVM() : BaseVM
         {
             TypeCalcEx.SetHashMethod(SelectedCalcResearch, res);
             await calc(SelectedCalcResearch);
+            this.RaisePropertyChanged(nameof(SelectedCalcResearch));
+
         }
     }
 
