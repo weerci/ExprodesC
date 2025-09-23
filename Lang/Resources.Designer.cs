@@ -88,6 +88,15 @@ namespace ExprodesC.Lang {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Alleles.
+        /// </summary>
+        public static string cap_alleles {
+            get {
+                return ResourceManager.GetString("cap_alleles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Base population.
         /// </summary>
         public static string cap_base_population {
@@ -777,6 +786,78 @@ namespace ExprodesC.Lang {
         public static string err_synonym_unique {
             get {
                 return ResourceManager.GetString("err_synonym_unique", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Locuses.
+        /// </summary>
+        public static string gc_child {
+            get {
+                return ResourceManager.GetString("gc_child", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Grandfather (grandmother).
+        /// </summary>
+        public static string gc_grandfather_grandmother {
+            get {
+                return ResourceManager.GetString("gc_grandfather_grandmother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Intended parent.
+        /// </summary>
+        public static string gc_intended_parent {
+            get {
+                return ResourceManager.GetString("gc_intended_parent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Known parent.
+        /// </summary>
+        public static string gc_known_parent {
+            get {
+                return ResourceManager.GetString("gc_known_parent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Locuses.
+        /// </summary>
+        public static string gc_locuses {
+            get {
+                return ResourceManager.GetString("gc_locuses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Person being verified.
+        /// </summary>
+        public static string gc_person_verification {
+            get {
+                return ResourceManager.GetString("gc_person_verification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Brother/Sister.
+        /// </summary>
+        public static string gc_presumed_brother_sister {
+            get {
+                return ResourceManager.GetString("gc_presumed_brother_sister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Grandfather/Grandmother.
+        /// </summary>
+        public static string gc_presumed_gg {
+            get {
+                return ResourceManager.GetString("gc_presumed_gg", resourceCulture);
             }
         }
         

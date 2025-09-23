@@ -26,13 +26,12 @@ public class CalcPageVM() : BaseVM
 {
     readonly IDisposable _cleanUp = null!;
 
-    public ISettingsProvider<ExSettingData> _settings { get; set; } = null!;
     ICounter _counter = null!;
     readonly SourceList<ErWR> _erWr = new();
 
     public CalcPageVM(ISettingsProvider<ExSettingData> settings, IProject project, ICounter counter) : this()
     {
-        _settings = settings;
+        Settings = settings;
         Project = project;
         _counter = counter;
 
@@ -50,6 +49,7 @@ public class CalcPageVM() : BaseVM
         var itemsLoader = _erWr.Connect()
             .ObserveOn(RxApp.MainThreadScheduler)
             .Bind(Items)
+            .Do(d => { this.RaisePropertyChanged(nameof(ShowReverse)); this.RaisePropertyChanged(nameof(ShowDirect)); })
             .Subscribe();
 
         CalcCommand = ReactiveCommand.CreateFromTask<string>(calc);
@@ -63,6 +63,7 @@ public class CalcPageVM() : BaseVM
     }
 
     #region Properties
+    public ISettingsProvider<ExSettingData> Settings { get; set; } = null!;
 
     public IProject Project { get; set; } = null!;
 
@@ -85,6 +86,16 @@ public class CalcPageVM() : BaseVM
     /// Строки таблицы расчетов
     /// </summary>
     public IObservableCollection<ErWR> Items { get; } = new ObservableCollectionExtended<ErWR>();
+
+    /// <summary>
+    /// Если true - отображается столбец с прямым расчетом
+    /// </summary>
+    public bool ShowReverse => Items.Any(i => !string.IsNullOrEmpty(i.Er.RevFormula));
+
+    /// <summary>
+    /// Если true - отображается столбец с обратным расчетом
+    /// </summary>
+    public bool ShowDirect => Items.Any(i => !string.IsNullOrEmpty(i.Er.DirFormula));
 
     #endregion
 

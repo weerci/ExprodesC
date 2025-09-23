@@ -453,4 +453,31 @@
   <data name="cap_calc" xml:space="preserve">
     <value>Расчет:</value>
   </data>
+  <data name="gc_locuses" xml:space="preserve">
+    <value>Ребенок</value>
+  </data>
+  <data name="gc_child" xml:space="preserve">
+    <value>Локусы</value>
+  </data>
+  <data name="gc_intended_parent" xml:space="preserve">
+    <value>Предполагаемый родитель</value>
+  </data>
+  <data name="gc_known_parent" xml:space="preserve">
+    <value>Известный родитель</value>
+  </data>
+  <data name="gc_grandfather_grandmother" xml:space="preserve">
+    <value>Дедушка (бабушка)</value>
+  </data>
+  <data name="gc_presumed_gg" xml:space="preserve">
+    <value>Дедушка/Бабушка</value>
+  </data>
+  <data name="gc_person_verification" xml:space="preserve">
+    <value>Проверяемое лицо</value>
+  </data>
+  <data name="gc_presumed_brother_sister" xml:space="preserve">
+    <value>Брат/Сестра</value>
+  </data>
+  <data name="cap_alleles" xml:space="preserve">
+    <value>Аллели</value>
+  </data>
 </root>

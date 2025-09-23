@@ -59,7 +59,7 @@ public class Project : ReactiveObject, IProject
 
     //public IObservableCollection<GenotypeColumnVM> SelectedGolumns { get; } = new ObservableCollectionExtended<GenotypeColumnVM>();
     public ReadOnlyObservableCollection<GenotypeColumnVM> SelectedGolumns => _selectedGolumns;
-    public ReadOnlyObservableCollection<GenotypeColumnVM> _selectedGolumns;
+    private ReadOnlyObservableCollection<GenotypeColumnVM> _selectedGolumns;
     /// <inheritdoc/>
     [Reactive] public GenotypeWR? CurrentGenotype { get; set; }
 

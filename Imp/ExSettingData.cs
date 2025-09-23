@@ -50,6 +50,12 @@ public class ExSettingData : AppSettingsData
     /// Текущая тема приложения
     /// </summary>
     [Reactive] public Themes CurrentTheme { get; set; } = Themes[0];
+    
+    /// <summary>
+    /// Высота выпадающего списка содержащего детализацию расчета
+    /// </summary>
+    [Reactive] public int MaxDetailsHeight { get; set; } = 65;
+    [Reactive] public int MinDetailsHeight { get; set; } = 35;
 
     /// <summary>
     /// Набор возможных тем для приложения

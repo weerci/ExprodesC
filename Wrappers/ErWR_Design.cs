@@ -14,16 +14,6 @@ public partial class ErWR
     public ErWR() : this(new ER()) // Конструктор для дизайнера
     {
         // Заполняем фиктивными данными
-        Er = new ER
-        {
-            Locus = new Locus { Name = "Пример локуса" },
-            DirFormula = "(pa+pb)^2-(pa)^2",
-            DirExpression = "",
-            RevFormula = "p^2",
-            DirResult = 0.5,
-            RevResult = 0.25
-        };
-
         List<Allele> alleles = new List<Allele>
             {
                 new Allele("10"),
@@ -31,6 +21,21 @@ public partial class ErWR
                 new Allele("14"),
                 new Allele("16")
             };
+        Hash hash = new();
+        hash.Append(alleles);
+        Er = new ER
+        {
+            Locus = new Locus { Name = "Пример локуса" },
+            DirFormula = "2pa*2pb",
+            Hash = hash,
+            DirExpression = "2*0,1763*2*0,3459",
+            RevFormula = "(pa+pb) * 2pa*pb",
+            RevExpression = "(pa+pb) * 2pa*pb",
+            DirResult = 0.5463,
+            RevResult = 0.2593
+        };
+
+       
 
         // Добавляем фиктивные аллели
         Er.Genomes.Add(new Ex<Genome>(new Genome(Er.Locus, alleles[0], alleles[1], alleles)));

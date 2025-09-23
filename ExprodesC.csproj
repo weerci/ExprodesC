@@ -17,22 +17,18 @@
 
 	<ItemGroup>
 		<AvaloniaXaml Remove="ExprodesCTest\**" />
-		<AvaloniaXaml Remove="Extensions\**" />
 		<AvaloniaXaml Remove="release\**" />
 		<AvaloniaXaml Remove="Reports\**" />
 		<AvaloniaXaml Remove="ViewModels\Dialogs\**" />
 		<Compile Remove="ExprodesCTest\**" />
-		<Compile Remove="Extensions\**" />
 		<Compile Remove="release\**" />
 		<Compile Remove="Reports\**" />
 		<Compile Remove="ViewModels\Dialogs\**" />
 		<EmbeddedResource Remove="ExprodesCTest\**" />
-		<EmbeddedResource Remove="Extensions\**" />
 		<EmbeddedResource Remove="release\**" />
 		<EmbeddedResource Remove="Reports\**" />
 		<EmbeddedResource Remove="ViewModels\Dialogs\**" />
 		<None Remove="ExprodesCTest\**" />
-		<None Remove="Extensions\**" />
 		<None Remove="release\**" />
 		<None Remove="Reports\**" />
 		<None Remove="ViewModels\Dialogs\**" />

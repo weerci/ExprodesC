@@ -1,4 +1,5 @@
-﻿using Calc.Calculation;
+﻿using Avalonia.Controls;
+using Calc.Calculation;
 using Calc.Models;
 using Func;
 using System;
@@ -12,27 +13,31 @@ namespace ExprodesC.Wrappers;
 
 public partial class ErWR : ReactiveObject
 {
-    
+
     public ErWR(ER er)
     {
         Er = er;
 
-        ToggleExpandCommand = ReactiveCommand.Create(fff);
-    }
-
-    private void fff()
-    {
-        IsExpanded = !IsExpanded;
+        ToggleExpandCommand = ReactiveCommand.Create(() =>
+        {
+            IsExpanded = !IsExpanded;
+        });
     }
 
     #region Properties
 
     public ER Er { get; }
 
-    public bool ShowReverse =>  !string.IsNullOrEmpty(Er.RevFormula);
-    public bool ShowDirect =>  !string.IsNullOrEmpty(Er.DirFormula);
 
     [Reactive] public bool IsExpanded { get; set; }
+    public bool IsReverse => !string.IsNullOrEmpty(Er.RevFormula);
+    public string DirFormulaView => $"{Lang.Resources.cap_formula} {Er.DirFormula}";
+    public string RevFormulaView => $"{Lang.Resources.cap_formula} {Er.RevFormula}";
+    public string DirExpressionView => $"{Lang.Resources.cap_calc} {Er.DirExpression.Value} = {Er.DirResult:E4}";
+    public string RevExpressionView => $"{Lang.Resources.cap_calc} {Er.RevExpression.Value} = {Er.RevResult:E4}";
+
+
+    //TODO Сделать отображение знаков с запятой в соответствии с настройками
 
     /// <summary>
     /// Sorted unique alleles from all genomes in this ER
@@ -45,6 +50,7 @@ public partial class ErWR : ReactiveObject
     #region Command
 
     public ICommand ToggleExpandCommand { get; }
+
 
     #endregion
 }
