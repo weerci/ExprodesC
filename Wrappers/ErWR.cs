@@ -37,7 +37,7 @@ public partial class ErWR : ReactiveObject
     public string RevExpressionView => $"{Lang.Resources.cap_calc} {Er.RevExpression.Value} = {Er.RevResult:E4}";
 
 
-    //TODO Сделать отображение знаков с запятой в соответствии с настройками
+    //TODO CalcPage Сделать отображение знаков с запятой в соответствии с настройками
 
     /// <summary>
     /// Sorted unique alleles from all genomes in this ER

@@ -29,7 +29,7 @@ public partial class AddEditPopulation : UserControl
         }
     }
 
-    //TODO Популяции - создание популяции без основании ее на базовой популяции (combobox с пустым значением)
+    //TODO AddEditPopulation - создание популяции без основании ее на базовой популяции (combobox с пустым значением)
     private void CbBase_SelectionChanged(object? sender, SelectionChangedEventArgs e)
     {
         _baseVM.CanSave = canSave();

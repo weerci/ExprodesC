@@ -22,7 +22,7 @@ public partial class ResultsDataGrid : UserControl
     {
         if (Design.IsDesignMode)
             return;
-
+        //TODO CalcPage если очень длинный метод расчета выгл€дит плохо
 
         if (sender is Button button)
         {

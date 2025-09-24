@@ -524,7 +524,7 @@ public class LibraryPageVM() : BaseVM
 
     private async Task openSymonyms(LocusWR locusWR) => await _dialogService.DialogSynonyms(new SynonymView(), Lang.Resources.cap_synonyms);
    
-    //TODO не работает сортировка аллелей после добавления/редактирования аллелей на форме редактирования локусов
+    //TODO AddEditGenotypeVM не работает сортировка аллелей после добавления/редактирования аллелей на форме редактирования локусов
     #endregion
 
     private void RefreshLocuses()

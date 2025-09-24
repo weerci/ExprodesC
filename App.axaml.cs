@@ -74,7 +74,7 @@ public partial class App : Application
                 DataContext = Services.GetService<MainViewVM>(),
             };
         }
-        //TODO Не работает нулевой уровень  для популяций
+        //TODO MainView Не работает нулевой уровень  для популяций
 
         base.OnFrameworkInitializationCompleted();
     }

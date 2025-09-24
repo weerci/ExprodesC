@@ -30,7 +30,7 @@ namespace ExprodesC.Views.Controls
 
         public IProject Project { get; set; } = null!;
 
-        //TODO При удалении из дерева не удаляется из списка выбранных
+        //TODO MainPage (возможно CalcPage) При удалении из дерева не удаляется из списка выбранных
         [Reactive] public GenotypeWR GenotypeWR { get; set; } = null!;
 
         public ObservableCollection<GenomeRow> GenomeRows { get; } = new();

@@ -25,7 +25,7 @@ public static class CalcConverters
 
     public static IValueConverter CollumnFormula { get; } = new FuncValueConverter<string, string>(method =>
     {
-        if (method != null && TypeCalcEx.GetHashResearch(method) is Ex<CaseResearch> ecr  && ecr.IsSuccess)
+        if (!string.IsNullOrEmpty(method) && TypeCalcEx.GetHashResearch(method) is Ex<CaseResearch> ecr  && ecr.IsSuccess)
             return ecr.Value!.CurrMethod switch
             {
                 MethodCalc.LR => Lang.Resources.gc_direct_hypothesis,
@@ -34,7 +34,8 @@ public static class CalcConverters
 
         return Lang.Resources.gc_formula;
     });
-
+    //TODO CalcPage Изменить анимацию при перегрузке рассчета
+    //TODO CalcPage Если выбрано несколько генотипов расчет прямой идентификации не работает
     public static IValueConverter CollumnProbability { get; } = new FuncValueConverter<string, string>(method =>
     {
         if (method != null && TypeCalcEx.GetHashResearch(method) is Ex<CaseResearch> ecr && ecr.IsSuccess)

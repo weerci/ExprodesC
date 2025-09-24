@@ -21,7 +21,7 @@ public partial class MainPage : UserControl
         DataContext = _mainPageVM;
         tvGenotypes.DoubleTapped += OnTreeDoubleTapped;
     }
-    //TODO изменить стили из xaml behaviors то ли оставить как есть, то ли реалзиовать стиль в своей программе, то ли полностью перенести функционал
+    //TODO MainPage, CalcPage dragAndDrop для выбранных генотипов
     private void OnTreeDoubleTapped(object? sender, TappedEventArgs e)
     {
         if (tvGenotypes.SelectedItem is GenotypeNode node)
